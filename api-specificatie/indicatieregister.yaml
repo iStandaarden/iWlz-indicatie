@@ -1,4 +1,4 @@
-# https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml
+# https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml 
 
 openapi: 3.0.1
 info:
