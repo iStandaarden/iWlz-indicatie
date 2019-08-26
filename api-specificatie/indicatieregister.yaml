@@ -6,6 +6,7 @@
 # Expand HAL links with GET "http://localhost:8080/wlzindicaties/{wlzindicatieID}?expand=geindiceerdezorgzwaartepaketten,geindiceerdefuncties"
 
 # Correllatienummer in response opnemen
+# edit
 
 # Abonnement op BSN nog nodig? Businesscase haakje client centraal?
 
