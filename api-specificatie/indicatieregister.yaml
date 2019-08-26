@@ -12,6 +12,7 @@
 # WLZ indicatie service geeft resultaat of enkel ID retour?
 # Enkel indicatieID + indicatiedatum
 # wlzindicaties geeft alle indicatieID's + indaicatieDatum retour
+# test Hilko
 
 openapi: 3.0.1
 info:
