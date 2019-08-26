@@ -1,18 +1,4 @@
-# https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/blob/master/api-specificatie/indicatieregister.yaml
-
-# TODO
-# Per abonnementType een URL vastleggen in station directory 
-# HAL toevoegen
-# Expand HAL links with GET "http://localhost:8080/wlzindicaties/{wlzindicatieID}?expand=geindiceerdezorgzwaartepaketten,geindiceerdefuncties"
-
-# Correllatienummer in response opnemen
-# edit
-
-# Abonnement op BSN nog nodig? Businesscase haakje client centraal?
-
-# WLZ indicatie service geeft resultaat of enkel ID retour?
-# Enkel indicatieID + indicatiedatum
-# wlzindicaties geeft alle indicatieID's + indaicatieDatum retour
+# https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml
 
 openapi: 3.0.1
 info:
@@ -24,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '1.3'
+  version: '1.4'
 externalDocs:
   description: Find out more about Swagger
   url: 'http://swagger.io'
