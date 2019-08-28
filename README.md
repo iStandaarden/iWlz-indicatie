@@ -9,9 +9,10 @@ De informatie die de API levert is herleidbaar naar het indicatiebeicht IO31 vol
 - verwijzing opnemen naar iStandaarden
 
 ## Bronnen
-* Actieprogramma iWlz: van keten naar netwerk [lees hier meer over het Actieprogramma iWlz](https://www.istandaarden.nl/actieprogramma-iwlz "Actieprogramma iWlz")
-* Informatiemodel iStandaarden iWlz 2.1 [Informatiemodellen](https://informatiemodellen.istandaarden.nl/2020)
-* iStandaarden [homepagina iStandaarden](https://www.istandaarden.nl)
+* Actieprogramma iWlz: van keten naar netwerk: [lees hier meer over het Actieprogramma iWlz](https://www.istandaarden.nl/actieprogramma-iwlz "Actieprogramma iWlz")
+* Informatiemodel iStandaarden iWlz 2.1: [Informatiemodellen](https://informatiemodellen.istandaarden.nl/2020)
+* Portaal voor iStandaarden in de
+Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
 ## Contactpersonen:
 * Hilko Jacobse - [@hilkojacobse](https://github.com/HilkoJacobse)
