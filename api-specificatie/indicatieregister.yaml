@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/blob/master/api-specificatie/indicatieregister.yaml
 
 # TODO
@@ -13,6 +14,9 @@
 # Enkel indicatieID + indicatiedatum
 # wlzindicaties geeft alle indicatieID's + indaicatieDatum retour
 # test Hilko
+=======
+# https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml 
+>>>>>>> 8bfcf77d4a8788cf56429eda178e24ab081d5bc6
 
 openapi: 3.0.1
 info:
@@ -24,7 +28,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '1.3'
+  version: '1.4'
 externalDocs:
   description: Find out more about Swagger
   url: 'http://swagger.io'
