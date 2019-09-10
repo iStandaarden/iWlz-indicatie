@@ -7,7 +7,7 @@ Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netw
 
 ## Versies
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
 ## Documentatie
 @todo
