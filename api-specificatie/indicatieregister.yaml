@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-# https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/blob/master/api-specificatie/indicatieregister.yaml
-
-# TODO
-# Per abonnementType een URL vastleggen in station directory 
-# HAL toevoegen
-# Expand HAL links with GET "http://localhost:8080/wlzindicaties/{wlzindicatieID}?expand=geindiceerdezorgzwaartepaketten,geindiceerdefuncties"
-
-# Correllatienummer in response opnemen
-
-# Abonnement op BSN nog nodig? Businesscase haakje client centraal?
-
-# WLZ indicatie service geeft resultaat of enkel ID retour?
-# Enkel indicatieID + indicatiedatum
-# wlzindicaties geeft alle indicatieID's + indaicatieDatum retour
-# test Hilko
-=======
 # https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml 
->>>>>>> 8bfcf77d4a8788cf56429eda178e24ab081d5bc6
 
 
 
@@ -501,10 +483,10 @@ paths:
         '404':
           description: Geen beperkingscores gevonden
           content: {}
-  /clientenIO31/{wlzindicatieID}:
+  /wlzindicaties/{wlzindicatieID}/client:
     get:
       tags:
-        - clientenIO31
+        - WLZ indicaties
       summary: Geeft clientgegevens op basis van het WLZ indicatie ID
       description: Persoonsgegevens van de cliënt. 
       operationId: getclientIO31
@@ -551,10 +533,10 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /clientenIO31/{wlzindicatieID}/contactpersonen:
+  /wlzindicaties/{wlzindicatieID}/contactpersonen:
     get:
       tags:
-        - clientenIO31
+        - WLZ indicaties
       summary: Geeft contactpersonen van een cliënt op basis van het WLZ indicatie ID
       description: Gegevens over de contactpersonen van de cliënt.
       operationId: getclientIO31Contactpersonen
@@ -603,10 +585,10 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /clientenIO31/{wlzindicatieID}/contactgegevens:
+  /wlzindicaties/{wlzindicatieID}/contactgegevens:
     get:
       tags:
-        - clientenIO31
+        - WLZ indicaties
       summary: Geeft contactgegevens van een cliënt op basis van het WLZ indicatie ID
       description: Gegevens over de contactpersonen van de cliënt.
       operationId: getclientIO31Contactgegevens
