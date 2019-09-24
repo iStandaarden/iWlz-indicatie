@@ -635,62 +635,12 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /samenloopwmo:
-    get:
-      tags:
-        - samenloop wmo
-      summary: Controleer of er in het kader van de sameloop met de WMO een WLZ indicatie is afgegeven voor een BSN
-      description: Geeft aan of er een WLZ WLZ indicatie is afgegeven voor het opgegeven BSN
-      operationId: getWlzCheck
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
-          schema:
-            type: string
-          required: true
-        - name: bsn
-          in: query
-          description: BSN van client
-          required: true
-          schema:
-            type: string
-            minLength: 9
-            maxLength: 9
-            pattern: '^[0-9]{9}$'
-            example: 950032153
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/WlzCheck'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WlzCheck'
-        '400':
-          description: Ongeldig BSN
-  /bopz/{wlzindicatieID}:
+   /bopz/{wlzindicatieID}:
     get:
       tags:
         - bopz
       summary: Zoek BOPZ op WLZ indicatie ID
-      description: Geeft alle BOPZ verklaringen bij een WLZ indicatie
+      description: Geeft BOPZ verklaring bij een WLZ indicatie
       operationId: getBopz
       parameters:
         - in: header
