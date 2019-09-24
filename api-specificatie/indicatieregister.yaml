@@ -18,6 +18,8 @@
 # https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml 
 >>>>>>> 8bfcf77d4a8788cf56429eda178e24ab081d5bc6
 
+
+
 openapi: 3.0.1
 info:
   title: WLZ indicatie register

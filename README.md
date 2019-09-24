@@ -5,6 +5,10 @@ De informatie die de API levert is herleidbaar naar het indicatiebeicht IO31 vol
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
+## Versies
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
+
 ## Documentatie
 @todo
 - verwijzing opnemen naar leeswijzer
