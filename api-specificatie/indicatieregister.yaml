@@ -12,7 +12,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '1.4'
+  version: '0.9.1.5'
 externalDocs:
   description: Find out more about Swagger
   url: 'http://swagger.io'
@@ -635,7 +635,7 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-   /bopz/{wlzindicatieID}:
+  /bopz/{wlzindicatieID}:
     get:
       tags:
         - bopz
