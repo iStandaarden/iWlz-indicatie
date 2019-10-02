@@ -24,11 +24,6 @@ tags:
     externalDocs:
       description: Link naar iStandaarden
       url: 'https://informatiemodel.istandaarden.nl/2018/object.html?object=72346'
-  - name: samenloop wmo
-    description: ''
-    externalDocs:
-      description: Link naar iStandaarden
-      url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
   - name: bopz
     description: ''
     externalDocs:
