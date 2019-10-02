@@ -29,11 +29,6 @@ tags:
     externalDocs:
       description: Link naar iStandaarden
       url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
-  - name: clientenIO31
-    description: 'Clientgegevens zoals die bij het vaststellen van de WLZ indicatie zijn vastgelegd.'
-    externalDocs:
-      description: Link naar iStandaarden
-      url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
   - name: bopz
     description: ''
     externalDocs:
