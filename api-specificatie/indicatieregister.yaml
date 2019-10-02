@@ -523,7 +523,7 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /wlzindicaties/{wlzindicatieID}/contactpersonen:
+  /wlzindicaties/{wlzindicatieID}/client/contactpersonen:
     get:
       tags:
         - WLZ indicaties
@@ -575,7 +575,7 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /wlzindicaties/{wlzindicatieID}/contactgegevens:
+  /wlzindicaties/{wlzindicatieID}/client/contactgegevens:
     get:
       tags:
         - WLZ indicaties
