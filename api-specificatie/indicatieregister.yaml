@@ -734,6 +734,14 @@ paths:
       tags:
         - abonnementen
       summary: Abonneren op indicaties voor een specifieke organisatie
+      parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
       requestBody:
         required: true
         content:
@@ -804,6 +812,14 @@ paths:
         tags:
           - abonnementen
         summary: Abonneren op indicaties voor een specifiek persoon
+        parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
         requestBody:
           required: true
           content:
