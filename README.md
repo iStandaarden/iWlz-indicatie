@@ -9,6 +9,13 @@ Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netw
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
+* versie v0.9.1.5 
+    * Abonnement opgesplits naar 
+        * abonnement op indicaties voor een specifieke organisatie
+        * abonnement op indicaties voor een specifieke persoon
+    * Abonnement Callback gespecificeerd 
+
+* versie v0.9.1.4 interne review
 ## Documentatie
 @todo
 - verwijzing opnemen naar leeswijzer
