@@ -767,35 +767,43 @@ paths:
                 - organisatieId
                 - organisatieIdType
       callbacks:   # Callback definition
-        nieuweIndicatie:   # Event name
+        notificatie:   # Event name
           '{abonneeEndpoint/notificatie}':   # The callback URL for delivering notifications
-            post:
-              requestBody:   # Contents of the callback message
-                required: true
-                content:
-                  application/json:
-                    schema:
-                      type: object
-                      properties:
-                          timestamp:
-                              type: string
-                              format: date-time
-                          abonnementId:
-                            type: string
-                            format: uuid
-                          eventType:
-                            type: string
-                            enum: ["create", "update"]
-                          entiteitID:
-                            type: string
-                      required:
-                        - timestamp
-                        - abonnementId
-                        - eventType
-                        - message
-              responses:   # Expected responses to the callback message
-                '200':
-                  description: Your server returns this code if it accepts the callback
+              post:
+                parameters:
+                - in: header
+                  name: X-orgKey
+                  description: Uniek ID van de organisatie binnen het netwerk
+                  schema:
+                    type: integer
+                    format: int32
+                  required: true
+                  requestBody:   # Contents of the callback message
+                    required: true
+                    content:
+                      application/json:
+                        schema:
+                          type: object
+                          properties:
+                              timestamp:
+                                  type: string
+                                  format: date-time
+                              abonnementId:
+                                type: string
+                                format: uuid
+                              eventType:
+                                type: string
+                                enum: ["create", "update"]
+                              entiteitID:
+                                type: string
+                          required:
+                            - timestamp
+                            - abonnementId
+                            - eventType
+                            - message
+                  responses:   # Expected responses to the callback message
+                    '200':
+                      description: Your server returns this code if it accepts the callback
       responses:
         '201':
           description: Abonnement aangemaakt
@@ -843,9 +851,17 @@ paths:
                   - organisatieId
                   - persoonIdType
         callbacks:   # Callback definition
-          nieuweIndicatie:   # Event name
+          notificatie:   # Event name
             '{abonneeEndpoint/notificatie}':   # The callback URL for delivering notifications
               post:
+                parameters:
+                - in: header
+                  name: X-orgKey
+                  description: Uniek ID van de organisatie binnen het netwerk
+                  schema:
+                    type: integer
+                    format: int32
+                  required: true
                 requestBody:   # Contents of the callback message
                   required: true
                   content:
@@ -891,6 +907,13 @@ paths:
       description: 'Operatie voor het verwijderen van een eerder geplaatst abonnement'
       operationId: deleteAbonnement
       parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
         - in: path
           name: abonnementID
           description: Id van het abonnement dat verwijderd dient te worden
