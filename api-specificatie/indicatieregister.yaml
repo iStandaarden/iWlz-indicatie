@@ -760,8 +760,7 @@ paths:
                 - organisatieIdType
       callbacks:   # Callback definition
         nieuweIndicatie:   # Event name
-          '{abonneeEndpoint/notificatie}':   # The callback URL,
-                                            # Refers to the passed URL
+          '{abonneeEndpoint/notificatie}':   # The callback URL for delivering notifications
             post:
               requestBody:   # Contents of the callback message
                 required: true
@@ -829,8 +828,7 @@ paths:
                   - persoonIdType
         callbacks:   # Callback definition
           nieuweIndicatie:   # Event name
-            '{abonneeEndpoint/notificatie}':   # The callback URL,
-                                              # Refers to the passed URL
+            '{abonneeEndpoint/notificatie}':   # The callback URL for delivering notifications
               post:
                 requestBody:   # Contents of the callback message
                   required: true
@@ -869,7 +867,6 @@ paths:
                     abonnementId:
                       type: string
                       format: uuid
-
 components:
   schemas:
     Adres:
