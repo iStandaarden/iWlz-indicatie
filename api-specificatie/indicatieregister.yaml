@@ -729,45 +729,132 @@ paths:
         '404':
           description: Geen Wzd verklaring gevonden voor WLZ indicatieID
           content: {}
-  /abonnementen:
+  /abonnement/organisatie:
+    post:
+      tags:
+        - abonnementen
+      summary: Abonneren op nieuwe indicaties voor een specifieke organisatie
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entiteit:
+                  type: string
+                  enum: ["wlzindicatie"]
+                eventType:
+                  type: string
+                  enum: ["all","create", "update"]
+                organisatieId:
+                  type: string
+                  minLength: 9
+                  maxLength: 9
+                organisatieIdType:
+                  type: string
+                  enum: ["UZOVI"]
+              required:
+                - event
+                - organisatieId
+                - organisatieIdType
+      callbacks:   # Callback definition
+        nieuweIndicatie:   # Event name
+          '{abonneeEndpoint/notificatie}':   # The callback URL,
+                                            # Refers to the passed URL
+            post:
+              requestBody:   # Contents of the callback message
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                          timestamp:
+                              type: string
+                              format: date-time
+                          abonnementId:
+                            type: string
+                            format: uuid
+                          eventType:
+                            type: string
+                            enum: ["create", "update"]
+                          entiteitID:
+                            type: string
+                      required:
+                        - timestamp
+                        - abonnementId
+                        - eventType
+                        - message
+              responses:   # Expected responses to the callback message
+                '200':
+                  description: Your server returns this code if it accepts the callback
+      responses:
+        '201':
+          description: Abonnement aangemaakt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abonnementId:
+                    type: string
+                    format: uuid
+  /abonnement/persoon:
       post:
         tags:
           - abonnementen
-        summary: Abonneren op WLZ indicaties
-        description: ''
-        operationId: subscribe
-        parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
+        summary: Abonneren op nieuwe indicaties voor een specifiek persoon
         requestBody:
           required: true
           content:
             application/json:
               schema:
-                oneOf:
-                  - $ref: '#/components/schemas/AbonnementRequestOrganisatie'
-                  - $ref: '#/components/schemas/AbonnementRequestBSN'
-                discriminator:
-                  propertyName: AbonnementType
-                  mapping:
-                    BSN: '#/components/schemas/AbonnementRequestBSN'
-                    Organisatie: '#/components/schemas/AbonnementRequestOrganisatie'
+                type: object
+                properties:
+                  entiteit:
+                    type: string
+                    enum: ["wlzindicatie"]
+                  eventType:
+                    type: string
+                    enum: ["all","create", "update"]
+                  persoonId:
+                    type: string
+                  persoonIdType:
+                    type: string
+                    enum: ["BSN"]
+                required:
+                  - event
+                  - organisatieId
+                  - persoonIdType
         callbacks:   # Callback definition
-          notificatie:
-            '{subscriber_datastation}/callbackUrl':   # The callback URL,
+          nieuweIndicatie:   # Event name
+            '{abonneeEndpoint/notificatie}':   # The callback URL,
                                               # Refers to the passed URL
               post:
-                requestBody:   # Inhoud van de notificatie
+                requestBody:   # Contents of the callback message
                   required: true
                   content:
                     application/json:
                       schema:
-                        $ref: '#/components/schemas/Notificatie'
+                        type: object
+                        properties:
+                          timestamp:
+                              type: string
+                              format: date-time
+                          abonnementId:
+                            type: string
+                            format: uuid
+                          eventType:
+                            type: string
+                            enum: ["create", "update"]
+                          entiteitID:
+                            type: string
+                        required:
+                          - timestamp
+                          - abonnementId
+                          - eventType
+                          - message
                 responses:   # Expected responses to the callback message
                   '200':
                     description: Your server returns this code if it accepts the callback
@@ -777,114 +864,14 @@ paths:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/AbonnementResponse'
-          '400':
-            description: Ongeldig kenmerk
-  /abonnementen/{abonnementID}:
-    delete:
-      tags:
-        - abonnementen
-      summary: Verwijder een abonnement
-      description: 'Operatie voor het verwijderen van een eerder geplaatst abonnement'
-      operationId: deleteAbonnement
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: path
-          name: abonnementID
-          description: Id van het abonnement dat verwijderd dient te worden
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      responses:
-        '204':
-          description: Abonnement verwijderd
-        '400':
-          description: Ongeldig abonnementID
-        '404':
-          description: abonnementID niet gevonden 
+                  type: object
+                  properties:
+                    abonnementId:
+                      type: string
+                      format: uuid
+
 components:
   schemas:
-    AbonnementRequestOrganisatie:
-      type: object
-      properties:
-        abonnementType: 
-          type: string
-          enum: ["Organisatie"]
-        eventType:
-          type: string
-          enum: ["created","updated","deleted"]
-        organisatieID:
-          type: string
-          minLength: 9
-          maxLength: 9
-      required:
-        - abonnementType
-        - eventType
-        - organisatieID
-    AbonnementRequestBSN:
-      type: object
-      properties:
-        abonnementType: 
-          type: string
-          enum: ["BSN"]
-        eventType:
-          type: string
-          enum: ["created","updated","deleted"]
-        BSN:
-          type: string
-          minLength: 9
-          maxLength: 9
-          pattern: '^[0-9]{9}$'
-          example: 950032153
-      required:
-        - abonnementType
-        - eventType
-        - BSN
-    AbonnementResponse:
-      type: object
-      properties:
-        abonnementID:
-          type: string
-          format: uuid
-          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      xml:
-        name: abonnementResponse
-    Notificatie:
-      type: object
-      properties:
-        abonnementID:
-          type: string
-          format: uuid
-          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-        timestamp:
-          type: string
-          format: date-time
-          example: "2017-07-21T17:32:28Z"
-        abonnementType: 
-          type: string
-          example: WLZ indicatie.nieuw
-        uri:
-          type: string
-          example: https://www.WLZ indicatieregister.nl/wlzindicaties/12345678
-        message:
-          type: string
-          example: Nieuwe WLZ indicatie afgegeven
-      required:
-        - abonnementID
-        - timestamp
-        - abonnementType
-        - uri
-        - message
-      xml:
-        name: notificatie
     Adres:
       required:
        - adresSoort
