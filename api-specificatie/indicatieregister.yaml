@@ -621,7 +621,7 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /bopz/{bsn}:
+  /bopz:
     get:
       tags:
         - bopz
@@ -649,14 +649,16 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: false
+        - name: bsn
+          in: query
+          description: BSN van WLZ indicatie
+          required: true
           schema:
             type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+            minLength: 9
+            maxLength: 9
+            pattern: '^[0-9]{9}$'
+            example: 950032153
       responses:
         '200':
           description: successful operation
@@ -725,7 +727,7 @@ paths:
         '404':
           description: Geen BOPZ gevonden voor WLZ indicatieID
           content: {}
-  /wzd/{bsn}:
+  /wzd:
     get:
       tags:
         - wzd
@@ -753,14 +755,16 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: false
+        - name: bsn
+          in: query
+          description: BSN van WLZ indicatie
+          required: true
           schema:
             type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+            minLength: 9
+            maxLength: 9
+            pattern: '^[0-9]{9}$'
+            example: 950032153
       responses:
         '200':
           description: successful operation
