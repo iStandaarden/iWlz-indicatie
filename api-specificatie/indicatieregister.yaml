@@ -8,7 +8,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.1.5'
+  version: '0.9.2'
 externalDocs:
   description: Find out more about Swagger
   url: 'http://swagger.io'
@@ -621,6 +621,60 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
+  /bopz:
+    get:
+      tags:
+        - bopz
+      summary: Zoek BOPZ op BSN
+      description: Geeft BOPZ verklaring bij een BSN
+      operationId: getBopzbyBsn
+      parameters:
+        - in: header
+          name: X-orgKey  
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-PSID
+          description: Pseudo ID van client
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-entiteit
+          description: Gezocht informatie type
+          schema:
+            type: string
+          required: true
+        - name: bsn
+          in: query
+          description: BSN van WLZ indicatie
+          required: true
+          schema:
+            type: string
+            minLength: 9
+            maxLength: 9
+            pattern: '^[0-9]{9}$'
+            example: 950032153
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BOPZ'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BOPZ'
+        '400':
+          description: Ongeldig WLZ indicatieID
+          content: {}
+        '404':
+          description: Geen BOPZ gevonden voor WLZ indicatieID
+          content: {}
   /bopz/{wlzindicatieID}:
     get:
       tags:
@@ -672,6 +726,60 @@ paths:
           content: {}
         '404':
           description: Geen BOPZ gevonden voor WLZ indicatieID
+          content: {}
+  /wzd:
+    get:
+      tags:
+        - wzd
+      summary: Zoek Wzd verklaring voor een BSN
+      description: Geeft alle Wzd verklaringen bij een BSN
+      operationId: getWzdbyBsn
+      parameters:
+        - in: header
+          name: X-orgKey  
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-PSID
+          description: Pseudo ID van client
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-entiteit
+          description: Gezocht informatie type
+          schema:
+            type: string
+          required: true
+        - name: bsn
+          in: query
+          description: BSN van WLZ indicatie
+          required: true
+          schema:
+            type: string
+            minLength: 9
+            maxLength: 9
+            pattern: '^[0-9]{9}$'
+            example: 950032153
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/WZD'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WZD'
+        '400':
+          description: Ongeldig WLZ indicatieID
+          content: {}
+        '404':
+          description: Geen Wzd verklaring gevonden voor WLZ indicatieID
           content: {}
   /wzd/{wlzindicatieID}:
     get:

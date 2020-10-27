@@ -12,6 +12,11 @@ Om de koppelvlakspecificatie te bekijken kunt u gebruik maken van de online Swag
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
+* versie v0.9.2
+    * Opmerking review CIZ d.d. 23-12-2019 verwerkt
+        * Mogelijkheid om Wzd of BOPZ te vinden voor Bsn
+        * datamodel aangepast
+
 * versie v0.9.1.5 
     * Opmerkingen review CIZ verwerkt
     * Abonnement opgesplits naar 
