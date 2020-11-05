@@ -82,7 +82,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  indicatieID: 
+                  wlzindicatieID: 
                     type: string
                   indicatiedatum: 
                     type: string
@@ -94,7 +94,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  indicatieID: 
+                  wlzindicatieID: 
                     type: string
                   indicatiedatum: 
                     type: string
