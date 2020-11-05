@@ -1233,6 +1233,14 @@ components:
           type: string
           minLength: 8
           maxLength: 8
+        communicatieVorm:
+          description: "Gecodeerde aanduiding van de bijzondere vorm van communicatie die gebruikt dient te worden"
+          type: string
+          enum: ["1","2","3"]
+        taal:
+          description: "De taal van de client waarin met de client wordt gecommuniceerd"
+          type: string
+          maxLength: 25
       xml:
         name: client   
     ContactGegevens:
