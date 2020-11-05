@@ -1456,6 +1456,8 @@ components:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
           type: integer
           enum: ["1","2","3","4"]
+        commentaar:
+          type: string
     GeindiceerdeZorgzwaartepakketten:
       type: object
       properties:
@@ -1497,6 +1499,8 @@ components:
           type: integer
           format: int32
           enum: ["1","2","3","4","5"]
+        commentaar:
+          type: string
     Stoornissen:
       type: object
       properties:
