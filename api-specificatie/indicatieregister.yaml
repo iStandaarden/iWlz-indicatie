@@ -1544,6 +1544,13 @@ components:
         landnummer:
           type: string
           example: "31"
+        ingangsdatum: 
+          type: string
+          format: date
+          example: "2005-09-01"
+        einddatum: 
+          type: string
+          format: date
     Telefoonnummers:
       type: object
       properties:
