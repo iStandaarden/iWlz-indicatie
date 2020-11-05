@@ -1404,6 +1404,10 @@ components:
           description: "Moet voldoen aan COD740: Leveringsvoorwaarde zorg; zie iWlz codelijsten"
           type: integer
           enum: ["1","2","3","4","8"]
+        vervoer:
+          description: "Gecodeerde aanduiding die aangeeft of vervoer van toepassing is"
+          type: integer
+          enum: ["1","2","9"]
         instellingVoorkeur:
           type: string
           minLength: 8
