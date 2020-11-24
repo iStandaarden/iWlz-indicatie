@@ -838,6 +838,7 @@ paths:
       tags:
         - abonnementen
       summary: Abonneren op indicaties voor een specifieke organisatie
+      operationId: postAbonnementOrganisatie
       parameters:
         - in: header
           name: X-orgKey
@@ -924,6 +925,7 @@ paths:
         tags:
           - abonnementen
         summary: Abonneren op indicaties voor een specifiek persoon
+        operationId: postAbonnementPersoon
         parameters:
         - in: header
           name: X-orgKey
