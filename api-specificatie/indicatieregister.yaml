@@ -19,7 +19,7 @@ tags:
     description: 'Alles over WLZ indicaties'
     externalDocs:
       description: Link naar iStandaarden
-      url: 'https://informatiemodel.istandaarden.nl/2018/object.html?object=72346'
+      url: 'https://informatiemodel.istandaarden.nl/'
   - name: bopz
     description: ''
     externalDocs:
