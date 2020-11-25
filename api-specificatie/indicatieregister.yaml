@@ -1,17 +1,19 @@
 openapi: 3.0.1
 info:
   title: WLZ indicatie register
-  description: Eerste opzet Swagger specificatie tbv WLZ indicatie register.
-  termsOfService: 'http://swagger.io/terms/'
+  description: OpenAPI Koppelvlak specificatie tbv WLZ indicatie register.
+  termsOfService: 'https://github.com/OAI/OpenAPI-Specification/blob/master/LICENSE'
   contact:
+    name: "iStandaarden"
+    url: "https://istandaarden.nl"
     email: info@istandaarden.nl
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   version: '0.9.3_prerelease'
 externalDocs:
-  description: Find out more about Swagger
-  url: 'http://swagger.io'
+  description: Find out more about OpenAPI
+  url: 'https://www.openapis.org'
 servers:
   - url: 'https://api.ciz.nl/wlzindicatieregister'
 tags:
@@ -31,10 +33,15 @@ tags:
       description: Link naar iStandaarden
       url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
   - name: abonnementen
-    description: Overzicht van beschikbare abonnementen
+    description: Beschikbare abonnementen
     externalDocs:
       description: Link naar iStandaarden
       url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
+  - name: "iWlz codelijsten"
+    description: ""
+    externalDocs:
+      description: "Codelijsten bij iWlz 2.2"
+      url: "https://www.istandaarden.nl/ibieb/codelijsten-iwlz-221"
 paths:
   /wlzindicaties:
     get:
@@ -1197,7 +1204,7 @@ components:
           description: "Moet voldoen aan COD046:Geslacht; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1, 2, 9]
+          enum: [0, 1, 2]
         burgerlijkeStaat:
           description: "Moet voldoen aan COD366:Burgerlijke staat; zie iWlz codelijsten"
           type: integer
