@@ -66,8 +66,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -135,8 +135,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -187,8 +187,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -239,8 +239,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -291,8 +291,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -343,8 +343,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -395,8 +395,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -447,8 +447,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -499,8 +499,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -549,8 +549,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -601,8 +601,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -651,8 +651,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -705,8 +705,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -757,8 +757,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
@@ -811,8 +811,8 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-entiteit
-          description: Gezocht informatie type
+          name: X-requestID
+          description: Identificatie van het request
           schema:
             type: string
           required: true
