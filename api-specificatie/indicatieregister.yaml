@@ -87,25 +87,10 @@ paths:
           content:
             application/xml:
               schema:
-                type: object
-                properties:
-                  wlzindicatieID: 
-                    type: string
-                  indicatiedatum: 
-                    type: string
-                    format: date
-                xml:
-                  name: 'foundIndicatieIDs'
-                  wrapped: true
+                $ref: '#/components/schemas/WlzindicatieIDs'
             application/json:
               schema:
-                type: object
-                properties:
-                  wlzindicatieID: 
-                    type: string
-                  indicatiedatum: 
-                    type: string
-                    format: date
+                $ref: '#/components/schemas/WlzindicatieIDs'
         '400':
           description: Ongeldig BSN
           content: {}
@@ -1614,6 +1599,22 @@ components:
       xml:
         name: WlzCheck
         wrapped: true
+    WlzindicatieID:
+      type: object
+      properties:
+        WLZ indicatieID: 
+          type: string
+      xml: 
+        name: wlzindicatieID
+        wrapped: true
+    WlzindicatieIDs:
+      type: object
+      properties:
+        telefoon:
+          $ref: '#/components/schemas/WlzindicatieID'
+      xml:
+        name: wlzindicatieids
+        wrapped: true    
     WZD:
       required:
        - bsn
