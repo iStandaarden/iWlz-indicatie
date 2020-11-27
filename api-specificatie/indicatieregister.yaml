@@ -1449,11 +1449,10 @@ components:
           description: "Moet voldoen aan COD999: Voorkeur client; zie iWlz codelijsten"
           type: integer
           format: int32
-          maxLength: 1
         instellingVoorkeur:
           type: string
-          minLength: 8
-          maxLength: 8
+          pattern: '^[0-9]{8}$'
+          example: 47471234
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
           type: integer
