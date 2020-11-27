@@ -77,8 +77,6 @@ paths:
           required: true
           schema:
             type: string
-            minLength: 9
-            maxLength: 9
             pattern: '^[0-9]{9}$'
             example: 950032153
       responses:
@@ -1148,8 +1146,6 @@ components:
       properties:
         bsn:
           type: string
-          minLength: 9
-          maxLength: 9
           pattern: '^[0-9]{9}$'
           example: 950031253
         bopzVerklaring:
@@ -1350,8 +1346,6 @@ components:
           pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
         bsn:
           type: string
-          minLength: 9
-          maxLength: 9
           pattern: '^[0-9]{9}$'
           example: 950032153
         besluitnummer:
@@ -1625,8 +1619,6 @@ components:
       properties:
         bsn:
           type: string
-          minLength: 9
-          maxLength: 9
           pattern: '^[0-9]{9}$'
           example: 950032153
         wzdVerklaring:
