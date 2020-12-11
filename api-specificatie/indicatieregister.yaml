@@ -1201,6 +1201,8 @@ components:
           type: string
         voornamen:
           type: string
+        roepnaam:
+          type: string
         voorletters:
           type: string
         naamGebruik:
@@ -1265,6 +1267,8 @@ components:
           type: string
           example: "Leo"
         roepnaam:
+          type: string
+        voorletters:
           type: string
         geslachtsnaam:
           type: string
