@@ -1231,6 +1231,10 @@ components:
           description: "De taal van de client waarin met de client wordt gecommuniceerd"
           type: string
           maxLength: 25
+        commentaar:
+          description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
+          type: string
+          maxLength: 255
       xml:
         name: client   
     ContactGegevens:
@@ -1370,6 +1374,10 @@ components:
           enum: ["Ja","Nee"]
         grondslag:
           $ref: '#/components/schemas/Grondslagen'
+        commentaar:
+          description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
+          type: string
+          maxLength: 255
       xml:
         name: WLZ indicatie
     GeindiceerdeFunctie:
