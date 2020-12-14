@@ -844,13 +844,16 @@ paths:
                   type: string
                   enum: ["wlzindicatie"]
                 eventType:
+                  description: specificatie voor welke gebeurtenissen er een abonnement wordt afgesloten. all = alle gebeurtenissen / create = alleen aanmaken / update = alleen wijzigingen
                   type: string
                   enum: ["all","create", "update"]
                 organisatieId:
+                  description: identificatie van de organisatie
                   type: string
                   minLength: 9
                   maxLength: 9
                 organisatieIdType:
+                  description: type identificatie van de organisatie
                   type: string
                   enum: ["UZOVI"]
               required:
@@ -931,11 +934,14 @@ paths:
                     type: string
                     enum: ["wlzindicatie"]
                   eventType:
+                    description: specificatie voor welke gebeurtenissen er een abonnement wordt afgesloten. all = alle gebeurtenissen / create = alleen aanmaken / update = alleen wijzigingen
                     type: string
                     enum: ["all","create", "update"]
                   persoonId:
+                    description: identificatie persoon
                     type: string
                   persoonIdType:
+                    description: type identificatie persoon
                     type: string
                     enum: ["BSN"]
                 required:
@@ -991,6 +997,9 @@ paths:
                     abonnementId:
                       type: string
                       format: uuid
+          '400':
+            description: Ongeldig BSN - Abonnement niet aangemaakt
+            content: {}
   /abonnementen/{abonnementID}:
     delete:
       tags:
@@ -1016,8 +1025,6 @@ paths:
       responses:
         '204':
           description: Abonnement verwijderd
-        '400':
-          description: Ongeldig abonnementID
         '404':
           description: abonnementID niet gevonden 
 components:
