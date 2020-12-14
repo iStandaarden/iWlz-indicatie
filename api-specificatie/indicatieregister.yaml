@@ -658,10 +658,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/BOPZ'
         '400':
-          description: Ongeldig WLZ indicatieID
+          description: Ongeldig Bsn
           content: {}
         '404':
-          description: Geen BOPZ gevonden voor WLZ indicatieID
+          description: Geen BOPZ gevonden
           content: {}
   /bopz/{wlzindicatieID}:
     get:
@@ -762,10 +762,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/WZD'
         '400':
-          description: Ongeldig WLZ indicatieID
+          description: Ongeldig Bsn
           content: {}
         '404':
-          description: Geen Wzd verklaring gevonden voor WLZ indicatieID
+          description: Geen Wzd verklaring gevonden
           content: {}
   /wzd/{wlzindicatieID}:
     get:
