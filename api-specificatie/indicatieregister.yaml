@@ -645,8 +645,6 @@ paths:
           required: true
           schema:
             type: string
-            minLength: 9
-            maxLength: 9
             pattern: '^[0-9]{9}$'
             example: 950032153
       responses:
@@ -751,8 +749,6 @@ paths:
           required: true
           schema:
             type: string
-            minLength: 9
-            maxLength: 9
             pattern: '^[0-9]{9}$'
             example: 950032153
       responses:
@@ -1034,8 +1030,6 @@ components:
         adresSoort:
           description: "Moet voldoen aan COD757: Soort Adres; zie iWlz codelijsten"
           type: string
-          minLength: 2
-          maxLength: 2
           enum: ["01","02","03"]
           example: "01"
         straatnaam: 
@@ -1058,8 +1052,6 @@ components:
         landCode: 
           description: "Moet voldoen aan COD032:Land; zie iWlz codelijsten"
           type: string
-          minLength: 2
-          maxLength: 2
           example: "NL"
         aanduidingWoonadres:
           description: "Moet voldoen aan NUM061: Aanduiding woonadres; zie iWlz codelijsten"
@@ -1088,15 +1080,11 @@ components:
         categorie:
           description: "Moet voldoen aan COD539: Beperking; zie iWlz codelijsten"
           type: string
-          minLength: 1
-          maxLength: 1
           enum: ["1","2","3","4","5","6"]
           example: "1"
         duur:
           description: "Moet voldoen aan COD749: duur; zie iWlz codelijsten"
           type: string
-          minLength: 1
-          maxLength: 1
           enum: ["1","2","3","4"]
           example: "1"
         commentaar:
@@ -1118,14 +1106,10 @@ components:
         beperkingsVraag:
           description: "Moet voldoen aan COD825: Vraag beperking; zie iWlz codelijsten"
           type: string
-          minLength: 4
-          maxLength: 4
           example: "0101"
         beperkingScore:
           description: "Moet voldoen aan COD828: Score beperking; zie iWlz codelijsten"
           type: string
-          minLength: 1
-          maxLength: 1
           enum: ["0","1","2","3","9"]
           example: "1"
         commentaar:
@@ -1167,8 +1151,6 @@ components:
       properties:
         bsn:
           type: string
-          minLength: 9
-          maxLength: 9
           pattern: '^[0-9]{9}$'
           example: 950032153
         geheimeClient:
@@ -1218,13 +1200,11 @@ components:
         juridischeStatus:
           description: "Moet voldoen aan COD232:Juridische status; zie iWlz codelijsten"
           type: string
-          minLength: 2
           enum: ["01","02","03","04","05","06","07","08","09","10","11","12"]
           example: "01"
         agbcodeHuisarts:
           type: string
-          minLength: 8
-          maxLength: 8
+          pattern: '^[0-9]{8}$'
         communicatieVorm:
           description: "Gecodeerde aanduiding van de bijzondere vorm van communicatie die gebruikt dient te worden"
           type: string
@@ -1396,8 +1376,6 @@ components:
         functiecode:
           description: "Moet voldoen aan COD732:Functie; zie iWlz codelijsten"
           type: string
-          minLength: 2
-          maxLength: 2
         ingangsdatum:
           type: string
           format: date
@@ -1418,8 +1396,6 @@ components:
           enum: ["1","2","9"]
         instellingVoorkeur:
           type: string
-          minLength: 8
-          maxLength: 8
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
           type: integer
@@ -1444,8 +1420,6 @@ components:
         zzpCode:
           description: "Moet voldoen aan COD163: Zorgzwaartepakket; zie iWlz codelijsten"
           type: string
-          minLength: 3
-          maxLength: 3
         ingangsdatum:
           type: string
           format: date
@@ -1455,8 +1429,6 @@ components:
         klasse:
           description: "Moet voldoen aan COD756: Klasse; zie iWlz codelijsten"
           type: string
-          minLength: 2
-          maxLength: 4
         voorkeurClient:
           description: "Moet voldoen aan COD999: Voorkeur client; zie iWlz codelijsten"
           type: integer
@@ -1487,8 +1459,6 @@ components:
         grondslag:
           description: "Moet voldoen aan COD736:Grondslag zorg; zie iWlz codelijsten"
           type: string
-          minLength: 2
-          maxLength: 2
           enum: ["01","02","03","04","05","06","07"]
     Grondslagen:
       type: object
@@ -1508,20 +1478,14 @@ components:
         grondslag:
           description: "Moet voldoen aan COD736:Grondslag zorg; zie iWlz codelijsten"
           type: string
-          minLength: 2
-          maxLength: 2
           enum: ["01","02","03","04","05","06","07"]
         diagnoseCodelijst:
           description: "Moet voldoen aan COD392:Diagnosecodelijst; zie iWlz codelijsten"
           type: string
-          minLength: 3
-          maxLength: 3
           enum: ["014","019","021","022","023","024"]
         diagnoseSubCodelijst:
           description: "Moet voldoen aan COD770:Subcode diagnosecodelijst; zie iWlz codelijsten"
           type: string
-          minLength: 2
-          maxLength: 2
           enum: ["01","02","03","04","05","06","07","08","09","10","11","12","13"]
         ziektebeeldStoornis:
           description: "vulling uit combinatie van COD923, COD924 en COD925; zie iWlz codelijsten"
@@ -1550,13 +1514,9 @@ components:
         stoornisVraag:
           description: "Moet voldoen aan COD824: Vraag stoornis; zie iWlz codelijsten"
           type: string
-          minLength: 4
-          maxLength: 4
         stoornisScore:
           description: "Moet voldoen aan COD827: Score vraag stoornis; zie iWlz codelijsten"
           type: string
-          minLength: 1
-          maxLength: 1
           enum: ["0","1","2","3","9"]
           example: "1"
         commentaar:
