@@ -858,6 +858,8 @@ components:
         einddatum:
           type: string
           format: date
+      xml:
+        name: adres
     Adressen:
       type: array
       items:
@@ -882,6 +884,8 @@ components:
           example: "1"
         commentaar:
           type: string
+      xml:
+        name: beperking
     Beperkingen:
       type: array
       items:
@@ -906,6 +910,8 @@ components:
           example: "1"
         commentaar:
           type: string
+      xml:
+        name: beperkingScore
     BeperkingScores:
       type: array
       items:
@@ -1019,6 +1025,8 @@ components:
           $ref: '#/components/schemas/Telefoonnummers'
         email:
           $ref: '#/components/schemas/Emailadressen'
+      xml:
+        name: contactGegevens
     ContactPersoon:
       required:
         - soortRelatie
@@ -1077,6 +1085,8 @@ components:
           $ref: '#/components/schemas/Telefoonnummers'
         email:
           $ref: '#/components/schemas/Emailadressen'
+      xml:
+        name: contactPersoon
     ContactPersonen:
       type: array
       items:
@@ -1099,6 +1109,8 @@ components:
         einddatum:
           type: string
           format: date
+      xml:
+        name: email
     Emailadressen:
       type: array
       items:
@@ -1149,7 +1161,7 @@ components:
           type: string
           maxLength: 255
       xml:
-        name: WLZ indicatie
+        name: WlzIndicatie
     GeindiceerdeFunctie:
       required:
         - functiecode
@@ -1188,6 +1200,8 @@ components:
           enum: ["1","2","3","4"]
         commentaar:
           type: string
+      xml:
+        name: geindiceerdeFunctie
     GeindiceerdeFuncties:
       type: array
       items:
@@ -1228,6 +1242,8 @@ components:
           enum: ["1","2","3","4"]
         commentaar:
           type: string
+      xml:
+        name: geindiceerdeZorgzwaartepakket
     GeindiceerdeZorgzwaartepakketten:
       type: array
       items:
@@ -1244,12 +1260,14 @@ components:
           description: "Moet voldoen aan COD736:Grondslag zorg; zie iWlz codelijsten"
           type: string
           enum: ["01","02","03","04","05","06","07"]
+      xml:
+        name: grondslag
     Grondslagen:
       type: array
       items:
         $ref: '#/components/schemas/Grondslag'
       xml:
-        name: grondslag
+        name: grondslagen
         wrapped: true
     Stoornis:
       required:
@@ -1280,6 +1298,8 @@ components:
           enum: ["1","2","3","4","5"]
         commentaar:
           type: string
+      xml:
+        name: stoornis
     Stoornissen:
       type: array
       items:
@@ -1303,6 +1323,8 @@ components:
           example: "1"
         commentaar:
           type: string
+      xml:
+        name: stoornisScore
     StoornisScores:
       type: array
       items:
@@ -1328,6 +1350,8 @@ components:
         einddatum:
           type: string
           format: date
+      xml:
+        name: telefoon
     Telefoonnummers:
       type: array
       items:
@@ -1341,6 +1365,8 @@ components:
         WLZ indicatie:
           type: string
           enum: ["Ja","Nee","Onbekend"]
+      xml:
+        name: WlzCheck
     WlzindicatieID:
       type: object
       properties:
@@ -1348,12 +1374,14 @@ components:
           type: string
           format: uuid
           pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      xml:
+        name: wlzindicatieID
     WlzindicatieIDs:
       type: array
       items:
         $ref: '#/components/schemas/WlzindicatieID'
       xml:
-        name: wlzindicatieids
+        name: WlzindicatieIDs
         wrapped: true
     WZD:
       required:
