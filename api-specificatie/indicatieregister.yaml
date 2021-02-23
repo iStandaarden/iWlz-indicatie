@@ -1161,7 +1161,7 @@ components:
           type: string
           maxLength: 255
       xml:
-        name: WlzIndicatie
+        name: wlzindicatie
     GeindiceerdeFunctie:
       required:
         - functiecode
