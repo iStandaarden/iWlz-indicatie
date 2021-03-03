@@ -132,10 +132,10 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/wlzindicatie'
+                $ref: '#/components/schemas/Wlzindicatie'
             application/json:
               schema:
-                $ref: '#/components/schemas/wlzindicatie'
+                $ref: '#/components/schemas/Wlzindicatie'
         '400':
           description: Ongeldig ID
           content: {}
@@ -972,7 +972,7 @@ components:
           enum: [1,2,3,4,5,6,7,8,9]
         geslachtsnaam:
           type: string
-        voorvoegselGeslachtnaam:
+        voorvoegselGeslachtsnaam:
           type: string
         partnernaam:
           type: string
@@ -1048,7 +1048,7 @@ components:
           type: string
         geslachtsnaam:
           type: string
-        voorvoegselGeslachtnaam:
+        voorvoegselGeslachtsnaam:
           type: string
         partnernaam:
           type: string
@@ -1118,12 +1118,12 @@ components:
       xml:
         name: emailadressen
         wrapped: true
-    wlzindicatie:
+    Wlzindicatie:
       required:
         - wlzindicatieID
         - besluitnummer
         - bsn
-        - soortWLZ indicatie
+        - soortWlzindicatie
       type: object
       properties:
         wlzindicatieID:
@@ -1138,7 +1138,7 @@ components:
           type: integer
           format: int32
           example: 1236458977
-        soortWLZ indicatie:
+        soortWlzindicatie:
           description: "Moet voldoen aan COD169: Soort WLZ indicatie; zie iWlz codelijsten"
           type: integer
           enum: ["1","2","3","4"]
@@ -1292,7 +1292,7 @@ components:
           description: "vulling uit combinatie van COD923, COD924 en COD925; zie iWlz codelijsten"
           type: string
         prognose:
-          description: "Moet voldoen aan COD737: Progenose; zie iWlz codelijsten"
+          description: "Moet voldoen aan COD737: Prognose; zie iWlz codelijsten"
           type: integer
           format: int32
           enum: ["1","2","3","4","5"]
