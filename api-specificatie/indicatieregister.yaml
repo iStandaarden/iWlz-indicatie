@@ -61,7 +61,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -113,7 +113,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -165,7 +165,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -217,7 +217,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -269,7 +269,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -321,7 +321,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -373,7 +373,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -425,7 +425,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -477,7 +477,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -527,7 +527,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -579,7 +579,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -629,7 +629,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -681,7 +681,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -733,7 +733,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
@@ -785,7 +785,7 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-requestID
+          name: X-Request-ID
           description: Identificatie van het request
           schema:
             type: string
