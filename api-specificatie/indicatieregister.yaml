@@ -1252,14 +1252,9 @@ components:
         name: geindiceerdeZorgzwaartepakketten
         wrapped: true
     Grondslag:
-      required:
-        - grondslag
-      type: object
-      properties:
-        grondslag:
-          description: "Moet voldoen aan COD736:Grondslag zorg; zie iWlz codelijsten"
-          type: string
-          enum: ["01","02","03","04","05","06","07"]
+      description: "Moet voldoen aan COD736:Grondslag zorg; zie iWlz codelijsten"
+      type: string
+      enum: ["01","02","03","04","05","06","07"]
       xml:
         name: grondslag
     Grondslagen:
