@@ -15,6 +15,10 @@ U kunt ook gebruik maken van de online viewers:
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
+* versie v0.9.4
+   * Removed object wrapper around WlzindicatieID
+   * typos removed
+
 * versie v0.9.3_prerelease
     * Opmerkingen review Menzis d.d. 29-10-2020 verwerkt
     * Opmerkingen review CIZ d.d. 09-11-2020 verwerkt
