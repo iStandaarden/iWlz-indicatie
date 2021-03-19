@@ -142,13 +142,13 @@ paths:
         '404':
           description: WLZ indicatie niet gevonden
           content: {}
-  /wlzindicaties/{wlzindicatieID}/geindiceerdezorgzwaartepaketten:
+  /wlzindicaties/{wlzindicatieID}/geindiceerdezorgzwaartepakketten:
     get:
       tags:
         - WLZ indicaties
-      summary: Vind geindiceerde zorgzwaartepaketten bij een wlzindicatieID.
+      summary: Vind geindiceerde zorgzwaartepakketten bij een wlzindicatieID.
       description: Gegevens over een geïndiceerd zorgzwaartepakket.
-      operationId: getWLZ indicatieGeindiceerdezorgzwaartepaketten
+      operationId: getWLZ indicatieGeindiceerdezorgzwaartepakketten
       parameters:
         - in: header
           name: X-orgKey
@@ -895,11 +895,11 @@ components:
         wrapped: true
     BeperkingScore:
       required:
-        - beperkingsVraag
+        - beperkingVraag
         - beperkinsScore
       type: object
       properties:
-        beperkingsVraag:
+        beperkingVraag:
           description: "Moet voldoen aan COD825: Vraag beperking; zie iWlz codelijsten"
           type: string
           example: "0101"
