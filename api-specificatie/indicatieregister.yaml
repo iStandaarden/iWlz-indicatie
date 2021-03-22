@@ -606,214 +606,6 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /bopz:
-    get:
-      tags:
-        - bopz
-      summary: Zoek BOPZ op BSN
-      description: Geeft BOPZ verklaring bij een BSN
-      operationId: getBopzbyBsn
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: bsn
-          in: query
-          description: BSN van WLZ indicatie
-          required: true
-          schema:
-            type: string
-            pattern: '^[0-9]{9}$'
-            example: 950032153
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/BOPZ'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BOPZ'
-        '400':
-          description: Ongeldig Bsn
-          content: {}
-        '404':
-          description: Geen BOPZ gevonden
-          content: {}
-  /bopz/{wlzindicatieID}:
-    get:
-      tags:
-        - bopz
-      summary: Zoek BOPZ op WLZ indicatie ID
-      description: Geeft BOPZ verklaring bij een WLZ indicatie
-      operationId: getBopz
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/BOPZ'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BOPZ'
-        '400':
-          description: Ongeldig WLZ indicatieID
-          content: {}
-        '404':
-          description: Geen BOPZ gevonden voor WLZ indicatieID
-          content: {}
-  /wzd:
-    get:
-      tags:
-        - wzd
-      summary: Zoek Wzd verklaring voor een BSN
-      description: Geeft alle Wzd verklaringen bij een BSN
-      operationId: getWzdbyBsn
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: bsn
-          in: query
-          description: BSN van WLZ indicatie
-          required: true
-          schema:
-            type: string
-            pattern: '^[0-9]{9}$'
-            example: 950032153
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/WZD'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WZD'
-        '400':
-          description: Ongeldig Bsn
-          content: {}
-        '404':
-          description: Geen Wzd verklaring gevonden
-          content: {}
-  /wzd/{wlzindicatieID}:
-    get:
-      tags:
-        - wzd
-      summary: Zoek Wzd verklaring op WLZ indicatieID
-      description: Geeft alle Wzd verklaringen bij een WLZ indicatie
-      operationId: getWzd
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/WZD'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WZD'
-        '400':
-          description: Ongeldig WLZ indicatieID
-          content: {}
-        '404':
-          description: Geen Wzd verklaring gevonden voor WLZ indicatieID
-          content: {}
 components:
   schemas:
     Adres:
@@ -919,23 +711,6 @@ components:
       xml:
         name: beperkingScores
         wrapped: true
-    BOPZ:
-      required:
-        - bsn
-        - bopzVerklaring
-      type: object
-      properties:
-        bsn:
-          type: string
-          pattern: '^[0-9]{9}$'
-          example: 950031253
-        bopzVerklaring:
-          type: boolean
-        datumAfgifte:
-          type: string
-          format: date
-      xml:
-        name: bopz
     Client:
       required:
         - bsn
@@ -1010,6 +785,16 @@ components:
           description: "De taal van de client waarin met de client wordt gecommuniceerd"
           type: string
           maxLength: 25
+        wzdVerklaring:
+          description: "Moet voldoen aan COD127: WzdVerklaring; zie iWlz codelijsten"
+          type: string
+          enum: ["1","2","3","4","9"]
+        wzdIngangsdatum:
+          type: string
+          format: date
+        datumwzdEinde:
+          type: string
+          format: date
         commentaar:
           description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
           type: string
@@ -1375,26 +1160,3 @@ components:
       xml:
         name: WlzindicatieIDs
         wrapped: true
-    WZD:
-      required:
-        - bsn
-        - wzdVerklaring
-      type: object
-      properties:
-        bsn:
-          type: string
-          pattern: '^[0-9]{9}$'
-          example: 950032153
-        wzdVerklaring:
-          description: "Moet voldoen aan COD127: WzdVerklaring; zie iWlz codelijsten"
-          type: string
-          enum: ["1","2","3","4","9"]
-        datumIngang:
-          type: string
-          format: date
-        datumEinde:
-          type: string
-          format: date
-      xml:
-        name: wzd
-
