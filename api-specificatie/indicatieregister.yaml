@@ -22,16 +22,6 @@ tags:
     externalDocs:
       description: Link naar iStandaarden
       url: 'https://informatiemodel.istandaarden.nl/'
-  - name: bopz
-    description: ''
-    externalDocs:
-      description: Link naar iStandaarden
-      url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
-  - name: wzd
-    description: ''
-    externalDocs:
-      description: Link naar iStandaarden
-      url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
   - name: "iWlz codelijsten"
     description: ""
     externalDocs:
@@ -792,7 +782,7 @@ components:
         wzdIngangsdatum:
           type: string
           format: date
-        datumwzdEinde:
+        wzdEinddatum:
           type: string
           format: date
         commentaar:
