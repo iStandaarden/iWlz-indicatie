@@ -67,6 +67,11 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ## [v0.9.1.5] - 2019-10-03
 ### Algemeen
 - Release voor POC deelnemers
+- Opmerkingen review CIZ verwerkt
+- Abonnement opgesplits naar 
+    - abonnement op indicaties voor een specifieke organisatie
+    - abonnement op indicaties voor een specifieke persoon
+- Abonnement Callback gespecificeerd 
 
 ## [v0.9.1.4] - 2019-09-10 - Initiële Github versie
 ### Algemeen
