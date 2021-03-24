@@ -6,13 +6,16 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ## [Unreleased]
 ### Algemeen
 - Issue #8 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/8)
+- Issue #4 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/4)
 
 ### Toegevoegd 
 - CHANGELOG file
 - elementen WZD toegevoegd aan Client
 
 ### Aangepast
-- 
+- Bij opvragingen via wlzindicatieID de error omschrijvingen:
+    - "404 Geen xxxxxx gevonden" omzetten naar "404 Onbekend WLZ indicatie ID".
+    - "400 Ongeldig ID" omzetten naar "400 Ongeldig WLZ indicatie ID"
 
 ### Verwijderd
 - losse requests voor BOPZ en WZD verwijderd

@@ -15,7 +15,7 @@ U kunt ook gebruik maken van de online viewers:
 Laatste versie: ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
-Versie overzicht: [changelog.md](CHANGELOG.md)
+Versie overzicht zie: [Changelog](CHANGELOG.md)
 
 ## Documentatie
 @todo

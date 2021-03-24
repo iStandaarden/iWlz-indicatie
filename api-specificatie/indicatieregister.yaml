@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.3'
+  version: '0.9.5'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -127,10 +127,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Wlzindicatie'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: WLZ indicatie niet gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/geindiceerdezorgzwaartepakketten:
     get:
@@ -179,10 +179,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen zorgzwaartepakketten gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/geindiceerdefuncties:
     get:
@@ -231,10 +231,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/GeindiceerdeFuncties'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen functies gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/stoornissen:
     get:
@@ -283,10 +283,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Stoornissen'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen stoornissen gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/stoornissen/stoornisscores:
     get:
@@ -335,10 +335,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/StoornisScores'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen stoornisscores gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/beperkingen:
     get:
@@ -387,10 +387,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Beperkingen'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen beperkingen gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/beperkingen/beperkingscores:
     get:
@@ -439,10 +439,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/BeperkingScores'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen beperkingscores gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/client:
     get:
