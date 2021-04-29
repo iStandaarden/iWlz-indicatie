@@ -47,8 +47,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -99,8 +98,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -151,8 +149,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -203,8 +200,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -255,8 +251,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -307,8 +302,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -359,8 +353,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -411,8 +404,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -463,8 +455,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -513,8 +504,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -565,8 +555,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
