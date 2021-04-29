@@ -11,14 +11,19 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ### Toegevoegd 
 - CHANGELOG file
 - elementen WZD toegevoegd aan Client
+- enum COD0824
 
 ### Aangepast
 - Bij opvragingen via wlzindicatieID de error omschrijvingen:
     - "404 Geen xxxxxx gevonden" omzetten naar "404 Onbekend WLZ indicatie ID".
     - "400 Ongeldig ID" omzetten naar "400 Ongeldig WLZ indicatie ID"
+- Losse bevragingen Bopz en Wzd onder bevraging via indicatieiD gebracht
+- correcties op codelijsten: COD366, COD478, COD046
+- X-PSID gewijzigd in string ipv integer
+
 
 ### Verwijderd
-- losse requests voor BOPZ en WZD verwijderd
+- aparte bevraging BeperkingScores
 
 ## [v0.9.4] - 2021-03-19
 ### Algemeen

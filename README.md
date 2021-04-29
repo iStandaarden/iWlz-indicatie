@@ -24,7 +24,7 @@ Versie overzicht zie: [Changelog](CHANGELOG.md)
 
 ## Bronnen
 * Actieprogramma iWlz: van keten naar netwerk: [lees hier meer over het Actieprogramma iWlz](https://www.istandaarden.nl/actieprogramma-iwlz "Actieprogramma iWlz")
-* Informatiemodel iStandaarden iWlz 2.1: [Informatiemodellen](https://informatiemodellen.istandaarden.nl/2020)
+* Informatiemodel iStandaarden iWlz: [Informatiemodellen](https://informatiemodellen.istandaarden.nl)
 * Portaal voor iStandaarden in de
 Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
