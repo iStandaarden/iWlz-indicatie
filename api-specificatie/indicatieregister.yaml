@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.3'
+  version: '0.9.5'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -22,16 +22,6 @@ tags:
     externalDocs:
       description: Link naar iStandaarden
       url: 'https://informatiemodel.istandaarden.nl/'
-  - name: bopz
-    description: ''
-    externalDocs:
-      description: Link naar iStandaarden
-      url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
-  - name: wzd
-    description: ''
-    externalDocs:
-      description: Link naar iStandaarden
-      url: 'https://www.istandaarden.nl/istandaarden/iwlz/'
   - name: "iWlz codelijsten"
     description: ""
     externalDocs:
@@ -57,8 +47,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -109,8 +98,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -137,10 +125,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Wlzindicatie'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: WLZ indicatie niet gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/geindiceerdezorgzwaartepakketten:
     get:
@@ -161,8 +149,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -189,10 +176,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen zorgzwaartepakketten gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/geindiceerdefuncties:
     get:
@@ -213,8 +200,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -241,10 +227,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/GeindiceerdeFuncties'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen functies gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/stoornissen:
     get:
@@ -265,8 +251,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -293,10 +278,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Stoornissen'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen stoornissen gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/stoornissen/stoornisscores:
     get:
@@ -317,8 +302,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -345,10 +329,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/StoornisScores'
         '400':
-          description: Ongeldig ID
+          description: Ongeldig WLZ indicatie ID
           content: {}
         '404':
-          description: Geen stoornisscores gevonden
+          description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/beperkingen:
     get:
@@ -369,8 +353,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -397,268 +380,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Beperkingen'
         '400':
-          description: Ongeldig ID
-          content: {}
-        '404':
-          description: Geen beperkingen gevonden
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/beperkingen/beperkingscores:
-    get:
-      tags:
-        - WLZ indicaties
-      summary: Vind beperkingscores bij een wlzindicatieID.
-      description: Scoregegevens over de beperkingen van de cliënt.
-      operationId: getWLZ indicatieBeperkingenBeperkingscores
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/BeperkingScores'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BeperkingScores'
-        '400':
-          description: Ongeldig ID
-          content: {}
-        '404':
-          description: Geen beperkingscores gevonden
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/client:
-    get:
-      tags:
-        - WLZ indicaties
-      summary: Geeft clientgegevens op basis van het WLZ indicatie ID
-      description: Persoonsgegevens van de cliënt.
-      operationId: getclientIO31
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Client'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Client'
-        '400':
           description: Ongeldig WLZ indicatie ID
+          content: {}
         '404':
           description: Onbekend WLZ indicatie ID
-  /wlzindicaties/{wlzindicatieID}/client/contactpersonen:
-    get:
-      tags:
-        - WLZ indicaties
-      summary: Geeft contactpersonen van een cliënt op basis van het WLZ indicatie ID
-      description: Gegevens over de contactpersonen van de cliënt.
-      operationId: getclientIO31Contactpersonen
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek id van de WLZ indicatie
-          required: true
-          schema:
-            type: integer
-            format: int32
-            minLength: 10
-            maxLength: 10
-            example: 1234567890
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/ContactPersonen'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ContactPersonen'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-        '404':
-          description: Onbekend WLZ indicatie ID
-  /wlzindicaties/{wlzindicatieID}/client/contactgegevens:
-    get:
-      tags:
-        - WLZ indicaties
-      summary: Geeft contactgegevens van een cliënt op basis van het WLZ indicatie ID
-      description: Gegevens over de contactpersonen van de cliënt.
-      operationId: getclientIO31Contactgegevens
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/ContactGegevens'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ContactGegevens'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-        '404':
-          description: Onbekend WLZ indicatie ID
-  /bopz:
-    get:
-      tags:
-        - bopz
-      summary: Zoek BOPZ op BSN
-      description: Geeft BOPZ verklaring bij een BSN
-      operationId: getBopzbyBsn
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: bsn
-          in: query
-          description: BSN van WLZ indicatie
-          required: true
-          schema:
-            type: string
-            pattern: '^[0-9]{9}$'
-            example: 950032153
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/BOPZ'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BOPZ'
-        '400':
-          description: Ongeldig Bsn
           content: {}
-        '404':
-          description: Geen BOPZ gevonden
-          content: {}
-  /bopz/{wlzindicatieID}:
+  /wlzindicaties/{wlzindicatieID}/bopz/:
     get:
       tags:
         - bopz
@@ -677,8 +404,7 @@ paths:
           name: X-PSID
           description: Pseudo ID van client
           schema:
-            type: integer
-            format: int32
+            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -710,59 +436,7 @@ paths:
         '404':
           description: Geen BOPZ gevonden voor WLZ indicatieID
           content: {}
-  /wzd:
-    get:
-      tags:
-        - wzd
-      summary: Zoek Wzd verklaring voor een BSN
-      description: Geeft alle Wzd verklaringen bij een BSN
-      operationId: getWzdbyBsn
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-        - name: bsn
-          in: query
-          description: BSN van WLZ indicatie
-          required: true
-          schema:
-            type: string
-            pattern: '^[0-9]{9}$'
-            example: 950032153
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/WZD'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WZD'
-        '400':
-          description: Ongeldig Bsn
-          content: {}
-        '404':
-          description: Geen Wzd verklaring gevonden
-          content: {}
-  /wzd/{wlzindicatieID}:
+  /wlzindicaties/{wlzindicatieID}/wzd/:
     get:
       tags:
         - wzd
@@ -814,6 +488,155 @@ paths:
         '404':
           description: Geen Wzd verklaring gevonden voor WLZ indicatieID
           content: {}
+  /wlzindicaties/{wlzindicatieID}/client:
+    get:
+      tags:
+        - WLZ indicaties
+      summary: Geeft clientgegevens op basis van het WLZ indicatie ID
+      description: Persoonsgegevens van de cliënt.
+      operationId: getclientIO31
+      parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-PSID
+          description: Pseudo ID van client
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: X-Request-ID
+          description: Identificatie van het request
+          schema:
+            type: string
+          required: true
+        - name: wlzindicatieID
+          in: path
+          description: Uniek ID van de WLZ indicatie
+          required: true
+          schema:
+            type: string
+            format: uuid
+            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Client'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '400':
+          description: Ongeldig WLZ indicatie ID
+        '404':
+          description: Onbekend WLZ indicatie ID
+  /wlzindicaties/{wlzindicatieID}/client/contactpersonen:
+    get:
+      tags:
+        - WLZ indicaties
+      summary: Geeft contactpersonen van een cliënt op basis van het WLZ indicatie ID
+      description: Gegevens over de contactpersonen van de cliënt.
+      operationId: getclientIO31Contactpersonen
+      parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-PSID
+          description: Pseudo ID van client
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: X-Request-ID
+          description: Identificatie van het request
+          schema:
+            type: string
+          required: true
+        - name: wlzindicatieID
+          in: path
+          description: Uniek id van de WLZ indicatie
+          required: true
+          schema:
+            type: integer
+            format: int32
+            minLength: 10
+            maxLength: 10
+            example: 1234567890
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ContactPersonen'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactPersonen'
+        '400':
+          description: Ongeldig WLZ indicatie ID
+        '404':
+          description: Onbekend WLZ indicatie ID
+  /wlzindicaties/{wlzindicatieID}/client/contactgegevens:
+    get:
+      tags:
+        - WLZ indicaties
+      summary: Geeft contactgegevens van een cliënt op basis van het WLZ indicatie ID
+      description: Gegevens over de contactpersonen van de cliënt.
+      operationId: getclientIO31Contactgegevens
+      parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-PSID
+          description: Pseudo ID van client
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: X-Request-ID
+          description: Identificatie van het request
+          schema:
+            type: string
+          required: true
+        - name: wlzindicatieID
+          in: path
+          description: Uniek ID van de WLZ indicatie
+          required: true
+          schema:
+            type: string
+            format: uuid
+            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ContactGegevens'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactGegevens'
+        '400':
+          description: Ongeldig WLZ indicatie ID
+        '404':
+          description: Onbekend WLZ indicatie ID
 components:
   schemas:
     Adres:
@@ -884,6 +707,8 @@ components:
           example: "1"
         commentaar:
           type: string
+        beperkingscores:
+          $ref: "#/components/schemas/BeperkingScores"
       xml:
         name: beperking
     Beperkingen:
@@ -919,16 +744,12 @@ components:
       xml:
         name: beperkingScores
         wrapped: true
-    BOPZ:
+    Bopz:
       required:
-        - bsn
         - bopzVerklaring
+        - datumAfgifte
       type: object
       properties:
-        bsn:
-          type: string
-          pattern: '^[0-9]{9}$'
-          example: 950031253
         bopzVerklaring:
           type: boolean
         datumAfgifte:
@@ -969,7 +790,7 @@ components:
           description: "Moet voldoen aan COD366:Burgerlijke staat; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3,4,5,6,7,8,9]
+          enum: [1,2,3,4,5,6,7,9]
         geslachtsnaam:
           type: string
         voorvoegselGeslachtsnaam:
@@ -993,7 +814,7 @@ components:
           description: "Moet voldoen aan COD478:Leefeenheid; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3,4,5,6,7,8,9]
+          enum: [1,2,3,4,5,6,7,9]
         juridischeStatus:
           description: "Moet voldoen aan COD232:Juridische status; zie iWlz codelijsten"
           type: string
@@ -1063,7 +884,7 @@ components:
           description: "Moet voldoen aan COD046:Geslacht; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1, 2, 9]
+          enum: [0, 1, 2]
         geboorteDatum:
           type: string
           format: date
@@ -1187,7 +1008,7 @@ components:
         leveringsVoorwaarde:
           description: "Moet voldoen aan COD740: Leveringsvoorwaarde zorg; zie iWlz codelijsten"
           type: integer
-          enum: ["1","2","3","4","8"]
+          enum: [1,2,3,4,8]
         vervoer:
           description: "Gecodeerde aanduiding die aangeeft of vervoer van toepassing is"
           type: integer
@@ -1239,7 +1060,7 @@ components:
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
           type: integer
-          enum: ["1","2","3","4"]
+          enum: [1,2,3,4]
         commentaar:
           type: string
       xml:
@@ -1311,6 +1132,7 @@ components:
         stoornisVraag:
           description: "Moet voldoen aan COD824: Vraag stoornis; zie iWlz codelijsten"
           type: string
+          enum: ["0101","0102","0103","0104","0201","0202","0203","0204","0301","0302","0303","0304","0305","0306","0401","0402","0403","0404","0405","0406","0407","0501","0502","0503","0504","0601","0602","0603","0604","0605"]
         stoornisScore:
           description: "Moet voldoen aan COD827: Score vraag stoornis; zie iWlz codelijsten"
           type: string
@@ -1375,16 +1197,12 @@ components:
       xml:
         name: WlzindicatieIDs
         wrapped: true
-    WZD:
+    Wzd:
       required:
-        - bsn
         - wzdVerklaring
+        - datumIngang
       type: object
       properties:
-        bsn:
-          type: string
-          pattern: '^[0-9]{9}$'
-          example: 950032153
         wzdVerklaring:
           description: "Moet voldoen aan COD127: WzdVerklaring; zie iWlz codelijsten"
           type: string
@@ -1397,4 +1215,3 @@ components:
           format: date
       xml:
         name: wzd
-

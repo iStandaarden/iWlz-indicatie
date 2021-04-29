@@ -12,30 +12,11 @@ U kunt ook gebruik maken van de online viewers:
 * SwaggerUI Viewer. [bekijk via deze link:](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml "https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml")
 
 ## Versies
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
+Laatste versie: ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
-* versie v0.9.4
-   * Removed object wrapper around WlzindicatieID
-   * typos removed
+Versie overzicht zie: [Changelog](CHANGELOG.md)
 
-* versie v0.9.3_prerelease
-    * Opmerkingen review Menzis d.d. 29-10-2020 verwerkt
-    * Opmerkingen review CIZ d.d. 09-11-2020 verwerkt
-        
-* versie v0.9.2
-    * Opmerking review CIZ d.d. 23-12-2019 verwerkt
-        * Mogelijkheid om Wzd of BOPZ te vinden voor Bsn
-        * datamodel aangepast
-
-* versie v0.9.1.5 
-    * Opmerkingen review CIZ verwerkt
-    * Abonnement opgesplits naar 
-        * abonnement op indicaties voor een specifieke organisatie
-        * abonnement op indicaties voor een specifieke persoon
-    * Abonnement Callback gespecificeerd 
-
-* versie v0.9.1.4 interne review
 ## Documentatie
 @todo
 - verwijzing opnemen naar leeswijzer
@@ -43,7 +24,7 @@ U kunt ook gebruik maken van de online viewers:
 
 ## Bronnen
 * Actieprogramma iWlz: van keten naar netwerk: [lees hier meer over het Actieprogramma iWlz](https://www.istandaarden.nl/actieprogramma-iwlz "Actieprogramma iWlz")
-* Informatiemodel iStandaarden iWlz 2.1: [Informatiemodellen](https://informatiemodellen.istandaarden.nl/2020)
+* Informatiemodel iStandaarden iWlz: [Informatiemodellen](https://informatiemodellen.istandaarden.nl)
 * Portaal voor iStandaarden in de
 Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
