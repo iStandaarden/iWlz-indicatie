@@ -707,7 +707,7 @@ components:
           example: "1"
         commentaar:
           type: string
-        beperkingscores:
+        beperkingScores:
           $ref: "#/components/schemas/BeperkingScores"
       xml:
         name: beperking
