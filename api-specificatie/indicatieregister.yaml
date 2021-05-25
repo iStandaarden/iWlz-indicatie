@@ -426,10 +426,10 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/BOPZ'
+                $ref: '#/components/schemas/Bopz'
             application/json:
               schema:
-                $ref: '#/components/schemas/BOPZ'
+                $ref: '#/components/schemas/Bopz'
         '400':
           description: Ongeldig WLZ indicatieID
           content: {}
@@ -478,10 +478,10 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/WZD'
+                $ref: '#/components/schemas/Wzd'
             application/json:
               schema:
-                $ref: '#/components/schemas/WZD'
+                $ref: '#/components/schemas/Wzd'
         '400':
           description: Ongeldig WLZ indicatieID
           content: {}
