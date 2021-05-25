@@ -3,7 +3,7 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
-## [v0.9.5] - 2021-04-30
+## [Unreleased]
 ### Algemeen
 - Issue #8 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/8)
 - Issue #4 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/4)
@@ -87,7 +87,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[v0.9.5]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.4...v0.9.5
+[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/main...wzd_bopz_cleanup
 [v0.9.4]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.3...v0.9.4
 [v0.9.3]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.2...v0.9.3
 [v0.9.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.1.5...v0.9.2
