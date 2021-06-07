@@ -853,6 +853,11 @@ components:
         - soortRelatie
       type: object
       properties:
+        volgorde:
+          description: "Aanduiding prioriteit van de contactpersoon"
+          type: integer
+          format: int32
+          maxLength: 2
         soortRelatie:
           description: "Moet voldoen aan COD472:Soort relatie; zie iWlz codelijsten"
           type: string
