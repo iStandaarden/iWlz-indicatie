@@ -44,12 +44,6 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
-          required: true
-        - in: header
           name: X-Request-ID
           description: Identificatie van het request
           schema:
@@ -93,12 +87,6 @@ paths:
           schema:
             type: integer
             format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -146,12 +134,6 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
-          required: true
-        - in: header
           name: X-Request-ID
           description: Identificatie van het request
           schema:
@@ -195,12 +177,6 @@ paths:
           schema:
             type: integer
             format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -248,12 +224,6 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
-          required: true
-        - in: header
           name: X-Request-ID
           description: Identificatie van het request
           schema:
@@ -297,12 +267,6 @@ paths:
           schema:
             type: integer
             format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -350,12 +314,6 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
-          required: true
-        - in: header
           name: X-Request-ID
           description: Identificatie van het request
           schema:
@@ -401,12 +359,6 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
-          required: true
-        - in: header
           name: X-Request-ID
           description: Identificatie van het request
           schema:
@@ -447,13 +399,6 @@ paths:
         - in: header
           name: X-orgKey
           description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
           schema:
             type: integer
             format: int32
@@ -504,12 +449,6 @@ paths:
             format: int32
           required: true
         - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
-          required: true
-        - in: header
           name: X-Request-ID
           description: Identificatie van het request
           schema:
@@ -551,12 +490,6 @@ paths:
           schema:
             type: integer
             format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
           required: true
         - in: header
           name: X-Request-ID
@@ -602,12 +535,6 @@ paths:
           schema:
             type: integer
             format: int32
-          required: true
-        - in: header
-          name: X-PSID
-          description: Pseudo ID van client
-          schema:
-            type: string
           required: true
         - in: header
           name: X-Request-ID
