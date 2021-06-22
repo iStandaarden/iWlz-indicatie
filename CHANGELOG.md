@@ -5,6 +5,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ---
 ## [Unreleased]
 ### Algemeen
+- Diverse clean-ups en fixes: Zie [commit-history]
+## [v0.9.5] - 2021-04-30
+### Algemeen
 - Issue #8 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/8)
 - Issue #4 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/4)
 
@@ -20,7 +23,6 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 - Losse bevragingen Bopz en Wzd onder bevraging via indicatieiD gebracht
 - correcties op codelijsten: COD366, COD478, COD046
 - X-PSID gewijzigd in string ipv integer
-
 
 ### Verwijderd
 - aparte bevraging BeperkingScores
@@ -87,7 +89,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/main...wzd_bopz_cleanup
+[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...master
+[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...master
+[v0.9.5]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.4...v0.9.5
 [v0.9.4]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.3...v0.9.4
 [v0.9.3]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.2...v0.9.3
 [v0.9.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.1.5...v0.9.2
