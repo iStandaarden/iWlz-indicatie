@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.5'
+  version: '0.9.6'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -29,7 +29,7 @@ tags:
       url: "https://www.istandaarden.nl/ibieb/codelijsten-iwlz-221"
 paths:
   /wlzindicaties:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Vind indicatieID's op BSN.
@@ -49,14 +49,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: bsn
-          in: query
-          description: BSN van WLZ indicatie
-          required: true
-          schema:
-            type: string
-            pattern: '^[0-9]{9}$'
-            example: 950032153
+      requestBody:
+        description: BSN object voor het vinden van  WLZ indicaties   
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/bsn'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -944,13 +943,13 @@ components:
         vervoer:
           description: "Gecodeerde aanduiding die aangeeft of vervoer van toepassing is"
           type: integer
-          enum: ["1","2","9"]
+          enum: [1,2,9]
         instellingVoorkeur:
           type: string
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
           type: integer
-          enum: ["1","2","3","4"]
+          enum: [1,2,3,4]
         commentaar:
           type: string
       xml:
@@ -1043,7 +1042,7 @@ components:
           description: "Moet voldoen aan COD737: Prognose; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: ["1","2","3","4","5"]
+          enum: [1,2,3,4,5]
         commentaar:
           type: string
       xml:
@@ -1108,14 +1107,6 @@ components:
       xml:
         name: telefoonnummers
         wrapped: true
-    WlzCheck:
-      type: object
-      properties:
-        WLZ indicatie:
-          type: string
-          enum: ["Ja","Nee","Onbekend"]
-      xml:
-        name: WlzCheck
     WlzindicatieID:
       type: string
       format: uuid
@@ -1147,3 +1138,10 @@ components:
           format: date
       xml:
         name: wzd
+    bsn:
+      type: object
+      properties:
+        bsn:
+          type: string
+          pattern: '^[0-9]{9}$'
+          example: 950032153
