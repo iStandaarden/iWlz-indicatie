@@ -73,7 +73,7 @@ paths:
           description: Geen WLZ indicaties gevonden
           content: {}
   /wlzindicaties/{wlzindicatieID}:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Vind WLZ indicatie op wlzindicatieID.
@@ -93,14 +93,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -118,7 +117,7 @@ paths:
           description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/geindiceerdezorgzwaartepakketten:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Vind geindiceerde zorgzwaartepakketten bij een wlzindicatieID.
@@ -138,14 +137,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -163,7 +161,7 @@ paths:
           description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/geindiceerdefuncties:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Vind geindiceerde functie bij een wlzindicatieID.
@@ -183,14 +181,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -208,7 +205,7 @@ paths:
           description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/stoornissen:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Vind stoornissen bij een wlzindicatieID.
@@ -228,14 +225,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -253,7 +249,7 @@ paths:
           description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/stoornissen/stoornisscores:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Vind stoornisscores bij een wlzindicatieID.
@@ -273,14 +269,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -298,7 +293,7 @@ paths:
           description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/beperkingen:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Vind beperkingen bij een wlzindicatieID.
@@ -318,14 +313,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -343,7 +337,7 @@ paths:
           description: Onbekend WLZ indicatie ID
           content: {}
   /wlzindicaties/{wlzindicatieID}/bopz/:
-    get:
+    post:
       tags:
         - bopz
       summary: Zoek BOPZ op WLZ indicatie ID
@@ -363,14 +357,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -388,7 +381,7 @@ paths:
           description: Geen BOPZ gevonden voor WLZ indicatieID
           content: {}
   /wlzindicaties/{wlzindicatieID}/wzd/:
-    get:
+    post:
       tags:
         - wzd
       summary: Zoek Wzd verklaring op WLZ indicatieID
@@ -408,14 +401,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -433,7 +425,7 @@ paths:
           description: Geen Wzd verklaring gevonden voor WLZ indicatieID
           content: {}
   /wlzindicaties/{wlzindicatieID}/client:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Geeft clientgegevens op basis van het WLZ indicatie ID
@@ -453,14 +445,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -476,7 +467,7 @@ paths:
         '404':
           description: Onbekend WLZ indicatie ID
   /wlzindicaties/{wlzindicatieID}/client/contactpersonen:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Geeft contactpersonen van een cliënt op basis van het WLZ indicatie ID
@@ -496,16 +487,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek id van de WLZ indicatie
-          required: true
-          schema:
-            type: integer
-            format: int32
-            minLength: 10
-            maxLength: 10
-            example: 1234567890
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
@@ -521,7 +509,7 @@ paths:
         '404':
           description: Onbekend WLZ indicatie ID
   /wlzindicaties/{wlzindicatieID}/client/contactgegevens:
-    get:
+    post:
       tags:
         - WLZ indicaties
       summary: Geeft contactgegevens van een cliënt op basis van het WLZ indicatie ID
@@ -541,14 +529,13 @@ paths:
           schema:
             type: string
           required: true
-        - name: wlzindicatieID
-          in: path
-          description: Uniek ID van de WLZ indicatie
-          required: true
-          schema:
-            type: string
-            format: uuid
-            pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      requestBody:
+        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WlzindicatieID'
+        required: true
       responses:
         '200':
           description: successful operation
