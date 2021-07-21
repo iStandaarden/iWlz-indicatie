@@ -50,11 +50,11 @@ paths:
             type: string
           required: true
       requestBody:
-        description: BSN object voor het vinden van  WLZ indicaties   
+        description: BSN object voor het vinden van  WLZ indicaties
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/bsn'
+              $ref: '#/components/schemas/Bsn'
         required: true
       responses:
         '200':
@@ -68,11 +68,11 @@ paths:
                 $ref: '#/components/schemas/WlzindicatieIDs'
         '400':
           description: Ongeldig BSN
-          content: {}
+          content: { }
         '404':
           description: Geen WLZ indicaties gevonden
-          content: {}
-  /wlzindicaties/{wlzindicatieID}:
+          content: { }
+  /wlzindicaties/wlzindicatie:
     post:
       tags:
         - WLZ indicaties
@@ -112,11 +112,11 @@ paths:
                 $ref: '#/components/schemas/Wlzindicatie'
         '400':
           description: Ongeldig WLZ indicatie ID
-          content: {}
+          content: { }
         '404':
           description: Onbekend WLZ indicatie ID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/geindiceerdezorgzwaartepakketten:
+          content: { }
+  /wlzindicaties/wlzindicatie/geindiceerdezorgzwaartepakketten:
     post:
       tags:
         - WLZ indicaties
@@ -156,11 +156,11 @@ paths:
                 $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
         '400':
           description: Ongeldig WLZ indicatie ID
-          content: {}
+          content: { }
         '404':
           description: Onbekend WLZ indicatie ID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/geindiceerdefuncties:
+          content: { }
+  /wlzindicaties/wlzindicatie/geindiceerdefuncties:
     post:
       tags:
         - WLZ indicaties
@@ -200,11 +200,11 @@ paths:
                 $ref: '#/components/schemas/GeindiceerdeFuncties'
         '400':
           description: Ongeldig WLZ indicatie ID
-          content: {}
+          content: { }
         '404':
           description: Onbekend WLZ indicatie ID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/stoornissen:
+          content: { }
+  /wlzindicaties/wlzindicatie/stoornissen:
     post:
       tags:
         - WLZ indicaties
@@ -244,11 +244,11 @@ paths:
                 $ref: '#/components/schemas/Stoornissen'
         '400':
           description: Ongeldig WLZ indicatie ID
-          content: {}
+          content: { }
         '404':
           description: Onbekend WLZ indicatie ID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/stoornissen/stoornisscores:
+          content: { }
+  /wlzindicaties/wlzindicatie/stoornissen/stoornisscores:
     post:
       tags:
         - WLZ indicaties
@@ -288,11 +288,11 @@ paths:
                 $ref: '#/components/schemas/StoornisScores'
         '400':
           description: Ongeldig WLZ indicatie ID
-          content: {}
+          content: { }
         '404':
           description: Onbekend WLZ indicatie ID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/beperkingen:
+          content: { }
+  /wlzindicaties/wlzindicatie/beperkingen:
     post:
       tags:
         - WLZ indicaties
@@ -332,11 +332,11 @@ paths:
                 $ref: '#/components/schemas/Beperkingen'
         '400':
           description: Ongeldig WLZ indicatie ID
-          content: {}
+          content: { }
         '404':
           description: Onbekend WLZ indicatie ID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/bopz/:
+          content: { }
+  /wlzindicaties/wlzindicatie/bopz/:
     post:
       tags:
         - bopz
@@ -376,11 +376,11 @@ paths:
                 $ref: '#/components/schemas/Bopz'
         '400':
           description: Ongeldig WLZ indicatieID
-          content: {}
+          content: { }
         '404':
           description: Geen BOPZ gevonden voor WLZ indicatieID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/wzd/:
+          content: { }
+  /wlzindicaties/wlzindicatie/wzd/:
     post:
       tags:
         - wzd
@@ -420,11 +420,11 @@ paths:
                 $ref: '#/components/schemas/Wzd'
         '400':
           description: Ongeldig WLZ indicatieID
-          content: {}
+          content: { }
         '404':
           description: Geen Wzd verklaring gevonden voor WLZ indicatieID
-          content: {}
-  /wlzindicaties/{wlzindicatieID}/client:
+          content: { }
+  /wlzindicaties/wlzindicatie/client:
     post:
       tags:
         - WLZ indicaties
@@ -466,7 +466,7 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /wlzindicaties/{wlzindicatieID}/client/contactpersonen:
+  /wlzindicaties/wlzindicatie/client/contactpersonen:
     post:
       tags:
         - WLZ indicaties
@@ -508,7 +508,7 @@ paths:
           description: Ongeldig WLZ indicatie ID
         '404':
           description: Onbekend WLZ indicatie ID
-  /wlzindicaties/{wlzindicatieID}/client/contactgegevens:
+  /wlzindicaties/wlzindicatie/client/contactgegevens:
     post:
       tags:
         - WLZ indicaties
@@ -560,7 +560,7 @@ components:
         adresSoort:
           description: "Moet voldoen aan COD757: Soort Adres; zie iWlz codelijsten"
           type: string
-          enum: ["01","02","03"]
+          enum: [ "01","02","03" ]
           example: "01"
         straatnaam:
           type: string
@@ -586,7 +586,7 @@ components:
         aanduidingWoonadres:
           description: "Moet voldoen aan NUM061: Aanduiding woonadres; zie iWlz codelijsten"
           type: string
-          enum: ["AB","BY","TO","WW"]
+          enum: [ "AB","BY","TO","WW" ]
         ingangsdatum:
           type: string
           format: date
@@ -611,12 +611,12 @@ components:
         categorie:
           description: "Moet voldoen aan COD539: Beperking; zie iWlz codelijsten"
           type: string
-          enum: ["1","2","3","4","5","6"]
+          enum: [ "1","2","3","4","5","6" ]
           example: "1"
         duur:
           description: "Moet voldoen aan COD749: duur; zie iWlz codelijsten"
           type: string
-          enum: ["1","2","3","4"]
+          enum: [ "1","2","3","4" ]
           example: "1"
         commentaar:
           type: string
@@ -644,7 +644,7 @@ components:
         beperkingScore:
           description: "Moet voldoen aan COD828: Score beperking; zie iWlz codelijsten"
           type: string
-          enum: ["0","1","2","3","9"]
+          enum: [ "0","1","2","3","9" ]
           example: "1"
         commentaar:
           type: string
@@ -670,6 +670,10 @@ components:
           format: date
       xml:
         name: bopz
+    Bsn:
+      type: string
+      pattern: '^[0-9]{9}$'
+      example: 950032153
     Client:
       required:
         - bsn
@@ -693,17 +697,17 @@ components:
         geboortedatumGebruik:
           description: "Moet voldoen aan COD170:Datumgebruik; zie iWlz codelijsten"
           type: integer
-          enum: [1,2,3]
+          enum: [ 1,2,3 ]
         geslacht:
           description: "Moet voldoen aan COD046:Geslacht; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [0, 1, 2]
+          enum: [ 0, 1, 2 ]
         burgerlijkeStaat:
           description: "Moet voldoen aan COD366:Burgerlijke staat; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3,4,5,6,7,9]
+          enum: [ 1,2,3,4,5,6,7,9 ]
         geslachtsnaam:
           type: string
         voorvoegselGeslachtsnaam:
@@ -722,16 +726,16 @@ components:
           description: "Moet voldoen aan COD700:Naamgebruik; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3,4,5,6]
+          enum: [ 1,2,3,4,5,6 ]
         leefeenheid:
           description: "Moet voldoen aan COD478:Leefeenheid; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3,4,5,6,7,9]
+          enum: [ 1,2,3,4,5,6,7,9 ]
         juridischeStatus:
           description: "Moet voldoen aan COD232:Juridische status; zie iWlz codelijsten"
           type: string
-          enum: ["01","02","03","04","05","06","07","08","09","10","11","12"]
+          enum: [ "01","02","03","04","05","06","07","08","09","10","11","12" ]
           example: "01"
         agbcodeHuisarts:
           type: string
@@ -739,7 +743,7 @@ components:
         communicatieVorm:
           description: "Gecodeerde aanduiding van de bijzondere vorm van communicatie die gebruikt dient te worden"
           type: string
-          enum: ["1","2","3"]
+          enum: [ "1","2","3" ]
         taal:
           description: "De taal van de client waarin met de client wordt gecommuniceerd"
           type: string
@@ -774,7 +778,7 @@ components:
         soortRelatie:
           description: "Moet voldoen aan COD472:Soort relatie; zie iWlz codelijsten"
           type: string
-          enum: ["04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"] #@@nNog verder aanvullen
+          enum: [ "04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25" ] #@@nNog verder aanvullen
           example: "12"
         organisatieNaam:
           type: string
@@ -797,12 +801,12 @@ components:
           description: "Moet voldoen aan COD700:Naamgebruik; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3,4,5,6]
+          enum: [ 1,2,3,4,5,6 ]
         geslacht:
           description: "Moet voldoen aan COD046:Geslacht; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [0, 1, 2]
+          enum: [ 0, 1, 2 ]
         geboorteDatum:
           type: string
           format: date
@@ -810,7 +814,7 @@ components:
           description: "Moet voldoen aan COD170:Datumgebruik; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3]
+          enum: [ 1,2,3 ]
         ingangsdatum:
           type: string
           format: date
@@ -857,50 +861,6 @@ components:
       xml:
         name: emailadressen
         wrapped: true
-    Wlzindicatie:
-      required:
-        - wlzindicatieID
-        - besluitnummer
-        - bsn
-        - soortWlzindicatie
-      type: object
-      properties:
-        wlzindicatieID:
-          type: string
-          format: uuid
-          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-        bsn:
-          type: string
-          pattern: '^[0-9]{9}$'
-          example: 950032153
-        besluitnummer:
-          type: integer
-          format: int32
-          example: 1236458977
-        soortWlzindicatie:
-          description: "Moet voldoen aan COD169: Soort WLZ indicatie; zie iWlz codelijsten"
-          type: integer
-          enum: ["1","2","3","4"]
-        afgiftedatum:
-          type: string
-          format: date
-        ingangsdatum:
-          type: string
-          format: date
-        einddatum:
-          type: string
-          format: date
-        meerzorg:
-          type: string
-          enum: ["Ja","Nee"]
-        grondslag:
-          $ref: '#/components/schemas/Grondslagen'
-        commentaar:
-          description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
-          type: string
-          maxLength: 255
-      xml:
-        name: wlzindicatie
     GeindiceerdeFunctie:
       required:
         - functiecode
@@ -926,17 +886,17 @@ components:
         leveringsVoorwaarde:
           description: "Moet voldoen aan COD740: Leveringsvoorwaarde zorg; zie iWlz codelijsten"
           type: integer
-          enum: [1,2,3,4,8]
+          enum: [ 1,2,3,4,8 ]
         vervoer:
           description: "Gecodeerde aanduiding die aangeeft of vervoer van toepassing is"
           type: integer
-          enum: [1,2,9]
+          enum: [ 1,2,9 ]
         instellingVoorkeur:
           type: string
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
           type: integer
-          enum: [1,2,3,4]
+          enum: [ 1,2,3,4 ]
         commentaar:
           type: string
       xml:
@@ -978,7 +938,7 @@ components:
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
           type: integer
-          enum: [1,2,3,4]
+          enum: [ 1,2,3,4 ]
         commentaar:
           type: string
       xml:
@@ -993,7 +953,7 @@ components:
     Grondslag:
       description: "Moet voldoen aan COD736:Grondslag zorg; zie iWlz codelijsten"
       type: string
-      enum: ["01","02","03","04","05","06","07"]
+      enum: [ "01","02","03","04","05","06","07" ]
       xml:
         name: grondslag
     Grondslagen:
@@ -1013,15 +973,15 @@ components:
         grondslag:
           description: "Moet voldoen aan COD736:Grondslag zorg; zie iWlz codelijsten"
           type: string
-          enum: ["01","02","03","04","05","06","07"]
+          enum: [ "01","02","03","04","05","06","07" ]
         diagnoseCodelijst:
           description: "Moet voldoen aan COD392:Diagnosecodelijst; zie iWlz codelijsten"
           type: string
-          enum: ["014","019","021","022","023","024"]
+          enum: [ "014","019","021","022","023","024" ]
         diagnoseSubCodelijst:
           description: "Moet voldoen aan COD770:Subcode diagnosecodelijst; zie iWlz codelijsten"
           type: string
-          enum: ["01","02","03","04","05","06","07","08","09","10","11","12","13"]
+          enum: [ "01","02","03","04","05","06","07","08","09","10","11","12","13" ]
         ziektebeeldStoornis:
           description: "vulling uit combinatie van COD923, COD924 en COD925; zie iWlz codelijsten"
           type: string
@@ -1029,7 +989,7 @@ components:
           description: "Moet voldoen aan COD737: Prognose; zie iWlz codelijsten"
           type: integer
           format: int32
-          enum: [1,2,3,4,5]
+          enum: [ 1,2,3,4,5 ]
         commentaar:
           type: string
       xml:
@@ -1050,11 +1010,11 @@ components:
         stoornisVraag:
           description: "Moet voldoen aan COD824: Vraag stoornis; zie iWlz codelijsten"
           type: string
-          enum: ["0101","0102","0103","0104","0201","0202","0203","0204","0301","0302","0303","0304","0305","0306","0401","0402","0403","0404","0405","0406","0407","0501","0502","0503","0504","0601","0602","0603","0604","0605"]
+          enum: [ "0101","0102","0103","0104","0201","0202","0203","0204","0301","0302","0303","0304","0305","0306","0401","0402","0403","0404","0405","0406","0407","0501","0502","0503","0504","0601","0602","0603","0604","0605" ]
         stoornisScore:
           description: "Moet voldoen aan COD827: Score vraag stoornis; zie iWlz codelijsten"
           type: string
-          enum: ["0","1","2","3","9"]
+          enum: [ "0","1","2","3","9" ]
           example: "1"
         commentaar:
           type: string
@@ -1094,12 +1054,54 @@ components:
       xml:
         name: telefoonnummers
         wrapped: true
+    Wlzindicatie:
+      required:
+        - wlzindicatieID
+        - besluitnummer
+        - bsn
+        - soortWlzindicatie
+      type: object
+      properties:
+        wlzindicatieID:
+          type: string
+          format: uuid
+          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+        bsn:
+          type: string
+          pattern: '^[0-9]{9}$'
+          example: 950032153
+        besluitnummer:
+          type: integer
+          format: int32
+          example: 1236458977
+        soortWlzindicatie:
+          description: "Moet voldoen aan COD169: Soort WLZ indicatie; zie iWlz codelijsten"
+          type: integer
+          enum: [ "1","2","3","4" ]
+        afgiftedatum:
+          type: string
+          format: date
+        ingangsdatum:
+          type: string
+          format: date
+        einddatum:
+          type: string
+          format: date
+        meerzorg:
+          type: string
+          enum: [ "Ja","Nee" ]
+        grondslag:
+          $ref: '#/components/schemas/Grondslagen'
+        commentaar:
+          description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
+          type: string
+          maxLength: 255
+      xml:
+        name: wlzindicatie
     WlzindicatieID:
       type: string
       format: uuid
       pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
-      xml:
-        name: wlzindicatieID
     WlzindicatieIDs:
       type: array
       items:
@@ -1116,7 +1118,7 @@ components:
         wzdVerklaring:
           description: "Moet voldoen aan COD127: WzdVerklaring; zie iWlz codelijsten"
           type: string
-          enum: ["1","2","3","4","9"]
+          enum: [ "1","2","3","4","9" ]
         datumIngang:
           type: string
           format: date
@@ -1125,10 +1127,3 @@ components:
           format: date
       xml:
         name: wzd
-    bsn:
-      type: object
-      properties:
-        bsn:
-          type: string
-          pattern: '^[0-9]{9}$'
-          example: 950032153
