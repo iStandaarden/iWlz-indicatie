@@ -12,6 +12,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 - Issue #4 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/4)
 
 ### Toegevoegd 
+- GRAPHQL-schema specificatie
 - CHANGELOG file
 - elementen WZD toegevoegd aan Client
 - enum COD0824

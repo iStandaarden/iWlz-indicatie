@@ -1,5 +1,5 @@
 # iWlz-indicatie
-iWlz-indicatie bevat de koppelvlak API voor het zoeken naar en raadplegen van Wlz indicaties in het indicatieregister. 
+iWlz-indicatie bevat de koppelvlak API en de Graphql-schema specificatie voor het zoeken naar en raadplegen van Wlz indicaties in het indicatieregister. 
 
 De informatie die de API levert is herleidbaar naar het indicatiebeicht IO31 volgens de iWlz specificatie in het iStandaarden Informatiemodel.
 
@@ -11,6 +11,7 @@ U kunt ook gebruik maken van de online viewers:
 * MrinDoc: [bekijk via deze link:](https://mrin9.github.io/OpenAPI-Viewer/#/load/https%3A%2F%2Fraw.githubusercontent.com%2FiStandaarden%2FiWlz-indicatie%2Fmaster%2Fapi-specificatie%2Findicatieregister.yaml "https://mrin9.github.io/OpenAPI-Viewer/#/load/https%3A%2F%2Fraw.githubusercontent.com%2FiStandaarden%2FiWlz-indicatie%2Fmaster%2Fapi-specificatie%2Findicatieregister.yaml")
 * SwaggerUI Viewer. [bekijk via deze link:](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml "https://petstore.swagger.io/?url=https://raw.githubusercontent.com/iStandaarden/iWlz-indicatie/master/api-specificatie/indicatieregister.yaml")
 
+Voor het bekijken en gebruiken van de Graphql-schema specificatie is een aparte IDE nodig
 ## Versies
 Laatste versie: ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
