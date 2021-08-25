@@ -4,8 +4,13 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
 ## [Unreleased]
-### Algemeen
 - Diverse clean-ups en fixes: Zie [commit-history]
+## [v0.9.6] - 2021-08-25
+### Aangepast
+- Alle GET operaties gewijzingd naar POST operaties: Issue #11 [link](https://github.com/iStandaarden/iWlz-indicatie/issues/11)
+
+### Toegevoegd
+- relatieNummer aan Contactpersoon voor overgang xsd naar register
 ## [v0.9.5] - 2021-04-30
 ### Algemeen
 - Issue #8 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/8)
@@ -90,8 +95,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...master
-[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...master
+[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.6...master
+[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.6...master
+[v0.9.6]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...v0.9.6
 [v0.9.5]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.4...v0.9.5
 [v0.9.4]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.3...v0.9.4
 [v0.9.3]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.2...v0.9.3

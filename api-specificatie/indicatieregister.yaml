@@ -770,6 +770,9 @@ components:
         - soortRelatie
       type: object
       properties:
+        relatieNummer:
+          description: Identificerend nummer van de relatie van een client
+          type: string
         volgorde:
           description: "Aanduiding prioriteit van de contactpersoon"
           type: integer

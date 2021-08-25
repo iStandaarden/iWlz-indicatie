@@ -138,6 +138,7 @@ type Client {
 
 type ContactPersoon {
   id: UUID!
+  relatieNummer: String
   volgorde: Int!
   soortRelatie: String! #COD472!
   organisatieNaam: String
