@@ -560,7 +560,7 @@ components:
         adresSoort:
           description: "Moet voldoen aan COD757: Soort Adres; zie iWlz codelijsten"
           type: string
-          enum: [ "01","02","03" ]
+          enum: [ "01","02","03", "04" ]
           example: "01"
         straatnaam:
           type: string
