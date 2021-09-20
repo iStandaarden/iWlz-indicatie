@@ -1115,17 +1115,17 @@ components:
     Wzd:
       required:
         - wzdVerklaring
-        - datumIngang
+        - wzdIngangsdatum
       type: object
       properties:
         wzdVerklaring:
           description: "Moet voldoen aan COD127: WzdVerklaring; zie iWlz codelijsten"
           type: string
           enum: [ "1","2","3","4","9" ]
-        datumIngang:
+        wzdIngangsdatum:
           type: string
           format: date
-        datumEinde:
+        wzdEinddatumdatum:
           type: string
           format: date
       xml:
