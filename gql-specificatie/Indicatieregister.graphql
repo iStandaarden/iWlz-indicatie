@@ -37,6 +37,7 @@ type WlzIndicatie {
   beperking: [Beperking]
   stoornis: [Stoornis]
   stoornisScore: [StoornisScore]
+  wzd: [Wzd]
   commentaar: String
 }
 
@@ -71,6 +72,7 @@ type GeindiceerdeFunctie {
 type Grondslag {
   id: UUID!
   grondslag: String #COD736
+  volgorde: Int! 
   wlzindicatieID: UUID!
 }
 
@@ -169,6 +171,7 @@ type ContactGegevens {
 }
 
 type Adres {
+  id: UUID!
   adresSoort: String #COD757
   straatnaam: String
   huisnummer: Int
@@ -197,6 +200,12 @@ type Telefoonnummer {
   einddatum: Date
   contactGegevenID: UUID!
 } 
+
+type Wzd{
+  wzdVerklaring: String! #COD127
+  wzdIngangsdatum: Date!
+  wzdEinddatum: Date
+}
 
 """
   Codelijsten - enums
