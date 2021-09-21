@@ -767,6 +767,8 @@ components:
         name: contactGegevens
     ContactPersoon:
       required:
+        - relatieNummer
+        - volgorde
         - soortRelatie
       type: object
       properties:
