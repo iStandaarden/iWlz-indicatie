@@ -634,7 +634,7 @@ components:
     BeperkingScore:
       required:
         - beperkingVraag
-        - beperkinsScore
+        - beperkingScore
       type: object
       properties:
         beperkingVraag:
