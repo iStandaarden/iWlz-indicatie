@@ -193,7 +193,7 @@ type Email {
   contactGegevenID: UUID!
   }
 
-type Telefoonnummer {
+type Telefoon {
   telefoonnummer: String!
   landnummer: String
   ingangsdatum: Date!
@@ -201,7 +201,7 @@ type Telefoonnummer {
   contactGegevenID: UUID!
 } 
 
-type Wzd{
+type Wzd {
   wzdVerklaring: String! #COD127
   wzdIngangsdatum: Date!
   wzdEinddatum: Date
