@@ -769,6 +769,7 @@ components:
       required:
         - relatieNummer
         - soortRelatie
+         - naamGebruik
       type: object
       properties:
         relatieNummer:
