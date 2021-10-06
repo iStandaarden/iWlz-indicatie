@@ -1134,10 +1134,10 @@ components:
           description: "Moet voldoen aan COD127: WzdVerklaring; zie iWlz codelijsten"
           type: string
           enum: [ "1","2","3","4","9" ]
-        wzdIngangsdatum:
+        ingangsdatum:
           type: string
           format: date
-        wzdEinddatumdatum:
+        einddatum:
           type: string
           format: date
       xml:

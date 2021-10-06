@@ -11,6 +11,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 - enumeratie fix
 - consistentie tussen IO31.xsd en koppelvlak
 - aanvulling GraphQL met WZD informatie
+- Issue #22 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/22)
 
 ## [v0.9.6] - 2021-08-25
 ### Aangepast
