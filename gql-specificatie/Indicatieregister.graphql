@@ -150,7 +150,7 @@ type ContactPersoon {
   voorvoegselGeslachtsnaam: String
   partnernaam: String
   voorvoegselPartnernaam: String
-  naamGebruik: String #COD700
+  naamGebruik: String! #COD700
   geslacht: String #COD046
   geboorteDatum: Date
   geboortedatumGebruik: Date
