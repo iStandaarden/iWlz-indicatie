@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.6'
+  version: '0.9.7'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -782,7 +782,7 @@ components:
         soortRelatie:
           description: "Moet voldoen aan COD472:Soort relatie; zie iWlz codelijsten"
           type: string
-          enum: [ "04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25" ] #@@nNog verder aanvullen
+          enum: [ "03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25" ]
           example: "12"
         organisatieNaam:
           type: string
