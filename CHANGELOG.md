@@ -6,7 +6,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ## [Unreleased]
 - Diverse clean-ups en fixes: Zie [commit-history]
 
-## [v0.9.7-pre] - 2021-09-xx
+## [v0.9.7] - 2021-10-07
 - typo fix
 - enumeratie fix
 - consistentie tussen IO31.xsd en koppelvlak
@@ -103,9 +103,10 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7-pre...master
-[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7-pre...master
-[v0.9.7-pre]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.6...v0.9.7-pre
+[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...master
+[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...master
+[v0.9.8-pre]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...v0.9.8-pre
+[v0.9.7]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.6...v0.9.7
 [v0.9.6]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...v0.9.6
 [v0.9.5]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.4...v0.9.5
 [v0.9.4]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.3...v0.9.4
