@@ -12,11 +12,11 @@ schema {
 "de volgende bevragingen zijn er gedefinieerd"
 type Query {
   # Haal alle Wlzindicaties voor bsn
-  getWlzindicatiesvoorBsn(bsn: String!): WlzIndicatie!
+  getWlzIndicatiesVoorBsn(bsn: String!): WlzIndicatie!
   # Haal Wlzindicatie voor IndicatieId
-  getWlzindicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
+  getWlzIndicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
   # Haal Client op voor bsn
-  getClientvoorBsn(bsn: String!): Client!
+  getClientVoorBsn(bsn: String!): Client!
 }
 
 " objects "
