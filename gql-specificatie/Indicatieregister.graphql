@@ -1,6 +1,6 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister++
-  Versie 0.0.2
+  Versie 0.0.3
 """
 scalar UUID
 scalar Date
@@ -12,7 +12,7 @@ schema {
 "de volgende bevragingen zijn er gedefinieerd"
 type Query {
   # Haal alle Wlzindicaties voor bsn
-  getWlzIndicatiesVoorBsn(bsn: String!): WlzIndicatie!
+  getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
   # Haal Wlzindicatie voor IndicatieId
   getWlzIndicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
   # Haal Client op voor bsn
