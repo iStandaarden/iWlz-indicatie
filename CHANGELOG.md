@@ -6,6 +6,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ## [Unreleased]
 - Diverse clean-ups en fixes: Zie [commit-history]
 
+### Aangepast
+- Graphql specificatie: opvragen indicatieID's dmv bsn: Zie [link](https://github.com/iStandaarden/iWlz-indicatie/commit/fbbef68ae6ceb7132743435c06f02874eb53d000)
+
 ## [v0.9.7] - 2021-10-07
 - typo fix
 - enumeratie fix
