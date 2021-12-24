@@ -1109,7 +1109,7 @@ components:
           enum: [ "Ja","Nee" ]
         grondslag:
           $ref: '#/components/schemas/Grondslagen'
-        wzdVerklaring:
+        wzdVerklaringBijAfgifte:
           description: "Wzd verklaring aanwezig ten tijde van afgifte indicatie"
           type: boolean
         commentaar:
