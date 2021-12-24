@@ -1,6 +1,6 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister++
-  Versie 0.0.3
+  Versie 0.0.4
 """
 scalar UUID
 scalar Date
@@ -30,6 +30,7 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
+  wzdVerklaringBijAfgifte: Boolean!
   grondslag: [Grondslag]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]
   geindiceerdeFunctie: [GeindiceerdeFunctie]
@@ -201,9 +202,9 @@ type Telefoon {
 } 
 
 type Wzd {
-  wzdVerklaring: String! #COD127
-  ingangsdatum: Date!
-  einddatum: Date
+  wzdVerklaring: String! #COD127 @deprecated(reason: "wzdVerklaring is deprecated. Use wzdVerklaringBijAfgifte instead.")
+  ingangsdatum: Date! @deprecated
+  einddatum: Date @deprecated
 }
 
 """
