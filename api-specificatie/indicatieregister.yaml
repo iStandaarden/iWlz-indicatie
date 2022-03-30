@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.7'
+  version: '0.9.8'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -382,6 +382,7 @@ paths:
           content: { }
   /wlzindicaties/wlzindicatie/wzd/:
     post:
+      deprecated: true
       tags:
         - wzd
       summary: Zoek Wzd verklaring op WLZ indicatieID
@@ -1108,6 +1109,9 @@ components:
           enum: [ "Ja","Nee" ]
         grondslag:
           $ref: '#/components/schemas/Grondslagen'
+        wzdVerklaringBijAfgifte:
+          description: "Wzd verklaring aanwezig ten tijde van afgifte indicatie"
+          type: boolean
         commentaar:
           description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
           type: string
