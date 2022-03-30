@@ -1,6 +1,6 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister++
-  Versie 0.0.4
+  Versie 0.0.5
 """
 scalar UUID
 scalar Date
@@ -38,6 +38,7 @@ type WlzIndicatie {
   stoornis: [Stoornis]
   stoornisScore: [StoornisScore]
   wzd: [Wzd]
+  client: [Client!]
   commentaar: String
 }
 
@@ -133,7 +134,6 @@ type Client {
   communicatieVorm: String #COD747
   taal: String
   commentaar: String
-  wlzindicaties: [WlzIndicatie]
   contactPersoon: [ContactPersoon]
   contactGegevens: [ContactGegevens!]
 }
