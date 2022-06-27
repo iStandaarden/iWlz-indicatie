@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.8'
+  version: '0.9.9'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -66,6 +66,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WlzindicatieIDs'
+        '400':
+          description: Ongeldig BSN
+          content: { }
+        '404':
+          description: Geen WLZ indicaties gevonden
+          content: { }
+  /wlzindicaties/wlzindicatiespersoon:
+    post:
+      tags:
+        - WLZ indicaties
+      summary: Vind indicaties op BSN.
+      description: Vind volledige indicaties op basis van het BSN van de cliënt.
+      operationId: getWLZindicatiesPersoon
+      parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-Request-ID
+          description: Identificatie van het request
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: BSN object voor het vinden van  WLZ indicaties
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bsn'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wlzindicaties'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wlzindicaties'
         '400':
           description: Ongeldig BSN
           content: { }
@@ -770,7 +814,7 @@ components:
       required:
         - relatieNummer
         - soortRelatie
-         - naamGebruik
+        - naamGebruik
       type: object
       properties:
         relatieNummer:
@@ -1118,6 +1162,13 @@ components:
           maxLength: 255
       xml:
         name: wlzindicatie
+    Wlzindicaties:
+      type: array
+      items:
+        $ref: '#/components/schemas/Wlzindicatie'
+      xml:
+        name: Wlzindicaties
+        wrapped: true
     WlzindicatieID:
       type: string
       format: uuid
