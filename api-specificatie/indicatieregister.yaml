@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '0.9.8'
+  version: '1.0.0-rc1'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -25,8 +25,8 @@ tags:
   - name: "iWlz codelijsten"
     description: ""
     externalDocs:
-      description: "Codelijsten bij iWlz 2.2"
-      url: "https://www.istandaarden.nl/ibieb/codelijsten-iwlz-221"
+      description: "Codelijsten"
+      url: "https://github.com/iStandaarden/iWlz-codelijsten-APiWlz/blob/main/iWlz-codelijsten.md"
 paths:
   /wlzindicaties:
     post:
@@ -336,50 +336,6 @@ paths:
         '404':
           description: Onbekend WLZ indicatie ID
           content: { }
-  /wlzindicaties/wlzindicatie/bopz/:
-    post:
-      tags:
-        - bopz
-      summary: Zoek BOPZ op WLZ indicatie ID
-      description: Geeft BOPZ verklaring bij een WLZ indicatie
-      operationId: getBopz
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Bopz'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Bopz'
-        '400':
-          description: Ongeldig WLZ indicatieID
-          content: { }
-        '404':
-          description: Geen BOPZ gevonden voor WLZ indicatieID
-          content: { }
   /wlzindicaties/wlzindicatie/wzd/:
     post:
       deprecated: true
@@ -658,19 +614,6 @@ components:
       xml:
         name: beperkingScores
         wrapped: true
-    Bopz:
-      required:
-        - bopzVerklaring
-        - datumAfgifte
-      type: object
-      properties:
-        bopzVerklaring:
-          type: boolean
-        datumAfgifte:
-          type: string
-          format: date
-      xml:
-        name: bopz
     Bsn:
       type: string
       pattern: '^[0-9]{9}$'
@@ -690,14 +633,15 @@ components:
           pattern: '^[0-9]{9}$'
           example: 950032153
         geheimeClient:
-          type: boolean
+          type: string
+          enum: [1,2]
           example: 2
         geboorteDatum:
           type: string
           format: date
         geboortedatumGebruik:
           description: "Moet voldoen aan COD170:Datumgebruik; zie iWlz codelijsten"
-          type: integer
+          type: string
           enum: [ 1,2,3 ]
         geslacht:
           description: "Moet voldoen aan COD046:Geslacht; zie iWlz codelijsten"
@@ -706,8 +650,7 @@ components:
           enum: [ 0, 1, 2 ]
         burgerlijkeStaat:
           description: "Moet voldoen aan COD366:Burgerlijke staat; zie iWlz codelijsten"
-          type: integer
-          format: int32
+          type: string
           enum: [ 1,2,3,4,5,6,7,9 ]
         geslachtsnaam:
           type: string
@@ -725,19 +668,12 @@ components:
           type: string
         naamGebruik:
           description: "Moet voldoen aan COD700:Naamgebruik; zie iWlz codelijsten"
-          type: integer
-          format: int32
+          type: string
           enum: [ 1,2,3,4,5,6 ]
         leefeenheid:
           description: "Moet voldoen aan COD478:Leefeenheid; zie iWlz codelijsten"
-          type: integer
-          format: int32
-          enum: [ 1,2,3,4,5,6,7,9 ]
-        juridischeStatus:
-          description: "Moet voldoen aan COD232:Juridische status; zie iWlz codelijsten"
           type: string
-          enum: [ "01","02","03","04","05","06","07","08","09","10","11","12" ]
-          example: "01"
+          enum: [ 1,2,3,4,5,6,7,9 ]
         agbcodeHuisarts:
           type: string
           pattern: '^[0-9]{8}$'
@@ -770,7 +706,6 @@ components:
       required:
         - relatieNummer
         - soortRelatie
-         - naamGebruik
       type: object
       properties:
         relatieNummer:
@@ -867,53 +802,6 @@ components:
       xml:
         name: emailadressen
         wrapped: true
-    GeindiceerdeFunctie:
-      required:
-        - functiecode
-        - ingangsdatum
-        - klasse
-        - leveringsVoorwaarde
-        - financiering
-      type: object
-      properties:
-        functiecode:
-          description: "Moet voldoen aan COD732:Functie; zie iWlz codelijsten"
-          type: string
-        ingangsdatum:
-          type: string
-          format: date
-        einddatum:
-          type: string
-          format: date
-        klasse:
-          type: string
-        opslag:
-          type: string
-        leveringsVoorwaarde:
-          description: "Moet voldoen aan COD740: Leveringsvoorwaarde zorg; zie iWlz codelijsten"
-          type: integer
-          enum: [ 1,2,3,4,8 ]
-        vervoer:
-          description: "Gecodeerde aanduiding die aangeeft of vervoer van toepassing is"
-          type: integer
-          enum: [ 1,2,9 ]
-        instellingVoorkeur:
-          type: string
-        financiering:
-          description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
-          type: integer
-          enum: [ 1,2,3,4 ]
-        commentaar:
-          type: string
-      xml:
-        name: geindiceerdeFunctie
-    GeindiceerdeFuncties:
-      type: array
-      items:
-        $ref: '#/components/schemas/GeindiceerdeFunctie'
-      xml:
-        name: geindiceerdeFuncties
-        wrapped: true
     GeindiceerdZorgzwaartepakket:
       required:
         - zzpCode
@@ -930,13 +818,9 @@ components:
         einddatum:
           type: string
           format: date
-        klasse:
-          description: "Moet voldoen aan COD756: Klasse; zie iWlz codelijsten"
-          type: string
         voorkeurClient:
           description: "Moet voldoen aan COD999: Voorkeur client; zie iWlz codelijsten"
-          type: integer
-          format: int32
+          type: string
         instellingVoorkeur:
           type: string
           pattern: '^[0-9]{8}$'
@@ -1004,8 +888,7 @@ components:
           type: string
         prognose:
           description: "Moet voldoen aan COD737: Prognose; zie iWlz codelijsten"
-          type: integer
-          format: int32
+          type: string
           enum: [ 1,2,3,4,5 ]
         commentaar:
           type: string
@@ -1093,7 +976,7 @@ components:
           example: 1236458977
         soortWlzindicatie:
           description: "Moet voldoen aan COD169: Soort WLZ indicatie; zie iWlz codelijsten"
-          type: integer
+          type: string
           enum: [ "1","2","3","4" ]
         afgiftedatum:
           type: string
@@ -1106,7 +989,7 @@ components:
           format: date
         meerzorg:
           type: string
-          enum: [ "Ja","Nee" ]
+          enum: [1,2]
         grondslag:
           $ref: '#/components/schemas/Grondslagen'
         wzdVerklaringBijAfgifte:
@@ -1132,7 +1015,6 @@ components:
     Wzd:
       required:
         - wzdVerklaring
-        - wzdIngangsdatum
       type: object
       properties:
         wzdVerklaring:
