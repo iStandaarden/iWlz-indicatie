@@ -1132,7 +1132,7 @@ components:
     Wzd:
       required:
         - wzdVerklaring
-        - wzdIngangsdatum
+        - ingangsdatum
       type: object
       properties:
         wzdVerklaring:
