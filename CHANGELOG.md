@@ -4,6 +4,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
 ## [Unreleased]
+- iWlz 2.4 clean-up. Release iWlz 2.4 is aanstaande voor 2023-01-01. Hierin worden diverse wijzigingen doorgevoerd die ook impact hebben op de koppelvlak specificaties. Zie hiervoor Issue #30 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/30) en [Informatiemodel iWlz 2.4 - netwerkmodel](https://informatiemodel.istandaarden.nl)
 - Diverse clean-ups en fixes: Zie [commit-history]
 
 ### Aangepast

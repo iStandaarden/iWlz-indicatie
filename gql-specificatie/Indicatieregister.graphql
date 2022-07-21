@@ -30,10 +30,9 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
-  wzdVerklaringBijAfgifte: Boolean!
+  wzdVerklaringBijAfgifte: Boolean @deprecated # Niet bruikbaar ivm hybride situatie met berichten (IO31/AW33/ZK33)
   grondslag: [Grondslag]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]
-  geindiceerdeFunctie: [GeindiceerdeFunctie]
   beperking: [Beperking]
   stoornis: [Stoornis]
   stoornisScore: [StoornisScore]
@@ -47,23 +46,7 @@ type GeindiceerdZorgzwaartepakket {
   zzpCode: String! #COD163!
   ingangsdatum: Date!
   einddatum: Date
-  klasse: String #COD756
   voorkeurClient: String #COD999
-  instellingVoorkeur: String
-  financiering: String #COD998
-  commentaar: String
-  wlzindicatieID: UUID!
-}
-
-type GeindiceerdeFunctie {
-  id: UUID!
-  functiecode: String! #COD732!
-  ingangsdatum: Date!
-  einddatum: Date
-  klasse: String #COD756
-  opslag: String
-  leveringsVoorwaarde: String #COD740
-  vervoer: String #COD741
   instellingVoorkeur: String
   financiering: String #COD998
   commentaar: String
@@ -151,10 +134,10 @@ type ContactPersoon {
   voorvoegselGeslachtsnaam: String
   partnernaam: String
   voorvoegselPartnernaam: String
-  naamGebruik: String! #COD700
+  naamGebruik: String #COD700
   geslacht: String #COD046
   geboorteDatum: Date
-  geboortedatumGebruik: Date
+  geboortedatumGebruik: String #COD170
   ingangsdatum: Date
   einddatum: Date
   clientID: UUID!
@@ -202,9 +185,9 @@ type Telefoon {
 } 
 
 type Wzd {
-  wzdVerklaring: String! #COD127 @deprecated(reason: "wzdVerklaring is deprecated. Use wzdVerklaringBijAfgifte instead.")
-  ingangsdatum: Date! @deprecated
-  einddatum: Date @deprecated
+  wzdVerklaring: String! #COD127 
+  ingangsdatum: Date
+  einddatum: Date 
 }
 
 """
