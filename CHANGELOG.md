@@ -4,7 +4,11 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
 ## [Unreleased]
-- iWlz 2.4 clean-up. Release iWlz 2.4 is aanstaande voor 2023-01-01. Hierin worden diverse wijzigingen doorgevoerd die ook impact hebben op de koppelvlak specificaties. Zie hiervoor Issue #30 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/30) en [Informatiemodel iWlz 2.4 - netwerkmodel](https://informatiemodel.istandaarden.nl)
+(empty)
+
+## [v1.0.0] - 2022-07-21 
+### iWlz Release 2.4 - clean-up. 
+- Release iWlz 2.4 is aanstaande voor 2023-01-01. Hierin worden diverse wijzigingen doorgevoerd die ook impact hebben op de koppelvlak specificaties. Zie hiervoor Issue #30 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/30) en [Informatiemodel iWlz 2.4](https://informatiemodel.istandaarden.nl)
 - Diverse clean-ups en fixes: Zie [commit-history]
 
 ### Aangepast
@@ -107,9 +111,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...master
-[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...master
-[v0.9.8-pre]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...v0.9.8-pre
+[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...master
+[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...master
+[v1.0.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...v1.0.0
 [v0.9.7]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.6...v0.9.7
 [v0.9.6]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...v0.9.6
 [v0.9.5]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.4...v0.9.5
