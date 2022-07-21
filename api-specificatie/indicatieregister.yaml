@@ -160,50 +160,6 @@ paths:
         '404':
           description: Onbekend WLZ indicatie ID
           content: { }
-  /wlzindicaties/wlzindicatie/geindiceerdefuncties:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Vind geindiceerde functie bij een wlzindicatieID.
-      description: Gegevens over een geïndiceerde functie.
-      operationId: getWLZindicatieGeindiceerdefuncties
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/GeindiceerdeFuncties'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GeindiceerdeFuncties'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-          content: { }
-        '404':
-          description: Onbekend WLZ indicatie ID
-          content: { }
   /wlzindicaties/wlzindicatie/stoornissen:
     post:
       tags:
