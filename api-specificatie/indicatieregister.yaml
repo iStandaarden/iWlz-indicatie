@@ -72,6 +72,50 @@ paths:
         '404':
           description: Geen WLZ indicaties gevonden
           content: { }
+  /wlzindicaties/wlzindicatiespersoon:
+    post:
+      tags:
+        - WLZ indicaties
+      summary: Vind indicaties op BSN.
+      description: Vind volledige indicaties op basis van het BSN van de cliënt.
+      operationId: getWLZindicatiesPersoon
+      parameters:
+        - in: header
+          name: X-orgKey
+          description: Uniek ID van de organisatie binnen het netwerk
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: header
+          name: X-Request-ID
+          description: Identificatie van het request
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: BSN object voor het vinden van  WLZ indicaties
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bsn'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wlzindicaties'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wlzindicaties'
+        '400':
+          description: Ongeldig BSN
+          content: { }
+        '404':
+          description: Geen WLZ indicaties gevonden
+          content: { }
   /wlzindicaties/wlzindicatie:
     post:
       tags:
@@ -957,6 +1001,13 @@ components:
           maxLength: 255
       xml:
         name: wlzindicatie
+    Wlzindicaties:
+      type: array
+      items:
+        $ref: '#/components/schemas/Wlzindicatie'
+      xml:
+        name: Wlzindicaties
+        wrapped: true
     WlzindicatieID:
       type: string
       format: uuid
