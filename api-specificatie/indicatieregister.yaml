@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '1.0.0-rc1'
+  version: '1.0.1'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -689,6 +689,10 @@ components:
           description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
           type: string
           maxLength: 255
+        contactpersonen:
+          $ref: '#/components/schemas/ContactPersonen'
+        contactgegevens:
+          $ref: '#/components/schemas/ContactGegevens'
       xml:
         name: client
     ContactGegevens:
@@ -995,6 +999,18 @@ components:
         wzdVerklaringBijAfgifte:
           description: "Wzd verklaring aanwezig ten tijde van afgifte indicatie"
           type: boolean
+        geindiceerdeZorgzwaartepakketten:
+          $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
+        beperkingen:
+          $ref: '#/components/schemas/Beperkingen'
+        stoornissen:
+          $ref: '#/components/schemas/Stoornissen'
+        stoornisscores:
+          $ref: '#/components/schemas/StoornisScores'
+        wzd:
+          $ref: '#/components/schemas/Wzd'
+        client:
+          $ref: '#/components/schemas/Client' 
         commentaar:
           description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
           type: string
