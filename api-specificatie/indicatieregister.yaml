@@ -649,9 +649,6 @@ components:
           enum: [1,2]
         grondslag:
           $ref: '#/components/schemas/Grondslagen'
-        wzdVerklaringBijAfgifte:
-          description: "Wzd verklaring aanwezig ten tijde van afgifte indicatie"
-          type: boolean
         geindiceerdeZorgzwaartepakketten:
           $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
         beperkingen:
