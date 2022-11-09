@@ -484,8 +484,8 @@ components:
           example: 47471234
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
-          type: integer
-          enum: [ 1,2,3,4 ]
+          type: string
+          enum: [ "1","2","3","4"]
         commentaar:
           type: string
       xml:
