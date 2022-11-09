@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '1.0.0-rc1'
+  version: '1.0.2'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -160,353 +160,6 @@ paths:
         '404':
           description: Onbekend WLZ indicatie ID
           content: { }
-  /wlzindicaties/wlzindicatie/geindiceerdezorgzwaartepakketten:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Vind geindiceerde zorgzwaartepakketten bij een wlzindicatieID.
-      description: Gegevens over een geïndiceerd zorgzwaartepakket.
-      operationId: getWLZ indicatieGeindiceerdezorgzwaartepakketten
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-          content: { }
-        '404':
-          description: Onbekend WLZ indicatie ID
-          content: { }
-  /wlzindicaties/wlzindicatie/stoornissen:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Vind stoornissen bij een wlzindicatieID.
-      description: Diagnostische gegevens m.b.t. ziektebeeld en/of stoornis van de client.
-      operationId: getWLZindicatiestoornissen
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Stoornissen'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Stoornissen'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-          content: { }
-        '404':
-          description: Onbekend WLZ indicatie ID
-          content: { }
-  /wlzindicaties/wlzindicatie/stoornissen/stoornisscores:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Vind stoornisscores bij een wlzindicatieID.
-      description: Scoregegevens over ziektebeeld / stoornis van de cliënt.
-      operationId: getWLZindicatiestoornissenStoornisscores
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/StoornisScores'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StoornisScores'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-          content: { }
-        '404':
-          description: Onbekend WLZ indicatie ID
-          content: { }
-  /wlzindicaties/wlzindicatie/beperkingen:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Vind beperkingen bij een wlzindicatieID.
-      description: Gegevens over beperkingen van de cliënt.
-      operationId: getWLZ indicatieBeperkingen
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Beperkingen'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Beperkingen'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-          content: { }
-        '404':
-          description: Onbekend WLZ indicatie ID
-          content: { }
-  /wlzindicaties/wlzindicatie/wzd/:
-    post:
-      deprecated: true
-      tags:
-        - wzd
-      summary: Zoek Wzd verklaring op WLZ indicatieID
-      description: Geeft alle Wzd verklaringen bij een WLZ indicatie
-      operationId: getWzd
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Wzd'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Wzd'
-        '400':
-          description: Ongeldig WLZ indicatieID
-          content: { }
-        '404':
-          description: Geen Wzd verklaring gevonden voor WLZ indicatieID
-          content: { }
-  /wlzindicaties/wlzindicatie/client:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Geeft clientgegevens op basis van het WLZ indicatie ID
-      description: Persoonsgegevens van de cliënt.
-      operationId: getclientIO31
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Client'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Client'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-        '404':
-          description: Onbekend WLZ indicatie ID
-  /wlzindicaties/wlzindicatie/client/contactpersonen:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Geeft contactpersonen van een cliënt op basis van het WLZ indicatie ID
-      description: Gegevens over de contactpersonen van de cliënt.
-      operationId: getclientIO31Contactpersonen
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/ContactPersonen'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ContactPersonen'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-        '404':
-          description: Onbekend WLZ indicatie ID
-  /wlzindicaties/wlzindicatie/client/contactgegevens:
-    post:
-      tags:
-        - WLZ indicaties
-      summary: Geeft contactgegevens van een cliënt op basis van het WLZ indicatie ID
-      description: Gegevens over de contactpersonen van de cliënt.
-      operationId: getclientIO31Contactgegevens
-      parameters:
-        - in: header
-          name: X-orgKey
-          description: Uniek ID van de organisatie binnen het netwerk
-          schema:
-            type: integer
-            format: int32
-          required: true
-        - in: header
-          name: X-Request-ID
-          description: Identificatie van het request
-          schema:
-            type: string
-          required: true
-      requestBody:
-        description: Uniek ID van de WLZ indicatie voor het opvragen van de indicatiebesluitgegevens
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WlzindicatieID'
-        required: true
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/ContactGegevens'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ContactGegevens'
-        '400':
-          description: Ongeldig WLZ indicatie ID
-        '404':
-          description: Onbekend WLZ indicatie ID
 components:
   schemas:
     Adres:
@@ -689,6 +342,10 @@ components:
           description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
           type: string
           maxLength: 255
+        contactpersonen:
+          $ref: '#/components/schemas/ContactPersonen'
+        contactgegevens:
+          $ref: '#/components/schemas/ContactGegevens'
       xml:
         name: client
     ContactGegevens:
@@ -827,8 +484,8 @@ components:
           example: 47471234
         financiering:
           description: "Moet voldoen aan COD998: Financiering zorg; zie iWlz codelijsten"
-          type: integer
-          enum: [ 1,2,3,4 ]
+          type: string
+          enum: ["1","2","3","4"]
         commentaar:
           type: string
       xml:
@@ -989,12 +646,21 @@ components:
           format: date
         meerzorg:
           type: string
-          enum: [1,2]
+          enum: ["1","2"]
         grondslag:
           $ref: '#/components/schemas/Grondslagen'
-        wzdVerklaringBijAfgifte:
-          description: "Wzd verklaring aanwezig ten tijde van afgifte indicatie"
-          type: boolean
+        geindiceerdeZorgzwaartepakketten:
+          $ref: '#/components/schemas/GeindiceerdeZorgzwaartepakketten'
+        beperkingen:
+          $ref: '#/components/schemas/Beperkingen'
+        stoornissen:
+          $ref: '#/components/schemas/Stoornissen'
+        stoornisscores:
+          $ref: '#/components/schemas/StoornisScores'
+        wzd:
+          $ref: '#/components/schemas/Wzd'
+        client:
+          $ref: '#/components/schemas/Client' 
         commentaar:
           description: "Vrije tekst (bijvoorbeeld toelichting) in een bericht."
           type: string
