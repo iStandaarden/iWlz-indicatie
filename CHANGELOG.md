@@ -6,7 +6,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ## [Unreleased]
 (empty)
 
-## [v1.0.2] - 2022-10-24
+## [v1.0.2] - 2022-11-09
 - Indicatie reponse in OPenApi specs gelijkgetrokken met GQL schema. De indicatie response bevat hiermee alle relevante informatie uit het indicatie register. 
 
 
@@ -115,8 +115,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...master
-[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...master
+[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.2...master
+[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.2...master
+[v1.0.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...v1.0.2
 [v1.0.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...v1.0.0
 [v0.9.7]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.6...v0.9.7
 [v0.9.6]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...v0.9.6
