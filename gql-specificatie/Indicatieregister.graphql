@@ -1,6 +1,6 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister++
-  Versie 0.0.5
+  Versie 1.0.0
 """
 scalar UUID
 scalar Date
@@ -118,7 +118,7 @@ type Client {
   taal: String
   commentaar: String
   contactPersoon: [ContactPersoon]
-  contactGegevens: [ContactGegevens!]
+  contactGegevens: ContactGegevens!
 }
 
 type ContactPersoon {
@@ -141,7 +141,7 @@ type ContactPersoon {
   ingangsdatum: Date
   einddatum: Date
   clientID: UUID!
-  contactGegevens: [ContactGegevens]
+  contactGegevens: ContactGegevens
 }
 
 type ContactGegevens {
@@ -163,7 +163,7 @@ type Adres {
   postcode: String
   plaatsnaam: String
   landCode: String #COD032
-  aanduidingWoonadres: NUM061
+  aanduidingWoonadres: String #NUM061
   ingangsdatum: Date
   einddatum: Date
   contactGegevenID: UUID!
