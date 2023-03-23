@@ -37,7 +37,7 @@ type WlzIndicatie {
   stoornis: [Stoornis]
   stoornisScore: [StoornisScore]
   wzd: [Wzd]
-  client: [Client!]
+  client: Client!
   commentaar: String
 }
 
