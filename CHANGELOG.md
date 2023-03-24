@@ -6,7 +6,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ## [Unreleased]
 - v1.1.0-pre - 2023-03-24 
     -   GraphQL: correctie client-array in wlzIndicatie. Dit moet een single object zijn. 
-    - ZIE: [unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.2...Client_array_fix
+    - ZIE: [unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/master...Client_array_fix
 
 ## [v1.0.2] - 2022-11-09
 - Indicatie reponse in OPenApi specs gelijkgetrokken met GQL schema. De indicatie response bevat hiermee alle relevante informatie uit het indicatie register. 
