@@ -1,6 +1,6 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister++
-  Versie 1.0.0
+  Versie 1.1.0
 """
 scalar UUID
 scalar Date
@@ -37,7 +37,7 @@ type WlzIndicatie {
   stoornis: [Stoornis]
   stoornisScore: [StoornisScore]
   wzd: [Wzd]
-  client: [Client!]
+  client: Client!
   commentaar: String
 }
 
