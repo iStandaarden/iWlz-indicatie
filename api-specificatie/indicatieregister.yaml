@@ -353,7 +353,7 @@ components:
       xml:
         name: contactGegeven
     ContactGegevens:
-      type: object
+      type: array
       properties:
         contactGegeven:
           $ref: '#/components/schemas/ContactGegeven'
