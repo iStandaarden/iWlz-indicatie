@@ -11,6 +11,8 @@ schema {
 
 "de volgende bevragingen zijn er gedefinieerd"
 type Query {
+  # Haal alle   Wlzindicaties voor bsn
+ getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
   # Haal Wlzindicatie voor IndicatieId
   getWlzIndicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
 }
