@@ -11,12 +11,8 @@ schema {
 
 "de volgende bevragingen zijn er gedefinieerd"
 type Query {
-  # Haal alle Wlzindicaties voor bsn
-  getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
   # Haal Wlzindicatie voor IndicatieId
   getWlzIndicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
-  # Haal Client op voor bsn
-  getClientVoorBsn(bsn: String!): Client!
 }
 
 " objects "
@@ -30,7 +26,7 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
-  wzdVerklaringBijAfgifte: Boolean @deprecated # Niet bruikbaar ivm hybride situatie met berichten (IO31/AW33/ZK33)
+  wzdVerklaringBijAfgifte: Boolean @deprecated(reason: "Niet bruikbaar i.v.m. hybride situatie met berichten (IO31/AW33/ZK33)")
   grondslag: [Grondslag]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]
   beperking: [Beperking]
