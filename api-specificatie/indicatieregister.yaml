@@ -337,11 +337,11 @@ components:
           maxLength: 255
         contactpersonen:
           $ref: '#/components/schemas/ContactPersonen'
-        contactgegevens:
-          $ref: '#/components/schemas/ContactGegevens'
+        contactInformatie:
+          $ref: '#/components/schemas/ContactInformatie'
       xml:
         name: client
-    ContactGegeven:
+    ContactGegevens:
       type: object
       properties:
         adres:
@@ -351,14 +351,14 @@ components:
         email:
           $ref: '#/components/schemas/Email'
       xml:
-        name: contactGegeven
-    ContactGegevens:
-      type: array
-      properties:
-        contactGegeven:
-          $ref: '#/components/schemas/ContactGegeven'
-      xml:
         name: contactGegevens
+    ContactInformatie:
+      type: array
+      items:
+        $ref: '#/components/schemas/ContactGegevens'
+      xml:
+        name: contactInformatie
+        wrapped: true
     ContactPersoon:
       required:
         - relatieNummer
@@ -420,8 +420,8 @@ components:
         einddatum:
           type: string
           format: date
-        contactgegevens:
-          $ref: '#/components/schemas/ContactGegevens'
+        contactInformatie:
+          $ref: '#/components/schemas/ContactInformatie'
       xml:
         name: contactPersoon
     ContactPersonen:
