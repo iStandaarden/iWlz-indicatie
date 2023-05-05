@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: '1.0.2'
+  version: '1.2.0'
 externalDocs:
   description: Find out more about OpenAPI
   url: 'https://www.openapis.org'
@@ -206,13 +206,6 @@ components:
           format: date
       xml:
         name: adres
-    Adressen:
-      type: array
-      items:
-        $ref: '#/components/schemas/Adres'
-      xml:
-        name: adressen
-        wrapped: true
     Beperking:
       required:
         - categorie
@@ -344,21 +337,28 @@ components:
           maxLength: 255
         contactpersonen:
           $ref: '#/components/schemas/ContactPersonen'
-        contactgegevens:
-          $ref: '#/components/schemas/ContactGegevens'
+        contactInformatie:
+          $ref: '#/components/schemas/ContactInformatie'
       xml:
         name: client
     ContactGegevens:
       type: object
       properties:
         adres:
-          $ref: '#/components/schemas/Adressen'
+          $ref: '#/components/schemas/Adres'
         telefoon:
-          $ref: '#/components/schemas/Telefoonnummers'
+          $ref: '#/components/schemas/Telefoon'
         email:
-          $ref: '#/components/schemas/Emailadressen'
+          $ref: '#/components/schemas/Email'
       xml:
         name: contactGegevens
+    ContactInformatie:
+      type: array
+      items:
+        $ref: '#/components/schemas/ContactGegevens'
+      xml:
+        name: contactInformatie
+        wrapped: true
     ContactPersoon:
       required:
         - relatieNummer
@@ -420,12 +420,8 @@ components:
         einddatum:
           type: string
           format: date
-        adres:
-          $ref: '#/components/schemas/Adressen'
-        telefoon:
-          $ref: '#/components/schemas/Telefoonnummers'
-        email:
-          $ref: '#/components/schemas/Emailadressen'
+        contactInformatie:
+          $ref: '#/components/schemas/ContactInformatie'
       xml:
         name: contactPersoon
     ContactPersonen:
@@ -452,13 +448,6 @@ components:
           format: date
       xml:
         name: email
-    Emailadressen:
-      type: array
-      items:
-        $ref: '#/components/schemas/Email'
-      xml:
-        name: emailadressen
-        wrapped: true
     GeindiceerdZorgzwaartepakket:
       required:
         - zzpCode
@@ -604,13 +593,6 @@ components:
           format: date
       xml:
         name: telefoon
-    Telefoonnummers:
-      type: array
-      items:
-        $ref: '#/components/schemas/Telefoon'
-      xml:
-        name: telefoonnummers
-        wrapped: true
     Wlzindicatie:
       required:
         - wlzindicatieID
