@@ -20,8 +20,8 @@ Versie overzicht zie: [Changelog](CHANGELOG.md)
 - verwijzing opnemen naar iStandaarden
 
 ## Bronnen
-* Actieprogramma iWlz: van keten naar netwerk: [lees hier meer over het Actieprogramma iWlz](https://www.istandaarden.nl/actieprogramma-iwlz "Actieprogramma iWlz")
-* Informatiemodel iStandaarden iWlz: [Informatiemodellen](https://informatiemodellen.istandaarden.nl)
+* Actieprogramma iWlz: van keten naar netwerk: [lees hier meer over het Actieprogramma iWlz (onderaan pagina)](https://www.istandaarden.nl/iwlz "Over Actieprogramma iWlz")
+* Informatiemodel iStandaarden iWlz: [Informatiemodellen](https://informatiemodel.istandaarden.nl)
 * Portaal voor iStandaarden in de
 Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
