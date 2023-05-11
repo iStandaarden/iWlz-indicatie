@@ -1,6 +1,6 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister++
-  Versie 1.1.0
+  Versie 1.2.0
 """
 scalar UUID
 scalar Date
@@ -11,12 +11,10 @@ schema {
 
 "de volgende bevragingen zijn er gedefinieerd"
 type Query {
-  # Haal alle Wlzindicaties voor bsn
-  getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
+  # Haal alle   Wlzindicaties voor bsn
+ getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
   # Haal Wlzindicatie voor IndicatieId
   getWlzIndicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
-  # Haal Client op voor bsn
-  getClientVoorBsn(bsn: String!): Client!
 }
 
 " objects "
@@ -30,13 +28,13 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
-  wzdVerklaringBijAfgifte: Boolean @deprecated # Niet bruikbaar ivm hybride situatie met berichten (IO31/AW33/ZK33)
+  wzdVerklaringBijAfgifte: Boolean @deprecated(reason: "Niet bruikbaar i.v.m. hybride situatie met berichten (IO31/AW33/ZK33)")
   grondslag: [Grondslag]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]
   beperking: [Beperking]
   stoornis: [Stoornis]
   stoornisScore: [StoornisScore]
-  wzd: [Wzd]
+  wzd: Wzd
   client: Client!
   commentaar: String
 }
@@ -48,14 +46,14 @@ type GeindiceerdZorgzwaartepakket {
   einddatum: Date
   voorkeurClient: String #COD999
   instellingVoorkeur: String
-  financiering: String #COD998
+  financiering: String! #COD998
   commentaar: String
   wlzindicatieID: UUID!
 }
 
 type Grondslag {
   id: UUID!
-  grondslag: String #COD736
+  grondslag: String! #COD736
   volgorde: Int! 
   wlzindicatieID: UUID!
 }
@@ -99,10 +97,10 @@ type StoornisScore {
 type Client {
   id: UUID!
   bsn: String!
-  geheimeClient: String #COD260
+  geheimeClient: String! #COD260
   geboorteDatum: Date!
   geboortedatumGebruik: String #COD170
-  geslacht: String #COD046!
+  geslacht: String! #COD046!
   burgerlijkeStaat: String #COD366
   geslachtsnaam: String!
   voorvoegselGeslachtsnaam: String
@@ -118,7 +116,7 @@ type Client {
   taal: String
   commentaar: String
   contactPersoon: [ContactPersoon]
-  contactGegevens: ContactGegevens!
+  contactGegevens: [ContactGegevens!]!
 }
 
 type ContactPersoon {
@@ -138,24 +136,24 @@ type ContactPersoon {
   geslacht: String #COD046
   geboorteDatum: Date
   geboortedatumGebruik: String #COD170
-  ingangsdatum: Date
+  ingangsdatum: Date!
   einddatum: Date
   clientID: UUID!
-  contactGegevens: ContactGegevens
+  contactGegevens: [ContactGegevens]
 }
 
 type ContactGegevens {
   id: UUID!
   clientID: UUID
   contactPersoonID: UUID
-  adres: [Adres]
-  telefoon: [Telefoon]
-  email: [Email]
+  adres: Adres
+  telefoon: Telefoon
+  email: Email
 }
 
 type Adres {
   id: UUID!
-  adresSoort: String #COD757
+  adresSoort: String! #COD757
   straatnaam: String
   huisnummer: Int
   huisletter: String
