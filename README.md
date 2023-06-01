@@ -9,10 +9,21 @@ Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netw
 
 Voor het bekijken en gebruiken van de Graphql-schema specificatie is een aparte IDE nodig
 ## Versies
-Laatste versie: ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
+Laatste versie: ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square) 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
+| iWlz Release | versie koppelvlak |
+|:-- |:-- |
+| iWlz 2.4 | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
+| iWlz 2.5 | [v1.3.0-rc1](https://github.com/iStandaarden/iWlz-indicatie/tree/Versie-1.3-rc1)
+
+
+
+
+
+
 Versie overzicht zie: [Changelog](CHANGELOG.md)
+
 
 ## Documentatie
 @todo
