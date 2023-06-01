@@ -3,8 +3,19 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
-## [Unreleased]
+## [Unreleased] - tag versie 1.3.0-rc
+### Aangepast
+- issue [#41](https://github.com/iStandaarden/iWlz-indicatie/issues/41)
+- issue [[#42](https://github.com/iStandaarden/iWlz-indicatie/issues/42)
+- issue [#43](https://github.com/iStandaarden/iWlz-indicatie/issues/43)
 
+## [v1.2.0] - 2023-
+### Aangepast
+- issue [#35]
+- issue [#36]
+- issue [#37]
+- issue [#38]
+- issue [#39]
 
 ## [v1.1.0] - 2023-03-24 
 ### Aangepast
@@ -119,8 +130,10 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.1.0...master
-[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.1.0...master
+[unreleased]: https://github.com/iStandaarden/iWlz-indicatie/compare/Versie-1.3-rc1...master
+[commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...master
+[v1.3.0-rc1]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...Versie-1.3-rc1
+[v1.2.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.2...v1.1.0
 [v1.0.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...v1.0.2
 [v1.0.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...v1.0.0
