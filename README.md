@@ -1,4 +1,17 @@
 # iWlz-indicatie
+## **Versie v1.3.0-rc1**
+>Versie voor iWlz Release 2.5.
+>
+>Hier zijn de volgende issues in verwerkt: [project iWlz 2.5](https://github.com/orgs/iStandaarden/projects/4/views/1)
+>
+>**Verschillenoverzicht**: [compare](
+https://github.com/iStandaarden/iWlz-indicatie/compare/master...Versie-1.3-rc1)
+>
+>**Versie overzicht** zie: [Changelog](CHANGELOG.md)
+
+
+## Inleiding
+
 **iWlz-indicatie bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie voor het zoeken naar en raadplegen van Wlz indicaties in het indicatieregister.**
 
 > N.B. de OpenAPI specificatie is niet voor implementatie!
@@ -8,11 +21,7 @@ De informatie die de API levert is herleidbaar naar het indicatiebeicht IO31 vol
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
 Voor het bekijken en gebruiken van de Graphql-schema specificatie is een aparte IDE nodig
-## Versies
-Laatste versie: ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
 
-Versie overzicht zie: [Changelog](CHANGELOG.md)
 
 ## Documentatie
 @todo
