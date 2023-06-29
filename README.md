@@ -15,7 +15,7 @@ Laatste versie: ![GitHub release (latest by date including pre-releases)](https:
 | iWlz Release | versie koppelvlak |
 |:-- |:-- |
 | iWlz 2.4 | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
-| iWlz 2.5 | [v1.3.0-rc1](https://github.com/iStandaarden/iWlz-indicatie/tree/Versie-1.3-rc1)
+| iWlz 2.5 | [v1.3.0](https://github.com/iStandaarden/iWlz-indicatie/tree/Versie-1.3)
 
 
 
