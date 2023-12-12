@@ -1,45 +1,35 @@
 # iWlz-indicatie
-**iWlz-indicatie bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie voor het zoeken naar en raadplegen van Wlz indicaties in het indicatieregister.**
-
-> N.B. de OpenAPI specificatie is niet voor implementatie!
-
-De informatie die de API levert is herleidbaar naar het indicatiebeicht IO31 volgens de iWlz specificatie in het iStandaarden Informatiemodel.
+**iWlz-indicatie bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie voor het raadplegen van Wlz indicatiegegevens in het indicatieregister.**
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
-Voor het bekijken en gebruiken van de Graphql-schema specificatie is een aparte IDE nodig
-## Versies
-Laatste versie: ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/iStandaarden/iWlz-indicatie?include_prereleases&style=flat-square) 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/iStandaarden/iWlz-indicatie?style=flat-square)
+De koppelvlak specificatie van het Indicatieregister maakt onderdeel uit van de **iStandaard iWlz**. De specificaties van de andere onderdelen, zoals ERD, regels, procesbeschrijving, autorisatieregels, notificatie-typen staan in het [Informatiemodel iWlz](https://informatiemodel.istandaarden.nl/) dat te vinden is via de website: [https://informatiemodel.istandaarden.nl/](https://informatiemodel.istandaarden.nl/)
 
-| iWlz Release | versie koppelvlak |
-|:-- |:-- |
-| iWlz 2.4 | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
-| iWlz 2.5 | [v1.3.0](https://github.com/iStandaarden/iWlz-indicatie/tree/Versie-1.3)
+> N.B. de OpenAPI specificatie is niet voor implementatie! 
 
+## Versies en Status 
 
+Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
 
+| iWlz Release | versie koppelvlak | Status |
+|:-- |:-- | :-- |
+| [Indicatie 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2) ([master](https://github.com/iStandaarden/iWlz-indicatie)) | **Lopend** |
+| [Indicatie 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/) | [v1.3.0](https://github.com/iStandaarden/iWlz-indicatie/tree/Versie-1.3) | In ontwikkeling | 
 
-
-
-Versie overzicht zie: [Changelog](CHANGELOG.md)
-
+Volledig versie overzicht zie: [Changelog](CHANGELOG.md)
 
 ## Documentatie
-@todo
-- verwijzing opnemen naar leeswijzer
-- verwijzing opnemen naar iStandaarden
+Ondersteunende documentatie is te vinden in het Informatiemodel, via de website [https://informatiemodel.istandaarden.nl/](https://informatiemodel.istandaarden.nl/) en daar de gewenste versie te selecteren (zie ook in de tabel hierboven voor een directe verwijzing).
 
-## Bronnen
-* Actieprogramma iWlz: van keten naar netwerk: [lees hier meer over het Actieprogramma iWlz (onderaan pagina)](https://www.istandaarden.nl/iwlz "Over Actieprogramma iWlz")
+## Meer informatie
+* Actieprogramma iWlz: van keten naar netwerk: [het Actieprogramma iWlz](https://www.istandaarden.nl/iwlz/actieprogramma/index "Over Actieprogramma iWlz")
 * Informatiemodel iStandaarden iWlz: [Informatiemodellen](https://informatiemodel.istandaarden.nl)
 * Portaal voor iStandaarden in de
 Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
 ## Contactpersonen:
 * Hilko Jacobse - [@hilkojacobse](https://github.com/HilkoJacobse)
+* Dennis de Gouw - [@dennisdegouw](http://github.com/dennisdegouw)
 * Remo van Rest - [@rvanrest](https://github.com/rvanrest)
 
-## Licentie
-Copyright &copy; iStandaarden 2019
-Licensed under the [EUPL]
+
