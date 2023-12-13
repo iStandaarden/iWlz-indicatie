@@ -28,6 +28,7 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
+  vervaldatum: Date
   grondslag: [Grondslag]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]
   beperking: [Beperking]
