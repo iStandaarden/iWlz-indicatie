@@ -4,7 +4,15 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
 ## [In Ontwikkeling] (v1.3.0)
- zie in branch v1.3.0
+### Issues
+- Issue #47 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/47)
+- Issue #48 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/48)
+- Issue #49 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/49)
+- Issue #50 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/50)
+
+### Aangepast
+- Custom Scalartyps aangevuld met specifiedBy
+
 
 ## [v1.2.0] - 2023-05-05
 - Issue #35 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/35)
@@ -127,9 +135,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[In ontwikkeling]: https://github.com/iStandaarden/iWlz-indicatie/compare/master..v1.3.0
+[In ontwikkeling]: https://github.com/iStandaarden/iWlz-indicatie/compare/master..v1.3
 [commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...master
-[v1.3.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...v1.3.0
+[v1.3.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...v1.3
 [v1.2.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.2...v1.1.0
 [v1.0.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...v1.0.2
