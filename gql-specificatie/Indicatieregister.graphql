@@ -9,7 +9,7 @@ schema {
   query: Query
 }
 
-"de volgende bevragingen zijn er gedefinieerd"
+""" de volgende bevragingen zijn er gedefinieerd """
 type Query {
   # Haal alle   Wlzindicaties voor bsn
  getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
@@ -17,7 +17,7 @@ type Query {
   getWlzIndicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
 }
 
-" objects "
+""" objects """
 # WlzIndicatie
 type WlzIndicatie {
   wlzindicatieID: UUID!
@@ -1270,4 +1270,5 @@ enum NUM061 {
   TO #Tegenover
   WW #Woonwagen
 }
+
 """
