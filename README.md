@@ -13,7 +13,7 @@ Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, st
 
 | iWlz Release | versie koppelvlak | Status |
 |:-- |:-- | :-- |
-| [Indicatie 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2) ([master](https://github.com/iStandaarden/iWlz-indicatie)) | **Lopend** |
+| [Indicatie 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) | [master](https://github.com/iStandaarden/iWlz-indicatie) ([v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2)) | **Lopend** |
 | [Indicatie 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/) | [v1.3.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.3) | In ontwikkeling | 
 
 Volledig versie overzicht zie: [Changelog](CHANGELOG.md)
