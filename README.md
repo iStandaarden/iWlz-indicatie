@@ -11,10 +11,10 @@ De koppelvlak specificatie van het Indicatieregister maakt onderdeel uit van de 
 
 Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
 
-| iWlz Release | versie koppelvlak | Status |
+| iWlz Informatiemodel | Status |  versie koppelvlak |
 |:-- |:-- | :-- |
-| [Indicatie 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) | [master](https://github.com/iStandaarden/iWlz-indicatie) ([v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2)) | **Lopend** |
-| [Indicatie 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/) | [v1.3.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.3) | In ontwikkeling | 
+| [Indicatieregister 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/)  | **Lopend** | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2) ([master](https://github.com/iStandaarden/iWlz-indicatie))  |
+| [Indicatieregister 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | In ontwikkeling | [v1.3.0](https://github.com/iStandaarden/iWlz-bemiddeling/tree/Bemiddelingsregister-1)|
 
 Volledig versie overzicht zie: [Changelog](CHANGELOG.md)
 
