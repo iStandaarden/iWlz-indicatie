@@ -1,5 +1,5 @@
-# iWlz-indicatie
-**iWlz-indicatie bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie voor het raadplegen van Wlz indicatiegegevens in het indicatieregister.**
+# iWlz-Indicatieregister 1
+**iWlz-Indicatieregister 1 bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie voor het raadplegen van Wlz indicatiegegevens in het indicatieregister.**
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
