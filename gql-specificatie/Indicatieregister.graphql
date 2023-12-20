@@ -1,7 +1,8 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister
-  Versie 1.3.0
+  Versie 1.3.1
 """
+
 scalar UUID @specifiedBy(url: "https://tools.ietf.org/html/rfc4122") # version 4
 scalar Date @specifiedBy(url: "https://scalars.graphql.org/andimarek/local-date") # YYYY-MM-DD
 
@@ -11,8 +12,8 @@ schema {
 
 "de volgende bevragingen zijn er gedefinieerd"
 type Query {
-  # Haal alle   Wlzindicaties voor bsn
- getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
+  # Haal alle Wlzindicaties voor bsn
+  getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
   # Haal Wlzindicatie voor IndicatieId
   getWlzIndicatieVoorIndicatieID(wlzindicatieID:UUID!): WlzIndicatie!
 }
@@ -28,6 +29,7 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
+  initieelVerantwoordelijkZorgkantoor: String! @specifiedBy(url: "https://github.com/iStandaarden/iWlz-codelijsten-APiWlz/tree/main/codelijsten/COD001")
   vervaldatum: Date
   grondslag: [Grondslag]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]

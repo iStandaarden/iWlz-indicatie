@@ -14,7 +14,7 @@ Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, st
 | iWlz Informatiemodel | Status |  versie koppelvlak |
 |:-- |:-- | :-- |
 | [Indicatieregister 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/)  | **Lopend** | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2) ([master](https://github.com/iStandaarden/iWlz-indicatie))  |
-| [Indicatieregister 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | In ontwikkeling | [v1.3.0](https://github.com/iStandaarden/iWlz-bemiddeling/tree/Bemiddelingsregister-1)|
+| [Indicatieregister 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | In ontwikkeling | [v1.3.1](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2)|
 
 Volledig versie overzicht zie: [Changelog](CHANGELOG.md)
 

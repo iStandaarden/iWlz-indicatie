@@ -3,12 +3,17 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
-## [In Ontwikkeling] (v1.3.0)
+## [In Ontwikkeling] 
+**Indicatieregister 2**
+- v1.3.1 - 21-12-2023
+- v1.3.0 - 01-07-2023
+
 ### Issues
 - Issue #47 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/47)
 - Issue #48 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/48)
 - Issue #49 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/49)
 - Issue #50 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/50)
+- Issue #51 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/51)
 
 ### Aangepast
 - Custom Scalartyps aangevuld met specifiedBy
@@ -135,9 +140,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Herziening versioning (was voorheen v1.4)
 - eerste versie in Github. 
 
-[In ontwikkeling]: https://github.com/iStandaarden/iWlz-indicatie/compare/master..v1.3
+[In ontwikkeling]: https://github.com/iStandaarden/iWlz-indicatie/compare/master..Indicatieregister-2
 [commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...master
-[v1.3.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...v1.3
+[Indicatieregister-2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...Indicatieregister-2
 [v1.2.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.2...v1.1.0
 [v1.0.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...v1.0.2
