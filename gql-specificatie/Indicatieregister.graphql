@@ -1,6 +1,6 @@
 """ 
   Graphql Schemadefinitie voor het Indicatieregister
-  Versie 1.4.0
+  Versie 1.5.0
 """
 
 scalar UUID @specifiedBy(url: "https://tools.ietf.org/html/rfc4122") # version 4
@@ -42,7 +42,8 @@ type WlzIndicatie {
 }
 
 type GeindiceerdZorgzwaartepakket {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik geindiceerdZorgzwaartepakketID")
+  geindiceerdZorgzwaartepakketID: UUID!
   zzpCode: String! #COD163!
   ingangsdatum: Date!
   einddatum: Date
@@ -50,54 +51,60 @@ type GeindiceerdZorgzwaartepakket {
   instellingVoorkeur: String
   financiering: String! #COD998
   commentaar: String
-  wlzindicatieID: UUID!
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type Grondslag {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik grondslagID")
+  grondslagID: UUID!
   grondslag: String! #COD736
   volgorde: Int! 
-  wlzindicatieID: UUID!
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type Beperking {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik beperkingID")
+  beperkingID: UUID!
   categorie: String! #COD539!
   duur: String #COD749
   commentaar: String
   beperkingScores: [BeperkingScore]
-  wlzindicatieID: UUID!
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type BeperkingScore {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik beperkingScoreID")
+  beperkingScoreID: UUID!
   beperkingVraag: String! #COD825!
   beperkingScore: String! #COD828!
   commentaar: String
-  beperkingID: UUID!
+  beperkingID: UUID @deprecated(reason: "overbodig")
 }
 
 type Stoornis {
-  id: UUID!
+  id: UUID@deprecated(reason: "vervangen door functioneel technisch ID gebruik stoornisID")
+  stoornisID: UUID!
   grondslag: String! #COD736!
   diagnoseCodelijst: String! #COD392!
   diagnoseSubCodelijst: String #COD770
   ziektebeeldStoornis: String! #COD923COD924COD925! #vulling uit een van COD923, COD924 en COD925; zie iWlz codelijsten
   prognose: String #COD737
   commentaar: String
-  wlzindicatieID:UUID!
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type StoornisScore {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik stoornisScoreID")
+  stoornisScoreID: UUID!
   stoornisVraag: String! #COD824!
   stoornisScore: String! #COD827!
   commentaar: String
-  wlzindicatieID:UUID!
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type Client {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik clientID")
+  clientID: UUID!
   bsn: String!
   geheimeClient: String! #COD260
   geboorteDatum: Date!
@@ -122,7 +129,8 @@ type Client {
 }
 
 type ContactPersoon {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik contactPersoonID")
+  contactPersoonID: UUID!
   relatieNummer: String!
   volgorde: Int
   soortRelatie: String! #COD472!
@@ -145,7 +153,8 @@ type ContactPersoon {
 }
 
 type ContactGegevens {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik contactGegevensID")
+  contactGegevensID: UUID!
   clientID: UUID
   contactPersoonID: UUID
   adres: Adres
@@ -154,7 +163,8 @@ type ContactGegevens {
 }
 
 type Adres {
-  id: UUID!
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik adresID")
+  adresID: UUID!
   adresSoort: String! #COD757
   straatnaam: String
   huisnummer: Int
@@ -170,6 +180,7 @@ type Adres {
 }
 
 type Email {
+  emailID: UUID!
   emailadres: String!
   ingangsdatum: Date!
   einddatum: Date
@@ -177,6 +188,7 @@ type Email {
   }
 
 type Telefoon {
+  telefoonID: UUID!
   telefoonnummer: String!
   landnummer: String
   ingangsdatum: Date!
@@ -185,6 +197,7 @@ type Telefoon {
 } 
 
 type Wzd {
+  wzdID: UUID!
   wzdVerklaring: String! #COD127 
   ingangsdatum: Date
   einddatum: Date 
