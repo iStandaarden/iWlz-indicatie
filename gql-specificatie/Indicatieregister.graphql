@@ -29,7 +29,7 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
-  initieelVerantwoordelijkZorgkantoor: String! @specifiedBy(url: "https://github.com/iStandaarden/iWlz-codelijsten-APiWlz/tree/main/codelijsten/COD001")
+  initieelVerantwoordelijkZorgkantoor: String! 
   vervaldatum: Date
   grondslag: [Grondslag]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]
