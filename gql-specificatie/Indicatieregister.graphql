@@ -203,7 +203,7 @@ type ContactPersoon {
   relatieNummer: String!
   volgorde: Int
   soortRelatie: String! #COD472!
-  organisatieNaam: String
+  organisatieNaam: String @deprecated(reason: "RFC24001 Organisatienaam verwijderen uit Indicatieregister")
   voornamen: String
   roepnaam: String
   voorletters: String
