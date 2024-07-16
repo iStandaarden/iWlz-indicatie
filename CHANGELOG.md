@@ -9,6 +9,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ### RFC verwerkt v1.6.0
 - RFC 24063 - Uniformeren GraphQL Indicatieregister 2: https://github.com/iStandaarden/iWlz_RequestForChange/issues/63
+- RFC 24001 - Organisatienaam verwijderen uit Indicatieregister: https://github.com/iStandaarden/iWlz_RequestForChange/issues/31
 
 
 ### Issues verwerkt in v1.3.0 - v1.5.0
