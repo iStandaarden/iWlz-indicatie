@@ -185,8 +185,8 @@ type Client {
   taal: String
   commentaar: String
   contactPersoon(
-    where: ContactpersoonFilterInput
-    order: [ContactpersoonSortInput!]
+    where: ContactPersoonFilterInput
+    order: [ContactPersoonSortInput!]
   ): [ContactPersoon]
     contactGegevens(
     where: ContactGegevensFilterInput
@@ -203,6 +203,8 @@ type ContactPersoon {
   relatieNummer: String!
   volgorde: Int
   soortRelatie: String! #COD472!
+  rol: String #COD1003: Rol
+  relatie: String #COD1002: Relatie
   organisatieNaam: String @deprecated(reason: "RFC24001 Organisatienaam verwijderen uit Indicatieregister")
   voornamen: String
   roepnaam: String
@@ -357,24 +359,70 @@ input BeperkingScoreSortInput{
   commentaar: SortEnumType
 }
 
+input ContactPersoonFilterInput {
+  and: [ContactPersoonFilterInput!]
+  or: [ContactPersoonFilterInput!]
+  contactPersoonID: UuidOperationFilterInput
+  relatieNummer: StringOperationFilterInput
+  volgorde: IntOperationFilterInput
+  soortRelatie: StringOperationFilterInput
+  rol: StringOperationFilterInput
+  voornamen: StringOperationFilterInput
+  roepnaam: StringOperationFilterInput
+  voorletters: StringOperationFilterInput
+  geslachtsnaam: StringOperationFilterInput
+  voorvoegselGeslachtsnaam: StringOperationFilterInput
+  partnernaam: StringOperationFilterInput
+  voorvoegselPartnernaam: StringOperationFilterInput
+  naamGebruik: StringOperationFilterInput
+  geslacht: StringOperationFilterInput
+  geboorteDatum: DateOperationFilterInput
+  geboortedatumGebruik: StringOperationFilterInput
+  ingangsdatum: DateOperationFilterInput
+  einddatum: DateOperationFilterInput
+  contactGegevens: ContactGegevensFilterInput
+}
+
+input ContactPersoonSortInput {
+  contactPersoonID: SortEnumType
+  relatieNummer: SortEnumType
+  volgorde: SortEnumType
+  soortRelatie: SortEnumType
+  rol: SortEnumType
+  voornamen: SortEnumType
+  roepnaam: SortEnumType
+  voorletters: SortEnumType
+  geslachtsnaam: SortEnumType
+  voorvoegselGeslachtsnaam: SortEnumType
+  partnernaam: SortEnumType
+  voorvoegselPartnernaam: SortEnumType
+  naamGebruik: SortEnumType
+  geslacht: SortEnumType
+  geboorteDatum: SortEnumType
+  geboortedatumGebruik: SortEnumType
+  ingangsdatum: SortEnumType
+  einddatum: SortEnumType
+  contactGegevens: ContactGegevensSortInput
+}
+
 input ContactGegevensFilterInput {
   and: [ContactGegevensFilterInput!]
   or: [ContactGegevensFilterInput!]
   contactGegevensID: UuidOperationFilterInput
   clientID: UuidOperationFilterInput
   contactPersoonID: UuidOperationFilterInput
-  adres: Adres
-  telefoon: Telefoon
-  email: Email
+  adres: AdresFilterInput
+  telefoon: TelefoonFilterInput
+  email: EmailFilterInput
 }
 
 input ContactGegevensSortInput {
   contactGegevensID: SortEnumType
   clientID: SortEnumType
   contactPersoonID: SortEnumType
-  adres: SortEnumType
-  telefoon: SortEnumType
-  email: SortEnumType
+  adres: AdresSortInput
+  telefoon: TelefoonSortInput
+  email: EmailSortInput
 }
 
 input EmailFilterInput {
@@ -500,13 +548,13 @@ input WlzIndicatieFilterInput {
   meerzorg: StringOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
   vervaldatum: DateOperationFilterInput
-  grondslag: [Grondslag]
-  geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket]
-  beperking: [Beperking]
-  stoornis: [Stoornis]
-  stoornisScore: [StoornisScore]
-  wzd: Wzd
-  client: Client!
+  grondslag: GrondslagFilterInput
+  geindiceerdZorgzwaartepakket: GeindiceerdZorgzwaartepakketFilterInput
+  beperking: BeperkingFilterInput
+  stoornis: StoornisFilterInput
+  stoornisScore: StoornisScoreFilterInput
+  wzd: WzdFilterInput
+  client: ClientFilterInput
   commentaar: StringOperationFilterInput
 }
 
