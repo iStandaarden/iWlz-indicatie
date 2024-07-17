@@ -589,7 +589,7 @@ input ListFilterInputTypeOfGeindiceerdZorgzwaartepakketFilterInput {
 
 input ListFilterInputTypeGrondslagFilterInput {
   all: GrondslagFilterInput
-  any: GrondslagFilterInput
+  none: GrondslagFilterInput
   some: GrondslagFilterInput
   any: Boolean
 }
