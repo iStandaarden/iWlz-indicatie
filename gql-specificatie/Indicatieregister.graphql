@@ -32,7 +32,8 @@ type Query {
   # Haal alle Wlzindicaties voor bsn
   getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
   # Haal Wlzindicatie voor IndicatieId
-  getWlzIndicatieVoorIndicatieID(wlzindicatieID: UUID!): WlzIndicatie! @deprecated(reason: "Gebruik wlzIndicatie met filter opties")
+  getWlzIndicatieVoorIndicatieID(wlzindicatieID: UUID!): WlzIndicatie!
+    @deprecated(reason: "Gebruik wlzIndicatie met filter opties")
 
   wlzIndicatie(where: WlzIndicatieFilterInput): [WlzIndicatie!]!
 }
@@ -53,7 +54,7 @@ type WlzIndicatie {
   vervaldatum: Date
   grondslag(
     where: GrondslagFilterInput
-    order: [GrondslagFilterInput!]
+    order: [GrondslagSortInput!]
   ): [Grondslag!]
   geindiceerdZorgzwaartepakket(
     where: GeindiceerdZorgzwaartepakketFilterInput
@@ -63,10 +64,7 @@ type WlzIndicatie {
     where: BeperkingFilterInput
     order: [BeperkingSortInput!]
   ): [Beperking!]
-  stoornis(
-    where: StoornisFilterInput
-    order: [StoornisSortInput!]
-  ): [Stoornis!]
+  stoornis(where: StoornisFilterInput, order: [StoornisSortInput!]): [Stoornis!]
   stoornisScore(
     where: StoornisScoreFilterInput
     order: [StoornisScoreSortInput!]
@@ -112,10 +110,11 @@ type Beperking {
   categorie: String! #COD539!
   duur: String #COD749
   commentaar: String
-  beperkingScores: [BeperkingScore] @deprecated (reason: "vervangen beperkingScore")
+  beperkingScores: [BeperkingScore]
+    @deprecated(reason: "vervangen beperkingScore")
   beperkingScore(
     where: BeperkingScoreFilterInput
-    order: [BeperkingScoreFilterInput!]
+    order: [BeperkingScoreSortInput!]
   ): [BeperkingScore!]
   wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
@@ -188,7 +187,7 @@ type Client {
     where: ContactPersoonFilterInput
     order: [ContactPersoonSortInput!]
   ): [ContactPersoon]
-    contactGegevens(
+  contactGegevens(
     where: ContactGegevensFilterInput
     order: [ContactGegevensSortInput!]
   ): [ContactGegevens!]!
@@ -205,7 +204,10 @@ type ContactPersoon {
   soortRelatie: String! #COD472!
   rol: String #COD1003: Rol
   relatie: String #COD1002: Relatie
-  organisatieNaam: String @deprecated(reason: "RFC24001 Organisatienaam verwijderen uit Indicatieregister")
+  organisatieNaam: String
+    @deprecated(
+      reason: "RFC24001 Organisatienaam verwijderen uit Indicatieregister"
+    )
   voornamen: String
   roepnaam: String
   voorletters: String
@@ -234,18 +236,9 @@ type ContactGegevens {
   contactGegevensID: UUID!
   clientID: UUID
   contactPersoonID: UUID
-  adres(
-    where: AdresFilterInput
-    order: [AdresSortInput!]
-  ): Adres
-  telefoon(
-    where: TelefoonFilterInput
-    order: [TelefoonFilterInput!]
-  ): Telefoon
-  email(
-    where: EmailFilterInput
-    order: [EmailSortInput!]
-  ): Email
+  adres(where: AdresFilterInput, order: [AdresSortInput!]): Adres
+  telefoon(where: TelefoonFilterInput, order: [TelefoonSortInput!]): Telefoon
+  email(where: EmailFilterInput, order: [EmailSortInput!]): Email
 }
 
 type Adres {
@@ -306,7 +299,7 @@ input AdresFilterInput {
   huisnummerToevoeging: UuidOperationFilterInput
   postcode: UuidOperationFilterInput
   plaatsnaam: UuidOperationFilterInput
-  landCode: UuidOperationFilterInput 
+  landCode: UuidOperationFilterInput
   aanduidingWoonadres: UuidOperationFilterInput
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
@@ -321,7 +314,7 @@ input AdresSortInput {
   huisnummerToevoeging: SortEnumType
   postcode: SortEnumType
   plaatsnaam: SortEnumType
-  landCode: SortEnumType 
+  landCode: SortEnumType
   aanduidingWoonadres: SortEnumType
   ingangsdatum: SortEnumType
   einddatum: SortEnumType
@@ -352,7 +345,7 @@ input BeperkingScoreFilterInput {
   beperkingScore: StringOperationFilterInput
   commentaar: StringOperationFilterInput
 }
-input BeperkingScoreSortInput{
+input BeperkingScoreSortInput {
   beperkingScoreID: SortEnumType
   beperkingVraag: SortEnumType
   beperkingScore: SortEnumType
@@ -577,7 +570,9 @@ input WzdSortInput {
   einddatum: SortEnumType
 }
 
-""" ListFilterInputType_FilterInput types """
+"""
+ListFilterInputType_FilterInput types
+"""
 input ListFilterInputTypeBeperkingScoreFilterInput {
   all: BeperkingScoreFilterInput
   none: BeperkingScoreFilterInput
@@ -593,7 +588,7 @@ input ListFilterInputTypeOfGeindiceerdZorgzwaartepakketFilterInput {
 }
 
 input ListFilterInputTypeGrondslagFilterInput {
-  all:GrondslagFilterInput
+  all: GrondslagFilterInput
   any: GrondslagFilterInput
   some: GrondslagFilterInput
   any: Boolean
