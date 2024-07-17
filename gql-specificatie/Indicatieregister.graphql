@@ -610,7 +610,7 @@ input ListFilterInputTypeStoornisScoreFilterInput {
 
 input ListFilterInputTypeOfWlzIndicatieFilterInput {
   all: WlzIndicatieFilterInput
-  any: WlzIndicatieFilterInput
+  none: WlzIndicatieFilterInput
   some: WlzIndicatieFilterInput
   any: Boolean
 }
