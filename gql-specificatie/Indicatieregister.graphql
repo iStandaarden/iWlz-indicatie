@@ -696,7 +696,7 @@ input UuidOperationFilterInput {
 """
 generic Enum
 """
-enum SortEnumType {
-  ASC
-  DESC
-}
+# enum SortEnumType {
+#   ASC
+#   DESC
+# }
