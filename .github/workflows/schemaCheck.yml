@@ -14,4 +14,4 @@ jobs:
       - uses: kamilkisiela/graphql-inspector@master
         with:
           schema: 'master:gql-specificatie/Indicatieregister.graphql'
-          fail-on-breaking: false
+          fail-on-breaking: true
