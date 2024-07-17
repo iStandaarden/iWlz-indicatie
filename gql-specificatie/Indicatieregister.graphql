@@ -50,7 +50,7 @@ type WlzIndicatie {
   ingangsdatum: Date!
   einddatum: Date
   meerzorg: String #COD260
-  initieelVerantwoordelijkZorgkantoor: String!
+  initieelVerantwoordelijkZorgkantoor: String! 
   vervaldatum: Date
   grondslag(
     where: GrondslagFilterInput
