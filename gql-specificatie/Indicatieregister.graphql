@@ -554,7 +554,6 @@ input WlzIndicatieFilterInput {
   stoornis: StoornisFilterInput
   stoornisScore: StoornisScoreFilterInput
   wzd: WzdFilterInput
-  client: ClientFilterInput
   commentaar: StringOperationFilterInput
 }
 
