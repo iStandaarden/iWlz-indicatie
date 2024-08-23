@@ -1,0 +1,215 @@
+@startuml Indicatieregister-graph
+
+class Query{
+  wlzIndicatie(where: WlzIndicatieFilterInput): [WlzIndicatie!]!
+}
+
+Query::wlzIndicatie --> WlzIndicatie
+
+class WlzIndicatie {
+  wlzindicatieID: UUID!
+  bsn: String!
+  besluitnummer: Int!
+  soortWlzindicatie: String! 
+  afgiftedatum: Date!
+  ingangsdatum: Date!
+  einddatum: Date
+  meerzorg: String 
+  initieelVerantwoordelijkZorgkantoor: String! 
+  vervaldatum: Date
+  grondslag [Grondslag!]
+  geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket!]
+  beperking: [Beperking!]
+  stoornis: [Stoornis!]
+  stoornisScore: [StoornisScore!]
+  wzd: Wzd
+  client: Client!
+  commentaar: String
+}
+
+WlzIndicatie::geindiceerdZorgzwaartepakket --> GeindiceerdZorgzwaartepakket
+WlzIndicatie::grondslag --> Grondslag
+WlzIndicatie::beperking --> Beperking
+WlzIndicatie::stoornis --> Stoornis
+WlzIndicatie::stoornisScore --> StoornisScore
+WlzIndicatie::wzd --> Wzd
+WlzIndicatie::client --> Client
+
+
+class GeindiceerdZorgzwaartepakket {
+  id: UUID@deprecated(reason: "vervangen door functioneel technisch ID gebruik geindiceerdZorgzwaartepakketID")
+  geindiceerdZorgzwaartepakketID: UUID!
+  zzpCode: String! 
+  ingangsdatum: Date!
+  einddatum: Date
+  voorkeurClient: String 
+  instellingVoorkeur: String
+  financiering: String! 
+  commentaar: String
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
+}
+
+class Grondslag {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik grondslagID")
+  grondslagID: UUID!
+  grondslag: String! 
+  volgorde: Int!
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
+}
+
+class Beperking {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik beperkingID")
+  beperkingID: UUID!
+  categorie: String! 
+  duur: String 
+  commentaar: String
+  beperkingScores: [BeperkingScore] @deprecated(reason: "vervangen beperkingScore")
+  beperkingScore: [BeperkingScore!]
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
+}
+
+Beperking::beperkingScore --> BeperkingScore
+
+class BeperkingScore {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik beperkingScoreID")
+  beperkingScoreID: UUID!
+  beperkingVraag: String! 
+  beperkingScore: String! 
+  commentaar: String
+  beperkingID: UUID @deprecated(reason: "overbodig")
+}
+
+class Stoornis {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik stoornisID")
+  stoornisID: UUID!
+  grondslag: String! 
+  diagnoseCodelijst: String! 
+  diagnoseSubCodelijst: String 
+  ziektebeeldStoornis: String! 
+  prognose: String 
+  commentaar: String
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
+}
+
+class StoornisScore {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik stoornisScoreID")
+  stoornisScoreID: UUID!
+  stoornisVraag: String! 
+  stoornisScore: String! 
+  commentaar: String
+  wlzindicatieID: UUID @deprecated(reason: "overbodig")
+}
+
+class Client {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik clientID")
+  clientID: UUID!
+  bsn: String!
+  geheimeClient: String! 
+  geboorteDatum: Date!
+  geboortedatumGebruik: String 
+  geslacht: String! 
+  burgerlijkeStaat: String 
+  geslachtsnaam: String!
+  voorvoegselGeslachtsnaam: String
+  partnernaam: String
+  voorvoegselPartnernaam: String
+  voornamen: String
+  roepnaam: String
+  voorletters: String
+  naamGebruik: String! 
+  leefeenheid: String 
+  agbcodeHuisarts: String
+  communicatieVorm: String 
+  taal: String
+  commentaar: String
+  contactPersoon: [ContactPersoon]
+  contactGegevens: [ContactGegevens!]!
+}
+
+Client::contactPersoon --> ContactPersoon
+Client::contactGegevens --> ContactGegevens
+
+class ContactPersoon {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik contactPersoonID")
+  contactPersoonID: UUID!
+  relatieNummer: String!
+  volgorde: Int
+  soortRelatie: String! #COD472!
+  rol: String #COD1003
+  relatie: String #COD1002
+  organisatieNaam: String @deprecated(reason: "RFC24001 Organisatienaam verwijderen uit Indicatieregister")
+  voornamen: String
+  roepnaam: String
+  voorletters: String
+  geslachtsnaam: String
+  voorvoegselGeslachtsnaam: String
+  partnernaam: String
+  voorvoegselPartnernaam: String
+  naamGebruik: String #COD700
+  geslacht: String #COD046
+  geboorteDatum: Date
+  geboortedatumGebruik: String #COD170
+  ingangsdatum: Date!
+  einddatum: Date
+  clientID: UUID!
+  contactGegevens: [ContactGegevens!]!
+}
+
+ContactPersoon::contactGegevens --> ContactGegevens
+
+class ContactGegevens {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik contactGegevensID")
+  contactGegevensID: UUID!
+  clientID: UUID
+  contactPersoonID: UUID
+  adres: Adres
+  telefoon: Telefoon
+  email: Email
+}
+
+ContactGegevens::adres --> Adres
+ContactGegevens::telefoon --> Telefoon
+ContactGegevens::email --> Email
+
+class Adres {
+  id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik adresID")
+  adresID: UUID!
+  adresSoort: String! #COD757
+  straatnaam: String
+  huisnummer: Int
+  huisletter: String
+  huisnummerToevoeging: String
+  postcode: String
+  plaatsnaam: String
+  landCode: String #COD032
+  aanduidingWoonadres: String #NUM061
+  ingangsdatum: Date
+  einddatum: Date
+  contactGegevenID: UUID @deprecated(reason: "overbodig")
+}
+
+class Email {
+  emailID: UUID!
+  emailadres: String!
+  ingangsdatum: Date!
+  einddatum: Date
+  contactGegevenID: UUID @deprecated(reason: "overbodig")
+}
+
+class Telefoon {
+  telefoonID: UUID!
+  telefoonnummer: String!
+  landnummer: String
+  ingangsdatum: Date!
+  einddatum: Date
+  contactGegevenID: UUID @deprecated(reason: "overbodig")
+}
+
+class Wzd {
+  wzdID: UUID!
+  wzdVerklaring: String! #COD127
+  ingangsdatum: Date
+  einddatum: Date
+}
+
+@enduml
