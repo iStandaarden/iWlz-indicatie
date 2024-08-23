@@ -1,6 +1,9 @@
 name: generate plantuml
 on: 
   push:
+    branches:
+      - main
+      - Indicatieregister-2
     paths:
       - 'src/**.puml'
 jobs:
