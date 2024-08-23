@@ -1,5 +1,7 @@
 name: generate plantuml
 on: push
+  paths:
+    - 'src/*.puml'
 jobs:
   generate_plantuml:
     runs-on: ubuntu-latest
@@ -11,6 +13,6 @@ jobs:
         id: plantuml
         uses: grassedge/generate-plantuml-action@master
         with:
-          path: .
+          path: src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
