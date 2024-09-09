@@ -1,7 +1,7 @@
 """
 Graphql Schemadefinitie voor het Indicatieregsiter
-Versie 1.6.0
-datum 2024-07-16
+Versie 1.6.1
+datum 2024-09-09
 Gebaseerd op Indicatieregister 2
 """
 schema {
@@ -29,8 +29,6 @@ scalar DateTime
 QUERY definities
 """
 type Query {
-  # Haal alle Wlzindicaties voor bsn
-  getWlzIndicatiesVoorBsn(bsn: String!): [WlzIndicatie!]
   # Haal Wlzindicatie voor IndicatieId
   getWlzIndicatieVoorIndicatieID(wlzindicatieID: UUID!): WlzIndicatie!
     @deprecated(reason: "Gebruik wlzIndicatie met filter opties")
@@ -52,33 +50,17 @@ type WlzIndicatie {
   meerzorg: String #COD260
   initieelVerantwoordelijkZorgkantoor: String! 
   vervaldatum: Date
-  grondslag(
-    where: GrondslagFilterInput
-    order: [GrondslagSortInput!]
-  ): [Grondslag!]
-  geindiceerdZorgzwaartepakket(
-    where: GeindiceerdZorgzwaartepakketFilterInput
-    order: [GeindiceerdZorgzwaartepakketSortInput!]
-  ): [GeindiceerdZorgzwaartepakket!]
-  beperking(
-    where: BeperkingFilterInput
-    order: [BeperkingSortInput!]
-  ): [Beperking!]
-  stoornis(where: StoornisFilterInput, order: [StoornisSortInput!]): [Stoornis!]
-  stoornisScore(
-    where: StoornisScoreFilterInput
-    order: [StoornisScoreSortInput!]
-  ): [StoornisScore!]
+  grondslag: [Grondslag!]
+  geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket!]
+  beperking: [Beperking!]
+  stoornis: [Stoornis!]
+  stoornisScore: [StoornisScore!]
   wzd: Wzd
   client: Client!
   commentaar: String
 }
 
 type GeindiceerdZorgzwaartepakket {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik geindiceerdZorgzwaartepakketID"
-    )
   geindiceerdZorgzwaartepakketID: UUID!
   zzpCode: String! #COD163!
   ingangsdatum: Date!
@@ -87,55 +69,32 @@ type GeindiceerdZorgzwaartepakket {
   instellingVoorkeur: String
   financiering: String! #COD998
   commentaar: String
-  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type Grondslag {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik grondslagID"
-    )
   grondslagID: UUID!
   grondslag: String! #COD736
   volgorde: Int!
-  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type Beperking {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik beperkingID"
-    )
   beperkingID: UUID!
   categorie: String! #COD539!
   duur: String #COD749
   commentaar: String
   beperkingScores: [BeperkingScore]
     @deprecated(reason: "vervangen beperkingScore")
-  beperkingScore(
-    where: BeperkingScoreFilterInput
-    order: [BeperkingScoreSortInput!]
-  ): [BeperkingScore!]
-  wlzindicatieID: UUID @deprecated(reason: "overbodig")
+  beperkingScore: [BeperkingScore!]
 }
 
 type BeperkingScore {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik beperkingScoreID"
-    )
   beperkingScoreID: UUID!
   beperkingVraag: String! #COD825!
   beperkingScore: String! #COD828!
   commentaar: String
-  beperkingID: UUID @deprecated(reason: "overbodig")
 }
 
 type Stoornis {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik stoornisID"
-    )
   stoornisID: UUID!
   grondslag: String! #COD736!
   diagnoseCodelijst: String! #COD392!
@@ -143,26 +102,16 @@ type Stoornis {
   ziektebeeldStoornis: String! #COD923COD924COD925! #vulling uit een van COD923, COD924 en COD925; zie iWlz codelijsten
   prognose: String #COD737
   commentaar: String
-  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type StoornisScore {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik stoornisScoreID"
-    )
   stoornisScoreID: UUID!
   stoornisVraag: String! #COD824!
   stoornisScore: String! #COD827!
   commentaar: String
-  wlzindicatieID: UUID @deprecated(reason: "overbodig")
 }
 
 type Client {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik clientID"
-    )
   clientID: UUID!
   bsn: String!
   geheimeClient: String! #COD260
@@ -185,19 +134,11 @@ type Client {
   commentaar: String
   contactPersoon(
     where: ContactPersoonFilterInput
-    order: [ContactPersoonSortInput!]
   ): [ContactPersoon]
-  contactGegevens(
-    where: ContactGegevensFilterInput
-    order: [ContactGegevensSortInput!]
-  ): [ContactGegevens!]!
+  contactGegevens: [ContactGegevens!]!
 }
 
 type ContactPersoon {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik contactPersoonID"
-    )
   contactPersoonID: UUID!
   relatieNummer: String!
   volgorde: Int
@@ -222,30 +163,19 @@ type ContactPersoon {
   ingangsdatum: Date!
   einddatum: Date
   clientID: UUID!
-  contactGegevens(
-    where: ContactGegevensFilterInput
-    order: [ContactGegevensSortInput!]
-  ): [ContactGegevens!]!
+  contactGegevens: [ContactGegevens!]!
 }
 
 type ContactGegevens {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik contactGegevensID"
-    )
   contactGegevensID: UUID!
   clientID: UUID
   contactPersoonID: UUID
-  adres(where: AdresFilterInput, order: [AdresSortInput!]): Adres
-  telefoon(where: TelefoonFilterInput, order: [TelefoonSortInput!]): Telefoon
-  email(where: EmailFilterInput, order: [EmailSortInput!]): Email
+  adres(where: AdresFilterInput): Adres
+  telefoon(where: TelefoonFilterInput): Telefoon
+  email(where: EmailFilterInput): Email
 }
 
 type Adres {
-  id: UUID
-    @deprecated(
-      reason: "vervangen door functioneel technisch ID gebruik adresID"
-    )
   adresID: UUID!
   adresSoort: String! #COD757
   straatnaam: String
@@ -258,7 +188,6 @@ type Adres {
   aanduidingWoonadres: String #NUM061
   ingangsdatum: Date
   einddatum: Date
-  contactGegevenID: UUID @deprecated(reason: "overbodig")
 }
 
 type Email {
@@ -266,7 +195,6 @@ type Email {
   emailadres: String!
   ingangsdatum: Date!
   einddatum: Date
-  contactGegevenID: UUID @deprecated(reason: "overbodig")
 }
 
 type Telefoon {
@@ -275,7 +203,6 @@ type Telefoon {
   landnummer: String
   ingangsdatum: Date!
   einddatum: Date
-  contactGegevenID: UUID @deprecated(reason: "overbodig")
 }
 
 type Wzd {
@@ -291,328 +218,37 @@ Specific Input Types
 input AdresFilterInput {
   and: [AdresFilterInput!]
   or: [AdresFilterInput!]
-  adresID: UuidOperationFilterInput
-  adresSoort: UuidOperationFilterInput
-  straatnaam: UuidOperationFilterInput
-  huisnummer: IntOperationFilterInput
-  huisletter: UuidOperationFilterInput
-  huisnummerToevoeging: UuidOperationFilterInput
-  postcode: UuidOperationFilterInput
-  plaatsnaam: UuidOperationFilterInput
-  landCode: UuidOperationFilterInput
-  aanduidingWoonadres: UuidOperationFilterInput
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
-}
-
-input AdresSortInput {
-  adresID: SortEnumType
-  adresSoort: SortEnumType
-  straatnaam: SortEnumType
-  huisnummer: SortEnumType
-  huisletter: SortEnumType
-  huisnummerToevoeging: SortEnumType
-  postcode: SortEnumType
-  plaatsnaam: SortEnumType
-  landCode: SortEnumType
-  aanduidingWoonadres: SortEnumType
-  ingangsdatum: SortEnumType
-  einddatum: SortEnumType
-}
-
-input BeperkingFilterInput {
-  and: [BeperkingFilterInput!]
-  or: [BeperkingFilterInput!]
-  beperkingID: UuidOperationFilterInput
-  categorie: UuidOperationFilterInput
-  duur: StringOperationFilterInput
-  commentaar: StringOperationFilterInput
-  beperkingScore: ListFilterInputTypeBeperkingScoreFilterInput
-}
-
-input BeperkingSortInput {
-  beperkingID: SortEnumType
-  categorie: SortEnumType
-  duur: SortEnumType
-  commentaar: SortEnumType
-}
-
-input BeperkingScoreFilterInput {
-  and: [BeperkingScoreFilterInput!]
-  or: [BeperkingScoreFilterInput!]
-  beperkingScoreID: UuidOperationFilterInput
-  beperkingVraag: StringOperationFilterInput
-  beperkingScore: StringOperationFilterInput
-  commentaar: StringOperationFilterInput
-}
-input BeperkingScoreSortInput {
-  beperkingScoreID: SortEnumType
-  beperkingVraag: SortEnumType
-  beperkingScore: SortEnumType
-  commentaar: SortEnumType
 }
 
 input ContactPersoonFilterInput {
   and: [ContactPersoonFilterInput!]
   or: [ContactPersoonFilterInput!]
-  contactPersoonID: UuidOperationFilterInput
-  relatieNummer: StringOperationFilterInput
-  volgorde: IntOperationFilterInput
-  soortRelatie: StringOperationFilterInput
-  rol: StringOperationFilterInput
-  voornamen: StringOperationFilterInput
-  roepnaam: StringOperationFilterInput
-  voorletters: StringOperationFilterInput
-  geslachtsnaam: StringOperationFilterInput
-  voorvoegselGeslachtsnaam: StringOperationFilterInput
-  partnernaam: StringOperationFilterInput
-  voorvoegselPartnernaam: StringOperationFilterInput
-  naamGebruik: StringOperationFilterInput
-  geslacht: StringOperationFilterInput
-  geboorteDatum: DateOperationFilterInput
-  geboortedatumGebruik: StringOperationFilterInput
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
-  contactGegevens: ContactGegevensFilterInput
 }
 
-input ContactPersoonSortInput {
-  contactPersoonID: SortEnumType
-  relatieNummer: SortEnumType
-  volgorde: SortEnumType
-  soortRelatie: SortEnumType
-  rol: SortEnumType
-  voornamen: SortEnumType
-  roepnaam: SortEnumType
-  voorletters: SortEnumType
-  geslachtsnaam: SortEnumType
-  voorvoegselGeslachtsnaam: SortEnumType
-  partnernaam: SortEnumType
-  voorvoegselPartnernaam: SortEnumType
-  naamGebruik: SortEnumType
-  geslacht: SortEnumType
-  geboorteDatum: SortEnumType
-  geboortedatumGebruik: SortEnumType
-  ingangsdatum: SortEnumType
-  einddatum: SortEnumType
-  contactGegevens: ContactGegevensSortInput
-}
-
-input ContactGegevensFilterInput {
-  and: [ContactGegevensFilterInput!]
-  or: [ContactGegevensFilterInput!]
-  contactGegevensID: UuidOperationFilterInput
-  clientID: UuidOperationFilterInput
-  contactPersoonID: UuidOperationFilterInput
-  adres: AdresFilterInput
-  telefoon: TelefoonFilterInput
-  email: EmailFilterInput
-}
-
-input ContactGegevensSortInput {
-  contactGegevensID: SortEnumType
-  clientID: SortEnumType
-  contactPersoonID: SortEnumType
-  adres: AdresSortInput
-  telefoon: TelefoonSortInput
-  email: EmailSortInput
-}
 
 input EmailFilterInput {
   and: [EmailFilterInput!]
   or: [EmailFilterInput!]
-  emailID: UuidOperationFilterInput
-  emailadres: StringOperationFilterInput
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
-}
-
-input EmailSortInput {
-  emailID: SortEnumType
-  emailadres: SortEnumType
-  ingangsdatum: SortEnumType
-  einddatum: SortEnumType
-}
-
-input GeindiceerdZorgzwaartepakketFilterInput {
-  and: [GeindiceerdZorgzwaartepakketFilterInput!]
-  or: [GeindiceerdZorgzwaartepakketFilterInput!]
-  geindiceerdZorgzwaartepakketID: UuidOperationFilterInput
-  zzpCode: StringOperationFilterInput
-  ingangsdatum: DateOperationFilterInput
-  einddatum: DateOperationFilterInput
-  voorkeurClient: StringOperationFilterInput
-  instellingVoorkeur: StringOperationFilterInput
-  financiering: StringOperationFilterInput
-  commentaar: StringOperationFilterInput
-  wlzindicatieID: WlzIndicatieFilterInput
-}
-
-input GeindiceerdZorgzwaartepakketSortInput {
-  geindiceerdZorgzwaartepakketID: SortEnumType
-  zzpCode: SortEnumType
-  ingangsdatum: SortEnumType
-  einddatum: SortEnumType
-  voorkeurClient: SortEnumType
-  instellingVoorkeur: SortEnumType
-  financiering: SortEnumType
-  commentaar: SortEnumType
-  wlzindicatieID: WlzIndicatieSortInput
-}
-
-input GrondslagFilterInput {
-  and: [GrondslagFilterInput!]
-  or: [GrondslagFilterInput!]
-  grondslagID: UuidOperationFilterInput
-  grondslag: StringOperationFilterInput
-  volgorde: IntOperationFilterInput
-}
-
-input GrondslagSortInput {
-  grondslagID: SortEnumType
-  grondslag: SortEnumType
-  volgorde: SortEnumType
-}
-
-input StoornisFilterInput {
-  and: [StoornisFilterInput!]
-  or: [StoornisFilterInput!]
-  stoornisID: UuidOperationFilterInput
-  grondslag: StringOperationFilterInput
-  diagnoseCodelijst: StringOperationFilterInput
-  diagnoseSubCodelijst: StringOperationFilterInput
-  ziektebeeldStoornis: StringOperationFilterInput
-  prognose: StringOperationFilterInput
-  commentaar: StringOperationFilterInput
-}
-
-input StoornisSortInput {
-  stoornisID: SortEnumType
-  grondslag: SortEnumType
-  diagnoseCodelijst: SortEnumType
-  diagnoseSubCodelijst: SortEnumType
-  ziektebeeldStoornis: SortEnumType
-  prognose: SortEnumType
-  commentaar: SortEnumType
-}
-
-input StoornisScoreFilterInput {
-  and: [StoornisScoreFilterInput!]
-  or: [StoornisScoreFilterInput!]
-  stoornisScoreID: UuidOperationFilterInput
-  stoornisVraag: StringOperationFilterInput
-  stoornisScore: StringOperationFilterInput
-  commentaar: StringOperationFilterInput
-}
-
-input StoornisScoreSortInput {
-  stoornisScoreID: SortEnumType
-  stoornisVraag: SortEnumType
-  stoornisScore: SortEnumType
-  commentaar: SortEnumType
 }
 
 input TelefoonFilterInput {
-  telefoonID: UuidOperationFilterInput
-  telefoonnummer: StringOperationFilterInput
-  landnummer: StringOperationFilterInput
+  and: [TelefoonFilterInput!]
+  or: [TelefoonFilterInput!]
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
-}
-
-input TelefoonSortInput {
-  telefoonID: SortEnumType
-  telefoonnummer: SortEnumType
-  landnummer: SortEnumType
-  ingangsdatum: SortEnumType
-  einddatum: SortEnumType
 }
 
 input WlzIndicatieFilterInput {
   and: [WlzIndicatieFilterInput!]
   or: [WlzIndicatieFilterInput!]
   wlzindicatieID: UuidOperationFilterInput
-  bsn: StringOperationFilterInput
-  besluitnummer: IntOperationFilterInput
-  soortWlzindicatie: StringOperationFilterInput
-  afgiftedatum: DateOperationFilterInput
-  ingangsdatum: DateOperationFilterInput
-  einddatum: DateOperationFilterInput
-  meerzorg: StringOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
-  vervaldatum: DateOperationFilterInput
-  grondslag: GrondslagFilterInput
-  geindiceerdZorgzwaartepakket: GeindiceerdZorgzwaartepakketFilterInput
-  beperking: BeperkingFilterInput
-  stoornis: StoornisFilterInput
-  stoornisScore: StoornisScoreFilterInput
-  wzd: WzdFilterInput
-  commentaar: StringOperationFilterInput
-}
-
-input WlzIndicatieSortInput {
-  wlzindicatieID: SortEnumType
-}
-
-input WzdFilterInput {
-  and: [WzdFilterInput!]
-  or: [WzdFilterInput!]
-  wzdID: UuidOperationFilterInput!
-  wzdVerklaring: StringOperationFilterInput
-  ingangsdatum: DateOperationFilterInput
-  einddatum: DateOperationFilterInput
-}
-
-input WzdSortInput {
-  wzdID: SortEnumType
-  wzdVerklaring: SortEnumType
-  ingangsdatum: SortEnumType
-  einddatum: SortEnumType
-}
-
-"""
-ListFilterInputType_FilterInput types
-"""
-input ListFilterInputTypeBeperkingScoreFilterInput {
-  all: BeperkingScoreFilterInput
-  none: BeperkingScoreFilterInput
-  some: BeperkingScoreFilterInput
-  any: Boolean
-}
-
-input ListFilterInputTypeOfGeindiceerdZorgzwaartepakketFilterInput {
-  all: GeindiceerdZorgzwaartepakketFilterInput
-  none: GeindiceerdZorgzwaartepakketFilterInput
-  some: GeindiceerdZorgzwaartepakketFilterInput
-  any: Boolean
-}
-
-input ListFilterInputTypeGrondslagFilterInput {
-  all: GrondslagFilterInput
-  none: GrondslagFilterInput
-  some: GrondslagFilterInput
-  any: Boolean
-}
-
-input ListFilterInputTypeStoornisFilterInput {
-  all: StoornisFilterInput
-  none: StoornisFilterInput
-  some: StoornisFilterInput
-  any: Boolean
-}
-
-input ListFilterInputTypeStoornisScoreFilterInput {
-  all: StoornisScoreFilterInput
-  none: StoornisScoreFilterInput
-  some: StoornisScoreFilterInput
-  any: Boolean
-}
-
-input ListFilterInputTypeOfWlzIndicatieFilterInput {
-  all: WlzIndicatieFilterInput
-  none: WlzIndicatieFilterInput
-  some: WlzIndicatieFilterInput
-  any: Boolean
 }
 
 """
@@ -631,21 +267,6 @@ input DateOperationFilterInput {
   nlt: Date
   lte: Date
   nlte: Date
-}
-
-input DateTimeOperationFilterInput {
-  eq: DateTime
-  neq: DateTime
-  in: [DateTime]
-  nin: [DateTime]
-  gt: DateTime
-  ngt: DateTime
-  gte: DateTime
-  ngte: DateTime
-  lt: DateTime
-  nlt: DateTime
-  lte: DateTime
-  nlte: DateTime
 }
 
 input IntOperationFilterInput {
@@ -691,12 +312,4 @@ input UuidOperationFilterInput {
   nlt: UUID
   lte: UUID
   nlte: UUID
-}
-
-"""
-generic Enum
-"""
-enum SortEnumType {
-  ASC
-  DESC
 }
