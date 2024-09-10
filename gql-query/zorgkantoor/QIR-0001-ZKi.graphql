@@ -12,11 +12,11 @@ query WlzIndicatie(
 ) {
     wlzIndicatie(
         where: {
-            wlzIndicatieID: {eq: $wlzIndicatieID}
+            wlzindicatieID: {eq: $wlzIndicatieID}
             initieelVerantwoordelijkZorgkantoor: {eq: $initieelVerantwoordelijkZorgkantoor}
         }
     ) {
-        wlzIndicatieID
+        wlzindicatieID
         bsn
         besluitnummer
         soortWlzindicatie
@@ -102,7 +102,7 @@ query WlzIndicatie(
                     where: 
                     {
                         or:[
-                            {einddatum: {gt: $now}, einddatum: {eq: null}}
+                            {einddatum: {gte: $now}}, {einddatum: {eq: null}}
                         ],
                         ingangsdatum: {ngt: $now}
                     }
@@ -123,7 +123,7 @@ query WlzIndicatie(
                     where: 
                     {
                         or:[
-                            {einddatum: {gt: $now}, einddatum: {eq: null}}
+                            {einddatum: {gte: $now}}, {einddatum: {eq: null}}
                         ],
                         ingangsdatum: {ngt: $now}
                     }
@@ -137,7 +137,7 @@ query WlzIndicatie(
                     where: 
                     {
                         or:[
-                            {einddatum: {gt: $now}, einddatum: {eq: null}}
+                            {einddatum: {gte: $now}}, {einddatum: {eq: null}}
                         ],
                         ingangsdatum: {ngt: $now}
                     }
@@ -153,7 +153,7 @@ query WlzIndicatie(
                 where: 
                 {
                     or:[
-                        {einddatum: {gt: $now}, einddatum: {eq: null}}
+                        {einddatum: {gte: $now}}, {einddatum: {eq: null}}
                     ],
                     ingangsdatum: {ngt: $now}
                 }
@@ -183,7 +183,7 @@ query WlzIndicatie(
                         where: 
                         {
                             or:[
-                                {einddatum: {gt: $now}, einddatum: {eq: null}}
+                                {einddatum: {gte: $now}}, {einddatum: {eq: null}}
                             ],
                             ingangsdatum: {ngt: $now}
                         }
@@ -204,7 +204,7 @@ query WlzIndicatie(
                         where: 
                         {
                             or:[
-                                {einddatum: {gt: $now}, einddatum: {eq: null}}
+                                {einddatum: {gte: $now}}, {einddatum: {eq: null}}
                             ],
                             ingangsdatum: {ngt: $now}
                         }
@@ -218,7 +218,7 @@ query WlzIndicatie(
                         where: 
                         {
                             or:[
-                                {einddatum: {gt: $now}, einddatum: {eq: null}}
+                                {einddatum: {gte: $now}}, {einddatum: {eq: null}}
                             ],
                             ingangsdatum: {ngt: $now}
                         }

@@ -1,7 +1,7 @@
 """
 Graphql Schemadefinitie voor het Indicatieregsiter
-Versie 1.6.1
-datum 2024-09-09
+Versie 1.6.2
+datum 2024-09-10
 Gebaseerd op Indicatieregister 2
 """
 schema {
@@ -238,15 +238,13 @@ input EmailFilterInput {
 }
 
 input TelefoonFilterInput {
-  and: [TelefoonFilterInput!]
+  # and: [TelefoonFilterInput!]
   or: [TelefoonFilterInput!]
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
 }
 
 input WlzIndicatieFilterInput {
-  and: [WlzIndicatieFilterInput!]
-  or: [WlzIndicatieFilterInput!]
   wlzindicatieID: UuidOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
 }
@@ -256,60 +254,45 @@ Generic Input Types
 """
 input DateOperationFilterInput {
   eq: Date
-  neq: Date
-  in: [Date]
-  nin: [Date]
-  gt: Date
+  # neq: Date
+  # in: [Date]
+  # nin: [Date]
+  # gt: Date
   ngt: Date
   gte: Date
-  ngte: Date
-  lt: Date
-  nlt: Date
-  lte: Date
-  nlte: Date
-}
-
-input IntOperationFilterInput {
-  eq: Int
-  neq: Int
-  in: [Int]
-  nin: [Int]
-  gt: Int
-  ngt: Int
-  gte: Int
-  ngte: Int
-  lt: Int
-  nlt: Int
-  lte: Int
-  nlte: Int
+  # ngte: Date
+  # lt: Date
+  # nlt: Date
+  # lte: Date
+  # nlte: Date
 }
 
 input StringOperationFilterInput {
-  and: [StringOperationFilterInput!]
-  or: [StringOperationFilterInput!]
+  # and: [StringOperationFilterInput!]
+  # or: [StringOperationFilterInput!]
   eq: String
-  neq: String
-  contains: String
-  ncontains: String
-  in: [String]
-  nin: [String]
-  startsWith: String
-  nstartsWith: String
-  endsWith: String
-  nendsWith: String
+  # neq: String
+  # contains: String
+  # ncontains: String
+  # in: [String]
+  # nin: [String]
+  # startsWith: String
+  # nstartsWith: String
+  # endsWith: String
+  # nendsWith: String
 }
 
 input UuidOperationFilterInput {
   eq: UUID
-  neq: UUID
-  in: [UUID]
-  nin: [UUID]
-  gt: UUID
-  ngt: UUID
-  gte: UUID
-  ngte: UUID
-  lt: UUID
-  nlt: UUID
-  lte: UUID
-  nlte: UUID
+  # neq: UUID
+  # in: [UUID]
+  # nin: [UUID]
+  # gt: UUID
+  # ngt: UUID
+  # gte: UUID
+  # ngte: UUID
+  # lt: UUID
+  # nlt: UUID
+  # lte: UUID
+  # nlte: UUID
 }
