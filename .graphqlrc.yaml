@@ -1,3 +1,2 @@
-# schema: './gql-specificatie/*.graphql'
-schema: '/gql-specificatie/Indicatieregister.graphql'
+schema: 'gql-specificatie/Indicatieregister.graphql'
 documents: 'gql-query/**/*.graphql'
