@@ -216,14 +216,14 @@ type Wzd {
 Specific Input Types
 """
 input AdresFilterInput {
-  and: [AdresFilterInput!]
+  # and: [AdresFilterInput!]
   or: [AdresFilterInput!]
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
 }
 
 input ContactPersoonFilterInput {
-  and: [ContactPersoonFilterInput!]
+  # and: [ContactPersoonFilterInput!]
   or: [ContactPersoonFilterInput!]
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
@@ -231,7 +231,7 @@ input ContactPersoonFilterInput {
 
 
 input EmailFilterInput {
-  and: [EmailFilterInput!]
+  # and: [EmailFilterInput!]
   or: [EmailFilterInput!]
   ingangsdatum: DateOperationFilterInput
   einddatum: DateOperationFilterInput
