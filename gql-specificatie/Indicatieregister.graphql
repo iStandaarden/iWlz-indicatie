@@ -1,7 +1,7 @@
 """
 Graphql Schemadefinitie voor het Indicatieregsiter
-Versie 1.6.2
-datum 2024-09-10
+Versie 1.6.3
+datum 2024-09-23
 Gebaseerd op Indicatieregister 2
 """
 schema {
@@ -186,7 +186,7 @@ type Adres {
   plaatsnaam: String
   landCode: String #COD032
   aanduidingWoonadres: String #NUM061
-  ingangsdatum: Date
+  ingangsdatum: Date!
   einddatum: Date
 }
 
@@ -208,7 +208,7 @@ type Telefoon {
 type Wzd {
   wzdID: UUID!
   wzdVerklaring: String! #COD127
-  ingangsdatum: Date
+  ingangsdatum: Date!
   einddatum: Date
 }
 
