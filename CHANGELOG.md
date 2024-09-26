@@ -5,9 +5,9 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 ---
 ## [In Ontwikkeling] 
 **Indicatieregister 2**
-- v1.6.0 - 16-07-2024
+- v1.6.x - 
 
-### RFC verwerkt v1.6.0
+### RFC verwerkt v1.6.x
 - RFC 24063 - Uniformeren GraphQL Indicatieregister 2: https://github.com/iStandaarden/iWlz_RequestForChange/issues/63
 - RFC 24001 - Organisatienaam verwijderen uit Indicatieregister: https://github.com/iStandaarden/iWlz_RequestForChange/issues/31
 - RFC 24002 - Rol en relatie toevoegen aan Indicatieregister: https://github.com/iStandaarden/iWlz_RequestForChange/issues/35
