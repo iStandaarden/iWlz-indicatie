@@ -61,6 +61,10 @@ type WlzIndicatie {
 }
 
 type GeindiceerdZorgzwaartepakket {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik geindiceerdZorgzwaartepakketID"
+    )
   geindiceerdZorgzwaartepakketID: UUID!
   zzpCode: String! #COD163!
   ingangsdatum: Date!
@@ -72,12 +76,20 @@ type GeindiceerdZorgzwaartepakket {
 }
 
 type Grondslag {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik grondslagID"
+    )
   grondslagID: UUID!
   grondslag: String! #COD736
   volgorde: Int!
 }
 
 type Beperking {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik beperkingID"
+    )
   beperkingID: UUID!
   categorie: String! #COD539!
   duur: String #COD749
@@ -88,6 +100,10 @@ type Beperking {
 }
 
 type BeperkingScore {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik beperkingScoreID"
+    )
   beperkingScoreID: UUID!
   beperkingVraag: String! #COD825!
   beperkingScore: String! #COD828!
@@ -95,6 +111,10 @@ type BeperkingScore {
 }
 
 type Stoornis {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik stoornisID"
+    )
   stoornisID: UUID!
   grondslag: String! #COD736!
   diagnoseCodelijst: String! #COD392!
@@ -105,6 +125,10 @@ type Stoornis {
 }
 
 type StoornisScore {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik stoornisScoreID"
+    )
   stoornisScoreID: UUID!
   stoornisVraag: String! #COD824!
   stoornisScore: String! #COD827!
@@ -112,6 +136,10 @@ type StoornisScore {
 }
 
 type Client {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik clientID"
+    )
   clientID: UUID!
   bsn: String!
   geheimeClient: String! #COD260
@@ -139,6 +167,10 @@ type Client {
 }
 
 type ContactPersoon {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik contactPersoonID"
+    )
   contactPersoonID: UUID!
   relatieNummer: String!
   volgorde: Int
@@ -167,6 +199,10 @@ type ContactPersoon {
 }
 
 type ContactGegevens {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik contactGegevensID"
+    )
   contactGegevensID: UUID!
   clientID: UUID
   contactPersoonID: UUID
@@ -176,6 +212,10 @@ type ContactGegevens {
 }
 
 type Adres {
+  id: UUID
+    @deprecated(
+      reason: "vervangen door functioneel technisch ID gebruik adresID"
+    )
   adresID: UUID!
   adresSoort: String! #COD757
   straatnaam: String
