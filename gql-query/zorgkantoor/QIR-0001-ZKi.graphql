@@ -3,12 +3,11 @@
 # Verplichte input:
 #   - wlzIndicatieID = te raadplegen WlzIndicatie
 #   - uzovicode zorgkantoor = eigen uzovicode raadpleger
-#   - datum vandaag
+# versie 1.0.0 - 2024-10-04
 
 query WlzIndicatie(
     $wlzIndicatieID: UUID!
     $initieelVerantwoordelijkZorgkantoor: String!
-    $now: Date!
 ) {
     wlzIndicatie(
         where: {
@@ -98,15 +97,7 @@ query WlzIndicatie(
             commentaar
             contactGegevens {
                 contactGegevensID
-                adres(
-                    where: 
-                    {
-                        or:[
-                            {einddatum: {gte: $now}}, {einddatum: {eq: null}}
-                        ],
-                        ingangsdatum: {ngt: $now}
-                    }
-                ) {
+                adres {
                     adresID
                     adresSoort
                     straatnaam
@@ -119,29 +110,13 @@ query WlzIndicatie(
                     ingangsdatum
                     einddatum
                 }
-                email (
-                    where: 
-                    {
-                        or:[
-                            {einddatum: {gte: $now}}, {einddatum: {eq: null}}
-                        ],
-                        ingangsdatum: {ngt: $now}
-                    }
-                ) {
+                email {
                     emailID
                     emailadres
                     ingangsdatum
                     einddatum
                 }
-                telefoon (
-                    where: 
-                    {
-                        or:[
-                            {einddatum: {gte: $now}}, {einddatum: {eq: null}}
-                        ],
-                        ingangsdatum: {ngt: $now}
-                    }
-                ) {
+                telefoon {
                     telefoonID
                     telefoonnummer
                     landnummer
@@ -149,15 +124,7 @@ query WlzIndicatie(
                     einddatum
                 }
             }
-            contactPersoon (
-                where: 
-                {
-                    or:[
-                        {einddatum: {gte: $now}}, {einddatum: {eq: null}}
-                    ],
-                    ingangsdatum: {ngt: $now}
-                }
-            ){
+            contactPersoon {
                 contactPersoonID
                 relatieNummer
                 volgorde
@@ -179,15 +146,7 @@ query WlzIndicatie(
                 einddatum
                 contactGegevens {
                     contactGegevensID
-                    adres(
-                        where: 
-                        {
-                            or:[
-                                {einddatum: {gte: $now}}, {einddatum: {eq: null}}
-                            ],
-                            ingangsdatum: {ngt: $now}
-                        }
-                    ) {
+                    adres {
                         adresID
                         adresSoort
                         straatnaam
@@ -200,29 +159,13 @@ query WlzIndicatie(
                         ingangsdatum
                         einddatum
                     }
-                    email (
-                        where: 
-                        {
-                            or:[
-                                {einddatum: {gte: $now}}, {einddatum: {eq: null}}
-                            ],
-                            ingangsdatum: {ngt: $now}
-                        }
-                    ) {
+                    email {
                         emailID
                         emailadres
                         ingangsdatum
                         einddatum
                     }
-                    telefoon (
-                        where: 
-                        {
-                            or:[
-                                {einddatum: {gte: $now}}, {einddatum: {eq: null}}
-                            ],
-                            ingangsdatum: {ngt: $now}
-                        }
-                    ) {
+                    telefoon {
                         telefoonID
                         telefoonnummer
                         landnummer
