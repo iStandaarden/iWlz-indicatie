@@ -3,13 +3,23 @@
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
-**Inhoudsopgave**
-- [iWlz-Indicatieregister](#iwlz-indicatieregister)
+## Versies en Status 
+
+Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
+
+| | LOPEND (*default branche*) | IN ONTWIKKELING | ARCHIEF |
+| --: |:-- |:-- | :-- |
+| ***Informatiemodel***| [Indicatieregister 1](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |  [**Indicatieregister 2**](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/) (*huidige branche*) | -- |
+| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) | -- |
+
+## Inhoudsopgave
+- [iWlz-Indicatieregister 2](#iwlz-indicatieregister-2)
+  - [Versies en Status](#versies-en-status)
+  - [Inhoudsopgave](#inhoudsopgave)
   - [Onderdelen](#onderdelen)
     - [Graphql-schema](#graphql-schema)
     - [Graphql-query](#graphql-query)
     - [Open Agent Policy](#open-agent-policy)
-  - [Versies en Status](#versies-en-status)
   - [Documentatie](#documentatie)
     - [Informatiemodel](#informatiemodel)
     - [GraphQL](#graphql)
@@ -36,16 +46,6 @@ De Open Agent Policy controleert of een query voldoet aan de daarvoor afgesproke
 
 De policy is beschikbaar in: @@@ nog te bepalen.
 
-## Versies en Status 
-
-Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
-
-| iWlz Informatiemodel | Status |  versie koppelvlak |
-|:-- |:-- | :-- |
-| [Indicatieregister 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/)  | **Lopend** | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2) ([master](https://github.com/iStandaarden/iWlz-indicatie))  |
-| [Indicatieregister 2](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | In ontwikkeling | [v1.6.x](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2)|
-
-Volledig versie overzicht zie: [Changelog](CHANGELOG.md)
 
 ## Documentatie
 

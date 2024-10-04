@@ -3,16 +3,35 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
-## [In Ontwikkeling] 
-**Indicatieregister 2**
-- v1.6.x - 
+# [Versie 1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) - 2024-10-04 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
+Publicatie Indicatieregister 2
 
-### RFC verwerkt v1.6.x
-- RFC 24063 - Uniformeren GraphQL Indicatieregister 2: https://github.com/iStandaarden/iWlz_RequestForChange/issues/63
-- RFC 24001 - Organisatienaam verwijderen uit Indicatieregister: https://github.com/iStandaarden/iWlz_RequestForChange/issues/31
-- RFC 24002 - Rol en relatie toevoegen aan Indicatieregister: https://github.com/iStandaarden/iWlz_RequestForChange/issues/35
+zie [Overzicht wijzigingsverzoeken milestone: Indicatieregister 2](https://github.com/orgs/iStandaarden/projects/9/views/1?filterQuery=milestone%3A%22Indicatieregister+2*%22)
 
-- RFC0014 - Functionele uitwerking aanvragen autorisatie (oAuth2.0) : https://github.com/iStandaarden/iWlz-RequestForComment/issues/9
+### RFC verwerkt v1.6.4 - 2024-10
+- [B76: Ingangsdatum WZD is ten onrechte als verplicht gemarkeerd](https://github.com/iStandaarden/iWlz_RequestForChange/issues/76)
+
+#### Issues
+- Issue [#54](https://github.com/iStandaarden/iWlz-indicatie/issues/54)
+- Issue [#55](https://github.com/iStandaarden/iWlz-indicatie/issues/55)
+
+### RFC verwerkt v1.6.3 - 2024-08
+- [B40: Er ontbreekt een gegevensregel (en daarmee foutcode) voor het foutmelden van een waarde in een element die niet voldoet aan bijbehorende codelijst](https://github.com/iStandaarden/iWlz_RequestForChange/issues/40)
+- [B44: Een bronhouder moet controleren of een notificatie is aangekomen bij de ontvanger](https://github.com/iStandaarden/iWlz_RequestForChange/issues/44)
+- [B66: Volgorde is verplicht maar moet optioneel zijn](https://github.com/iStandaarden/iWlz_RequestForChange/issues/66)
+- [B67: Afzendergegevens notificatie CIZ niet juist vermeld in Informatiemodel](https://github.com/iStandaarden/iWlz_RequestForChange/issues/67)
+- [RFC 24022 Vaststellen verantwoordelijk zorgkantoor door CIZ](https://github.com/iStandaarden/iWlz_RequestForChange/issues/51)
+- [RFC 24050 Omschrijving IQ scores aanpassen Indicatieregister](https://github.com/iStandaarden/iWlz_RequestForChange/issues/50)
+- [RFC 24063 Uniformeren GraphQL Indicatieregister 2](https://github.com/iStandaarden/iWlz_RequestForChange/issues/63)
+- [RFC iWlz 24001 Organisatienaam verwijderen uit Indicatieregister](https://github.com/iStandaarden/iWlz_RequestForChange/issues/31)
+- [RFC iWlz 24002 Rol en relatie toevoegen aan Indicatieregister](https://github.com/iStandaarden/iWlz_RequestForChange/issues/35)
+- [RFC iWlz 24010 Tijdzone toevoegen bij datumtijd en datum attributen](https://github.com/iStandaarden/iWlz_RequestForChange/issues/23)
+- [RFC iWlz 24013 Toevoegen functioneel technische IDs Indicatieregister](https://github.com/iStandaarden/iWlz_RequestForChange/issues/24)
+- [RFC0014 - Functionele uitwerking aanvragen autorisatie (oAuth2.0)](https://github.com/iStandaarden/iWlz-RequestForComment/issues/9)
+
+### RFC verwerkt v1.6.0 - 2023-12
+- [RFC iWlz 2024-001 - Vervaldatum indicatiebesluit toevoegen aan Indicatieregister](https://github.com/iStandaarden/iWlz_RequestForChange/issues/58)
+- [RFC iWlz 2024-003 - Correcties Indicatieregister](https://github.com/iStandaarden/iWlz_RequestForChange/issues/57)
 
 
 ### Issues verwerkt in v1.3.0 - v1.5.0
@@ -23,10 +42,10 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 - Issue #51 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/51)
 
 ### Aangepast
-- Custom Scalartyps aangevuld met specifiedBy
+- Custom Scalartypes aangevuld met specifiedBy
 
-
-## [v1.2.0] - 2023-05-05
+---
+# [v1.2.0] - 2023-05-05 - [Indicatieregister 1](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-1/)
 - Issue #35 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/35)
 - Issue #36 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/36)
 - Issue #37 - [link](https://github.com/iStandaarden/iWlz-indicatie/issues/37)
@@ -150,17 +169,17 @@ Herziening versioning (was voorheen v1.4)
 [In ontwikkeling]: https://github.com/iStandaarden/iWlz-indicatie/compare/master..Indicatieregister-2
 [commit-history]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...master
 [Indicatieregister-2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.2.0...Indicatieregister-2
-[v1.2.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.1.0...v1.2.0
-[v1.1.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.2...v1.1.0
-[v1.0.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v1.0.0...v1.0.2
-[v1.0.0]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.7...v1.0.0
-[v0.9.7]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.6...v0.9.7
-[v0.9.6]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.5...v0.9.6
-[v0.9.5]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.4...v0.9.5
-[v0.9.4]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.3...v0.9.4
-[v0.9.3]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.2...v0.9.3
-[v0.9.2]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.1.5...v0.9.2
-[v0.9.1.5]: https://github.com/iStandaarden/iWlz-indicatie/compare/v0.9.1.4...v0.9.1.5
+[v1.2.0]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2.0
+[v1.1.0]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.1.0
+[v1.0.2]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.0.2
+[v1.0.0]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.0.0
+[v0.9.7]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.7
+[v0.9.6]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.6
+[v0.9.5]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.5
+[v0.9.4]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.4
+[v0.9.3]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.3
+[v0.9.2]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.2
+[v0.9.1.5]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.1.5
 [v0.9.1.4]: https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v0.9.1.4
 
 ---
