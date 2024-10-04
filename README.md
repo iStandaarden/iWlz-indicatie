@@ -1,4 +1,4 @@
-# iWlz-Indicatieregister
+# iWlz Indicatieregister 1
 **iWlz-Indicatieregister bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie voor het raadplegen van Wlz indicatiegegevens in het indicatieregister.**
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
@@ -11,10 +11,11 @@ De koppelvlak specificatie van het Indicatieregister maakt onderdeel uit van de 
 
 Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
 
-| iWlz Informatiemodel | Status |  versie koppelvlak |
-|:-- |:-- | :-- |
-| [Indicatieregister 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/)  | **Lopend** | [v1.2.0](https://github.com/iStandaarden/iWlz-indicatie/tree/v1.2) ([master](https://github.com/iStandaarden/iWlz-indicatie))  |
-| [Indicatieregister 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | In ontwikkeling | [v1.4.0](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2)|
+| | LOPEND (*default*) | IN ONTWIKKELING | ARCHIEF |
+| --: |:-- |:-- | :-- |
+| ***Informatiemodel***| [Indicatieregister 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |  [Indicatieregister 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | -- |
+| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) | -- |
+
 
 Volledig versie overzicht zie: [Changelog](CHANGELOG.md)
 
