@@ -1,7 +1,7 @@
 """
 Graphql Schemadefinitie voor het Indicatieregsiter
-Versie 1.6.3
-datum 2024-09-23
+Versie 1.6.4
+datum 2024-10-04
 Gebaseerd op Indicatieregister 2
 """
 schema {
@@ -30,8 +30,9 @@ QUERY definities
 """
 type Query {
   # Haal Wlzindicatie voor IndicatieId
-  getWlzIndicatieVoorIndicatieID(wlzindicatieID: UUID!): WlzIndicatie!
-    @deprecated(reason: "Gebruik wlzIndicatie met filter opties")
+  #54 Query werkt door introductie OPA niet @deprecated markering suggereert anders daarom comment
+  # getWlzIndicatieVoorIndicatieID(wlzindicatieID: UUID!): WlzIndicatie!
+  #  @deprecated(reason: "Gebruik wlzIndicatie met filter opties")
 
   wlzIndicatie(where: WlzIndicatieFilterInput): [WlzIndicatie!]!
 }
@@ -160,9 +161,7 @@ type Client {
   communicatieVorm: String #COD747
   taal: String
   commentaar: String
-  contactPersoon(
-    where: ContactPersoonFilterInput
-  ): [ContactPersoon]
+  contactPersoon: [ContactPersoon]
   contactGegevens: [ContactGegevens!]!
 }
 
@@ -206,9 +205,9 @@ type ContactGegevens {
   contactGegevensID: UUID!
   clientID: UUID
   contactPersoonID: UUID
-  adres(where: AdresFilterInput): Adres
-  telefoon(where: TelefoonFilterInput): Telefoon
-  email(where: EmailFilterInput): Email
+  adres: Adres
+  telefoon: Telefoon
+  email: Email
 }
 
 type Adres {
@@ -248,42 +247,13 @@ type Telefoon {
 type Wzd {
   wzdID: UUID!
   wzdVerklaring: String! #COD127
-  ingangsdatum: Date!
+  ingangsdatum: Date
   einddatum: Date
 }
 
 """
 Specific Input Types
 """
-input AdresFilterInput {
-  # and: [AdresFilterInput!]
-  or: [AdresFilterInput!]
-  ingangsdatum: DateOperationFilterInput
-  einddatum: DateOperationFilterInput
-}
-
-input ContactPersoonFilterInput {
-  # and: [ContactPersoonFilterInput!]
-  or: [ContactPersoonFilterInput!]
-  ingangsdatum: DateOperationFilterInput
-  einddatum: DateOperationFilterInput
-}
-
-
-input EmailFilterInput {
-  # and: [EmailFilterInput!]
-  or: [EmailFilterInput!]
-  ingangsdatum: DateOperationFilterInput
-  einddatum: DateOperationFilterInput
-}
-
-input TelefoonFilterInput {
-  # and: [TelefoonFilterInput!]
-  or: [TelefoonFilterInput!]
-  ingangsdatum: DateOperationFilterInput
-  einddatum: DateOperationFilterInput
-}
-
 input WlzIndicatieFilterInput {
   wlzindicatieID: UuidOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
@@ -292,21 +262,6 @@ input WlzIndicatieFilterInput {
 """
 Generic Input Types
 """
-input DateOperationFilterInput {
-  eq: Date
-  # neq: Date
-  # in: [Date]
-  # nin: [Date]
-  # gt: Date
-  ngt: Date
-  gte: Date
-  # ngte: Date
-  # lt: Date
-  # nlt: Date
-  # lte: Date
-  # nlte: Date
-}
-
 input StringOperationFilterInput {
   # and: [StringOperationFilterInput!]
   # or: [StringOperationFilterInput!]
