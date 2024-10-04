@@ -7,14 +7,18 @@ Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netw
 
 Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
 
-| | LOPEND (*default branche*) | IN ONTWIKKELING | ARCHIEF |
+| | LOPEND (*default branch*) | IN ONTWIKKELING | ARCHIEF |
 | --: |:-- |:-- | :-- |
-| ***Informatiemodel***| [Indicatieregister 1](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |  [**Indicatieregister 2**](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/) (*huidige branche*) | -- |
+| ***Informatiemodel***| [Indicatieregister 1](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |  [**Indicatieregister 2**](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/) (*huidige branch*) | -- |
 | ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) | -- |
+
+### Changelog
+Volledige Changelog [Hier](/CHANGELOG.md)
 
 ## Inhoudsopgave
 - [iWlz-Indicatieregister 2](#iwlz-indicatieregister-2)
   - [Versies en Status](#versies-en-status)
+    - [Changelog](#changelog)
   - [Inhoudsopgave](#inhoudsopgave)
   - [Onderdelen](#onderdelen)
     - [Graphql-schema](#graphql-schema)
