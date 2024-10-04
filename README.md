@@ -11,9 +11,9 @@ De koppelvlak specificatie van het Indicatieregister maakt onderdeel uit van de 
 
 Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
 
-| | LOPEND (*default*) | IN ONTWIKKELING | ARCHIEF |
+| | LOPEND (*default branch*) | IN ONTWIKKELING | ARCHIEF |
 | --: |:-- |:-- | :-- |
-| ***Informatiemodel***| [Indicatieregister 1 (iWlz 2.4)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |  [Indicatieregister 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | -- |
+| ***Informatiemodel***| [**Indicatieregister 1 (iWlz 2.4)**](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) (*huidige branch*) |  [Indicatieregister 2 (iWlz 2.5)](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/)  | -- |
 | ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) | -- |
 
 
