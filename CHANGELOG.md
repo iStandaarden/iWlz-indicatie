@@ -3,6 +3,15 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
+# [Versie 1.7.4] - 2025-01-29 [Indicatregister-3](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-3)
+Concept Indicatieregister 3
+
+### RFC verwerkt v1.7.0 - 2025-01-29
+- [RFC 24080 Reden toevoegen bij vervallen indicatie](https://github.com/iStandaarden/iWlz_RequestForChange/issues/80) 
+- [RFC 24064 Regels voor vervaldatum / meer vervaldatums per besluit](https://github.com/iStandaarden/iWlz_RequestForChange/issues/64)
+
+
+---
 # [Versie 1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) - 2024-10-04 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
 Publicatie Indicatieregister 2
 
