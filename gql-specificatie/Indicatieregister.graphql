@@ -1,8 +1,8 @@
 """
 Graphql Schemadefinitie voor het Indicatieregsiter
-Versie 1.6.4
-datum 2024-10-04
-Gebaseerd op Indicatieregister 2
+Versie 1.7.0
+datum 2025-01-29
+Gebaseerd op Indicatieregister 3
 """
 schema {
   query: Query
@@ -29,11 +29,6 @@ scalar DateTime
 QUERY definities
 """
 type Query {
-  # Haal Wlzindicatie voor IndicatieId
-  #54 Query werkt door introductie OPA niet @deprecated markering suggereert anders daarom comment
-  # getWlzIndicatieVoorIndicatieID(wlzindicatieID: UUID!): WlzIndicatie!
-  #  @deprecated(reason: "Gebruik wlzIndicatie met filter opties")
-
   wlzIndicatie(where: WlzIndicatieFilterInput): [WlzIndicatie!]!
 }
 
@@ -50,7 +45,9 @@ type WlzIndicatie {
   einddatum: Date
   meerzorg: String #COD260
   initieelVerantwoordelijkZorgkantoor: String! 
-  vervaldatum: Date
+  vervaldatum: Date @deprecated(
+      reason: "vervangen door node VervallenGeldigheid"
+    )
   grondslag: [Grondslag!]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket!]
   beperking: [Beperking!]
@@ -59,6 +56,7 @@ type WlzIndicatie {
   wzd: Wzd
   client: Client!
   commentaar: String
+  vervallenGeldigheid: [VervallenGeldigheid!]
 }
 
 type GeindiceerdZorgzwaartepakket {
@@ -74,6 +72,14 @@ type GeindiceerdZorgzwaartepakket {
   instellingVoorkeur: String
   financiering: String! #COD998
   commentaar: String
+}
+
+type VervallenGeldigheid {
+  vervallenGeldigheidID: UUID!
+  vervaldatum: Date!
+  vaststellingmoment: DateTime!
+  reden: String
+  nieuwVerantwoordelijkZorgkantoor: String
 }
 
 type Grondslag {
