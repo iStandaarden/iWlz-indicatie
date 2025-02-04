@@ -78,7 +78,7 @@ type VervallenGeldigheid {
   vervallenGeldigheidID: UUID!
   vervaldatum: Date!
   vaststellingmoment: DateTime!
-  reden: String
+  reden: String!
   nieuwVerantwoordelijkZorgkantoor: String
 }
 
