@@ -199,7 +199,7 @@ type ContactPersoon {
   geboortedatumGebruik: String #COD170
   ingangsdatum: Date!
   einddatum: Date
-  clientID: UUID!
+  clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   contactGegevens: [ContactGegevens!]!
 }
 
@@ -208,8 +208,8 @@ type ContactGegevens {
     @deprecated(
       reason: "vervangen door functioneel technisch ID gebruik contactGegevensID"
     )
-  contactGegevensID: UUID!
-  clientID: UUID
+  contactGegevensID: UUID @deprecated(reason: "overbodig" zie RFC25089)
+  clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   contactPersoonID: UUID
   adres: Adres
   telefoon: Telefoon
