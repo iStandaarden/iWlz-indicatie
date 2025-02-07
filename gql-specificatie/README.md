@@ -166,7 +166,7 @@ classDiagram
   geboortedatumGebruik: String #COD170
   ingangsdatum: Date!
   einddatum: Date
-  clientID: UUID! @deprecated(reason: "overbodig" zie RFC25089)
+  clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   contactGegevens: [ContactGegevens!]!
   }
 
@@ -176,7 +176,7 @@ classDiagram
   id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik contactGegevensID")
   contactGegevensID: UUID!
   clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
-  contactPersoonID: UUID
+  contactPersoonID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   adres: Adres
   telefoon: Telefoon
   email: Email
