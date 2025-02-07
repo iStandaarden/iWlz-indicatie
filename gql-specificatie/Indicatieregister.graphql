@@ -208,9 +208,9 @@ type ContactGegevens {
     @deprecated(
       reason: "vervangen door functioneel technisch ID gebruik contactGegevensID"
     )
-  contactGegevensID: UUID @deprecated(reason: "overbodig" zie RFC25089)
+  contactGegevensID: UUID!
   clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
-  contactPersoonID: UUID
+  contactPersoonID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   adres: Adres
   telefoon: Telefoon
   email: Email
