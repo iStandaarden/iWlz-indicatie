@@ -7,6 +7,7 @@ Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 Concept Indicatieregister 3
 
 ### RFC verwerkt v1.7.0 - 2025-01-29
+- [RFC 25089: Koppelvlak specificatie Indicatieregister 2 (v1.6.4) bevat onnodige clientID en contactpersoonID elementen](https://github.com/iStandaarden/iWlz_RequestForChange/issues/89)
 - [RFC 24080 Reden toevoegen bij vervallen indicatie](https://github.com/iStandaarden/iWlz_RequestForChange/issues/80) 
 - [RFC 24064 Regels voor vervaldatum / meer vervaldatums per besluit](https://github.com/iStandaarden/iWlz_RequestForChange/issues/64)
 
