@@ -10,8 +10,8 @@ Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, st
 | | LOPEND (*default branch*) | IN ONTWIKKELING | ARCHIEF |
 | --: |:-- |:-- | :-- |
 | ***Informatiemodel***| [**Indicatieregister 2**](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-2/) (*huidige branch*) | -- | [Indicatieregister 1](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |
-| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) | -- |  [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
-| ***Datum*** | 16-01-2025 | -- | 
+| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.5] | -- |  [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
+| ***Datum*** | 06-03-2025 | -- | juli 2023 |
 
 ### Changelog
 Volledige Changelog [Hier](/CHANGELOG.md)
