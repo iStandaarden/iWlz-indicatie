@@ -121,5 +121,5 @@ query Bemiddeling(
   }
 
 ```
-Als het resultaat overeenkomt met de Indicatiequery is toegang toegestaan. 
+Als het resultaat overeenkomt met de variabelen meegegeven in de Indicatiequery of als de combi bestaat dan is toegang toegestaan. 
 
