@@ -41,7 +41,7 @@ stateDiagram
     notifyWait: Wacht op notificatie
     notifyReceive: notificatie NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGAANBIEDER ontvangen
     haalData: Raadpleeg het bemiddelingsregister voor de wlzIndicatieID
-    inputQuery: wlzIndicatieID, Uzovicode, raadpleegdatum 
+    inputQuery: wlzIndicatieID, Uzovicode, (raadpleegdatum) 
     Query: Gebruik query QIR-0002-ZA
 
   style notifyWait fill:#FFD600
