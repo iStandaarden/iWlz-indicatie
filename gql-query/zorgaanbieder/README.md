@@ -52,7 +52,7 @@ stateDiagram
 
 
 
-| **Query ID** | **Beschrijving** | **Verplichte input** | **resultaat** | **Autorisatie** |
+| **Query ID** | **Beschrijving** | **Verplichte input** | **resultaat** | **Autorisatie-regel** |
 |---|---|---|---|---|
 | [QIR-0002-ZA](/gql-query/zorgaanbieder/QIR-0002-ZA.graphql) |  Op basis van de (opgehaalde) wlzIndicatieID en eigen identificatie, de bijbehorende WlzIndicatie raadplegen inclusief Clientgegevens | wlzIndicatieID,  AgbCode | Alle klassen/nodes | [IRA0003](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/ira0003/) |
 
