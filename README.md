@@ -77,7 +77,6 @@ zie [Open Agent Policy](https://www.openpolicyagent.org) en [documentatie](https
 Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
 ## Contactpersonen:
-* Hilko Jacobse - [@hilkojacobse](https://github.com/HilkoJacobse)
 * Dennis de Gouw - [@dennisdegouw](http://github.com/dennisdegouw)
 * Remo van Rest - [@rvanrest](https://github.com/rvanrest)
 
