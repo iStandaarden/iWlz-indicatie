@@ -8,7 +8,7 @@
 
 ## Zorgaanbieder - uitvoerend
 
-Een zorgaanbieder wordt bij de zorg van een client betrokken door het zorgkantoor. Het zorgkantoor registreert een bemiddelingspecificatie voor de zorgaanbieder. De zorgaanbieder ontvangt hiervan een notificatie ```NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGAANBIEDER```. Op basis van deze notificatie kan de zorgaanbieder de ```wlzIndicatieID``` raadplegen. Met deze ```wlzIndicatieID```, de eigen ```AGBcode``` en de datum van opvragen (```raadpleegdatum```) kan de zorgaanbieder de WlzIndactie gegevens raadplegen. 
+Een zorgaanbieder wordt bij de zorg van een client betrokken door het zorgkantoor. Het zorgkantoor registreert een bemiddelingspecificatie voor de zorgaanbieder. De zorgaanbieder ontvangt hiervan een notificatie ```NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGAANBIEDER```. Op basis van deze notificatie kan de zorgaanbieder de ```wlzIndicatieID``` raadplegen. Met deze ```wlzIndicatieID``` en de eigen ```AGBcode```  kan de zorgaanbieder de WlzIndactie gegevens raadplegen. 
 
 **schematisch:**
 
@@ -41,7 +41,7 @@ stateDiagram
     notifyWait: Wacht op notificatie
     notifyReceive: notificatie NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGAANBIEDER ontvangen
     haalData: Raadpleeg het bemiddelingsregister voor de wlzIndicatieID
-    inputQuery: wlzIndicatieID, Uzovicode, (raadpleegdatum) 
+    inputQuery: wlzIndicatieID + AgbCode 
     Query: Gebruik query QIR-0002-ZA
 
   style notifyWait fill:#FFD600
@@ -54,4 +54,5 @@ stateDiagram
 
 | **Query ID** | **Beschrijving** | **Verplichte input** | **resultaat** | **Autorisatie** |
 |---|---|---|---|---|
-| [QIR-0002-ZA](/gql-query/zorgaanbieder/QIR-0002-ZA.graphql) |  | | |
+| [QIR-0002-ZA](/gql-query/zorgaanbieder/QIR-0002-ZA.graphql) |  Op basis van de (opgehaalde) wlzIndicatieID en eigen identificatie, de bijbehorende WlzIndicatie raadplegen inclusief Clientgegevens | wlzIndicatieID,  AgbCode | Alle klassen/nodes | [IRA0003](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/ira0003/) |
+

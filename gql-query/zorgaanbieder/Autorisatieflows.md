@@ -80,3 +80,9 @@ error --> [*]
   style Query fill:#00C853
 ```
 
+Controle query
+```gql
+
+
+
+```
