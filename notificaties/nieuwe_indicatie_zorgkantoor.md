@@ -17,37 +17,22 @@ Notificatie aan het zorgkantoor als het CIZ een nieuwe Wlz-indicatie heeft gereg
 
 | Variabele | Waarde | Voorbeeld | 
 | :-- | :-- | :-- |
-| timestamp | {timestamp} | | 
-| afzenderIDType | "KVK" | |
-| afzenderID | "62253778" | |
-| ontvangerIDType | "UZOVI" | |
-| ontvangerID | {uzovi-code ontvanger} | |
+| timestamp | {timestamp} | ```"timestamp": "2024-07-02T00:00:00Z"``` | 
+| afzenderIDType | "KVK" | ```"afzenderIDType": "KVK"``` |
+| afzenderID | "62253778" | ```"afzenderID": "62253778"``` |
+| ontvangerIDType | "UZOVI" | ```"ontvangerIDType": "UZOVI"``` |
+| ontvangerID | {uzovi-code ontvanger} | ```"ontvangerID": "5151"``` |
 | ontvangerKenmerk | NULL | |
-| eventType | "NIEUWE_INDICATIE_ZORGKANTOOR" | |
-| subjectList |  | |
-| ../subject | "WlzIndicatie/{wlzIndicatieID}" | |
-| ../recordID | "WlzIndicatie/{wlzIndicatieID}" | |
+| eventType | "NIEUWE_INDICATIE_ZORGKANTOOR" | ```"eventType": "NIEUWE_INDICATIE_ZORGKANTOOR"``` |
+| subjectList |  | ```"subjectList": [{```|
+| ../subject | "WlzIndicatie/{wlzIndicatieID}" | "subject": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6"|
+| ../recordID | "WlzIndicatie/{wlzIndicatieID}" | "recordID": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6" |
+| | | ```}``` | 
 
-### Voorbeeld
-```json
-{
-  "afzenderID": "62253778",
-  "afzenderIDType": "KVK",
-  "eventType": "NIEUWE_INDICATIE_ZORGKANTOOR",
-  "ontvangerID": "5151",
-  "ontvangerIDType": "UZOVI",
-  "timestamp": "2024-07-02T00:00:00Z",
-  "subjectList": [
-    {
-      "recordID": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6",
-      "subject": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6"
-    }
-  ]
-}
-```
 
-## andere notificaties Indicatieregister
-[overige notificaties Indicatieregister](../README.md)
 
-## Meer informatie
+## Andere notificaties Indicatieregister
+[Andere notificaties Indicatieregister](README.md)
+
+## Meer informatie over Notificaties
 Meer informatie over notificeren in het [Afsprakenstelsel iWlz](https://wlz.atlassian.net/wiki/x/5AlgAQ?atlOrigin=eyJpIjoiNzMyN2E3MjM3YjQwNGQ4MmFkZDgwNWY0ZmE0MDIzMGEiLCJwIjoiYyJ9): [link](https://wlz.atlassian.net/wiki/x/5AlgAQ?atlOrigin=eyJpIjoiNzMyN2E3MjM3YjQwNGQ4MmFkZDgwNWY0ZmE0MDIzMGEiLCJwIjoiYyJ9)
