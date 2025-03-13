@@ -258,6 +258,7 @@ input WlzIndicatieFilterInput {
   wlzindicatieID: UuidOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
   agbCodeInstelling: StringOperationFilterInput
+  uzoviCodeZorgkantoor: StringOperationFilterInput
   raadpleegDatum: Date
 }
 

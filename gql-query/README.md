@@ -4,7 +4,7 @@ Hier staan de query templates die een raadpleger kan gebruiken voor het raadpleg
 Een vraag wordt gesteld door een actor als deelnemer van het netwerk. Deze deelnemer stelt de vraag vanuit een bepaalde autorisatie. Afhankelijk van de autorisatie zijn gegevens wel of niet (direct) raadpleegbaar. 
 
 
-# Beschikbare templates per rol
+## Beschikbare templates per rol
 
 Op dit moment zijn de volgende rollen onderkent:
 | Deelnemer | rol | toelichting |
