@@ -2,17 +2,14 @@
 # Query voor zorgaanbieder
 # Verplichte input:
 #   - wlzIndicatieID = te raadplegen WlzIndicatie
-#   - agbcode zorgaanbieder = eigen agbcode raadpleger
 # versie 1.0.0 - 2025-03-06
 
 query WlzIndicatie(
     $wlzIndicatieID: UUID!
-    $agbCodeInstelling: String!
 ) {
     wlzIndicatie(
         where: {
             wlzindicatieID: {eq: $wlzIndicatieID}
-            agbCodeInstelling: {eq: $agbCodeInstelling}
         }
     ) {
         wlzindicatieID

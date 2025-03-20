@@ -47,18 +47,24 @@ stateDiagram
   style Query fill:#00C853
 ```
 
-| **Query ID** | **Beschrijving** | **Verplichte input** | **resultaat** | **Autorisatie** |
+| **Query ID** | **Beschrijving** | **Verplichte input** | **resultaat** | **Autorisatie-regel** |
 |---|---|---|---|---|
 | [**QIR-0001-ZKi**](/gql-query/zorgkantoor/QIR-0001-ZKi.graphql) | Op basis van de (ontvangen) wlzIndicatieID en eigen identificatie, de bijbehorende WlzIndicatie raadplegen inclusief Clientgegevens | wlzIndicatieID,  Uzovicode, raadpleegdatum | Alle klassen/nodes | [IRA0001](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/ira0001/) |
 
-## Zorgkantoor - nieuw verantwoodelijk
+### autorisatieflow en query
+Autorisatieflow en query: [QIR-0001-ZKi-autoridatieflow](/gql-query/zorgkantoor/QIR-0001-ZKi-autorisatieflow.md)
 
-Query is nog niet beschikbaar doordat het Bemiddelingsregister nog niet volledig in gebruik is. (Overdracht verloopt tot die tijd via ZK31)
+## Zorgkantoor - nieuw verantwoordelijk
+
+Na een dossieroverdracht via de registratie van een ```Overdracht``` ontvangt het nieuw verantwoordelijke zorgkantoor de notificatie ```not``` waarmee dat zorgkantoor de informatie kan ophalen met betrekking tot de overdracht. 
+
+
 
 
 ## Zorgkantoor - uitvoerend
 
 Query is nog niet beschikbaar doordat het Bemiddelingsregister nog niet volledig in gebruik is. (Uitvoerend zorgkantoor is altijd de bronhouder zelf en anders via ZK33 indicatiegegevens)
 
-
+---
+[Terug naar Query overzicht](/gql-query/README.md)
 
