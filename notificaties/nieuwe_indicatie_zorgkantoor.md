@@ -32,14 +32,12 @@ stateDiagram
   state ontvanger {
     direction TB
     ontvang --> verwerk
-    verwerk --> gebruik
     ontvang
     verwerk
-    gebruik
   }
   [*] --> trigger
   verstuur --> ontvang
-  gebruik --> [*]
+  verwerk --> [*]
   verzender:CIZ
   trigger:Trigger
 trigger:- Registratie van
@@ -47,11 +45,13 @@ trigger:- nieuwe Wlz Indicatie
   opstellen:Stel notificatie op voor
 opstellen:- initieel verantwoordelijk zorgkantoor
 opstellen:- NIEUWE_INDICATIE_ZORGKANTOOR
-  verstuur:Verstuur notificatie
+  verstuur:Verstuur 
+  verstuur: notificatie
   ontvanger:Initieel verantwoordelijk zorgkantoor
-  ontvang:Ontvang notificatie
-  verwerk:Verwerk notifiatie
-  gebruik:Gebruik inhoud voor raadpleging
+  ontvang:Ontvang 
+  ontvang:notificatie
+  verwerk:Verwerk 
+  verwerk:notifiatie
 
 ```
 
