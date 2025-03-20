@@ -3,11 +3,9 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
-# [Versie 1.6.5]() - 2025-03-07 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
-Patch op koppelvlakspecificatie versie 1.6.4
+# [Versie 1.6.4]() - 2025-03-07 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
 
-### Bevinding: [B103: Query voor raadplegen Wlz indicatie door zorgaanbieder ontbreekt](https://github.com/iStandaarden/iWlz_RequestForChange/issues/103)
-- **Wijziging** **koppelvlakspecificatie** versie 1.6.5: Aanvulling van ```WlzIndicatieFilterInput``` met ```agbCodeInstelling``` voor het kunnen meegeven van de AgbCode van de raadplegende zorgaanbieder.
+### Bevinding: [B103: Query voor raadplegen Wlz indicatie door zorgaanbieder, zorgkantoor nieuwe en zorgkantoor uitvoerend ontbreken](https://github.com/iStandaarden/iWlz_RequestForChange/issues/103)
 - **Nieuwe** **query**-template voor zorgaanbieders toegevoegd: ```QIR-0002-ZA.graphql```. zie [/gql-query/zorgaanbieder](/gql-query/zorgaanbieder/) 
 
 
