@@ -1,23 +1,28 @@
-# NIEUWE_INDICATIE_ZORGKANTOOR
+# VERVALLEN_INDICATIE_ZORGKANTOOR
 
 ## Documentatie
 
-Notificatie aan het zorgkantoor als het CIZ een nieuwe Wlz-indicatie heeft geregistreerd voor een cliënt die in de regio van dit zorgkantoor woont.
+Notificatie aan het zorgkantoor als het CIZ een nieuwe vervaldatum heeft geregistreerd, of een vervaldatum heeft gewijzigd of verwijderd, bij een Wlz-indicatie waarvoor dit zorgkantoor verantwoordelijk is, was of wordt.
 
-Het zorgkantoor is daarmee op de hoogte gesteld van de aanwezigheid van een nieuwe Wlz-indicatie voor een client die volgens het BRP woonachtig is in de regio waarvoor dat zorgkantoor verantwoordelijk is. De notificatie bevat informatie waarmee dat zorgkantoor de Wlz-indicatie kan raadplegen.
+Het zorgkantoor is daarmee op de hoogte gesteld dat een Wlz-indicatie is vervallen. De notificatie bevat informatie waarmee dat zorgkantoor de Wlz-indicatie kan raadplegen.
 
 ## Aanleiding
 **De trigger voor de notificatie is:** 
 
-> de registratie van een Wlz indicatie in het Indicatieregister
+  > het registreren, wijzigen of verwijderen van de vervaldatum. 
 
 ## Instructie
 **Stel notificatie op voor:** 
-> - het zorgkantoor van de regio waarin de client volgens zijn BRP-adres woont. Als er geen BRP-adres is, stel dan notificatie op voor: het zorgkantoor van de regio waarin de client volgens zijn verblijfadres woont
+
+> - het zorgkantoor dat verantwoordelijk is voor de Wlz-indicatie
+> - het zorgkantoor dat verantwoordelijk is geweest voor de Wlz-indicatie
+> - het zorgkantoor dat door overdracht verantwoordelijk wordt voor de Wlz-indicatie
 
 ## Type
 Het type-notificatie: 
 > VERPLICHT
+
+## Flow
 
 
 ```mermaid
@@ -47,14 +52,14 @@ stateDiagram
   verwerk --> [*]
   verzender:CIZ
   trigger:Trigger
-trigger:- Registratie van
-trigger:- nieuwe Wlz Indicatie
+trigger:- Mutatie van
+trigger:- vervaldatum
   opstellen:Stel notificatie op voor
-opstellen:- initieel verantwoordelijk zorgkantoor
-opstellen:- NIEUWE_INDICATIE_ZORGKANTOOR
+opstellen:- alle verantwoordelijke (huidig, verleden, toekomstig) zorgkantoren
+opstellen:- VERVALLEN_INDICATIE_ZORGKANTOOR
   verstuur:Verstuur 
   verstuur: notificatie
-  ontvanger:Initieel verantwoordelijk zorgkantoor
+  ontvanger:Verantwoordelijk zorgkantoor
   ontvang:Ontvang 
   ontvang:notificatie
   verwerk:Verwerk 
@@ -72,7 +77,7 @@ opstellen:- NIEUWE_INDICATIE_ZORGKANTOOR
 | ontvangerIDType | "UZOVI" | ```"ontvangerIDType": "UZOVI"``` |
 | ontvangerID | {uzovi-code ontvanger} | ```"ontvangerID": "5151"``` |
 | ontvangerKenmerk | NULL | |
-| eventType | "NIEUWE_INDICATIE_ZORGKANTOOR" | ```"eventType": "NIEUWE_INDICATIE_ZORGKANTOOR"``` |
+| eventType | "NIEUWE_INDICATIE_ZORGKANTOOR" | ```"eventType": "VERVALLEN_INDICATIE_ZORGKANTOOR"``` |
 | subjectList |  | ```"subjectList": [{```|
 | ../subject | "WlzIndicatie/{wlzIndicatieID}" | "subject": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6"|
 | ../recordID | "WlzIndicatie/{wlzIndicatieID}" | "recordID": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6" |
