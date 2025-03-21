@@ -9,9 +9,12 @@ Een vraag wordt gesteld door een actor als deelnemer van het netwerk. Deze deeln
 Op dit moment zijn de volgende rollen onderkent:
 | Deelnemer | rol | toelichting |
 | :-- | :-- |:-- |
-| Zorgaanbieder | [uitvoerend](/gql-query/zorgaanbieder/README.md#zorgaanbieder---uitvoerend) | Een zorgaanbieder die betrokken is bij de uitvoering van zorg |
-| Zorgkantoor | [intieel verantwoordelijke](/gql-query/zorgkantoor/README.md#zorgkantoor---initieel-verantwoordelijk) | Een zorgkantoor dat initieel verantwoordelijk is voor de client en zorgt voor de bemiddeling van zorg | 
-| Zorgkantoor | [nieuw verantwoordelijk](/gql-query/zorgkantoor/README.md#zorgkantoor---nieuw-verantwoordelijk) | Het zorgkantoor dat de client krijgt overgedragen van het huidige verantwoordelijk zorgkantoor |
-| Zorgkantoor | [uitvoerend](/gql-query/zorgkantoor/README.md#zorgkantoor---uitvoerend) | Een zorgkantoor dat bovenregionaal betrokken is bij de uitvoering van zorg | 
+| [Zorgaanbieder](/gql-query/zorgaanbieder/README.md) | [uitvoerend](/gql-query/zorgaanbieder/README.md#zorgaanbieder---uitvoerend) | Een zorgaanbieder die betrokken is bij de uitvoering van zorg |
+| [Zorgkantoor](/gql-query/zorgkantoor/README.md) | [initieel verantwoordelijke](/gql-query/zorgkantoor/README.md#zorgkantoor---initieel-verantwoordelijk) | Een zorgkantoor dat initieel verantwoordelijk is voor de client en zorgt voor de bemiddeling van zorg | 
+| [Zorgkantoor](/gql-query/zorgkantoor/README.md) | [nieuw verantwoordelijk](/gql-query/zorgkantoor/README.md#zorgkantoor---nieuw-verantwoordelijk) | Het zorgkantoor dat de client krijgt overgedragen van het huidige verantwoordelijk zorgkantoor |
+| [Zorgkantoor](/gql-query/zorgkantoor/README.md) | [uitvoerend](/gql-query/zorgkantoor/README.md#zorgkantoor---uitvoerend) | Een zorgkantoor dat bovenregionaal betrokken is bij de uitvoering van zorg | 
 
 Kies een rol voor de beschikbare query-templates. 
+
+---
+Terug naar [HOME](/README.md)

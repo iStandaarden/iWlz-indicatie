@@ -1,0 +1,176 @@
+# QIR-0003-ZKn.graphql
+# Query voor nieuw Verantwoordelijk Zorgkantoor op Indicatieregister
+# Verplichte input:
+#   - wlzIndicatieID = te raadplegen WlzIndicatie
+# versie 1.0.0 - 2025-03-21
+
+query WlzIndicatie(
+    $wlzIndicatieID: UUID!
+) {
+    wlzIndicatie(
+        where: {
+            wlzindicatieID: {eq: $wlzIndicatieID}
+        }
+    ) {
+        wlzindicatieID
+        bsn
+        besluitnummer
+        soortWlzindicatie
+        afgiftedatum
+        ingangsdatum
+        einddatum
+        meerzorg
+        initieelVerantwoordelijkZorgkantoor
+        vervaldatum
+        commentaar
+        grondslag {
+            grondslagID
+            grondslag
+            volgorde
+        }
+        geindiceerdZorgzwaartepakket {
+            geindiceerdZorgzwaartepakketID
+            zzpCode
+            ingangsdatum
+            einddatum
+            voorkeurClient
+            instellingVoorkeur
+            financiering
+            commentaar
+        }
+        beperking {
+            beperkingID
+            categorie
+            duur
+            commentaar
+            beperkingScore {
+                beperkingScoreID
+                beperkingVraag
+                beperkingScore
+                commentaar
+            }
+        }
+        stoornis {
+            stoornisID
+            grondslag
+            diagnoseCodelijst
+            diagnoseSubCodelijst
+            ziektebeeldStoornis
+            prognose
+            commentaar
+        }
+        stoornisScore {
+            stoornisScoreID
+            stoornisVraag
+            stoornisScore
+            commentaar
+        }
+        wzd {
+            wzdID
+            wzdVerklaring
+            ingangsdatum
+            einddatum
+        }
+        client {
+            clientID
+            bsn
+            geheimeClient
+            geboorteDatum
+            geboortedatumGebruik
+            geslacht
+            burgerlijkeStaat
+            geslachtsnaam
+            voorvoegselGeslachtsnaam
+            partnernaam
+            voorvoegselPartnernaam
+            voornamen
+            roepnaam
+            voorletters
+            naamGebruik
+            leefeenheid
+            agbcodeHuisarts
+            communicatieVorm
+            taal
+            commentaar
+            contactGegevens {
+                contactGegevensID
+                adres {
+                    adresID
+                    adresSoort
+                    straatnaam
+                    huisnummer
+                    huisnummerToevoeging
+                    postcode
+                    plaatsnaam
+                    landCode
+                    aanduidingWoonadres
+                    ingangsdatum
+                    einddatum
+                }
+                email {
+                    emailID
+                    emailadres
+                    ingangsdatum
+                    einddatum
+                }
+                telefoon {
+                    telefoonID
+                    telefoonnummer
+                    landnummer
+                    ingangsdatum
+                    einddatum
+                }
+            }
+            contactPersoon {
+                contactPersoonID
+                relatieNummer
+                volgorde
+                soortRelatie
+                rol
+                relatie
+                voornamen
+                roepnaam
+                voorletters
+                geslachtsnaam
+                voorvoegselGeslachtsnaam
+                partnernaam
+                voorvoegselPartnernaam
+                naamGebruik
+                geslacht
+                geboorteDatum
+                geboortedatumGebruik
+                ingangsdatum
+                einddatum
+                contactGegevens {
+                    contactGegevensID
+                    adres {
+                        adresID
+                        adresSoort
+                        straatnaam
+                        huisnummer
+                        huisnummerToevoeging
+                        postcode
+                        plaatsnaam
+                        landCode
+                        aanduidingWoonadres
+                        ingangsdatum
+                        einddatum
+                    }
+                    email {
+                        emailID
+                        emailadres
+                        ingangsdatum
+                        einddatum
+                    }
+                    telefoon {
+                        telefoonID
+                        telefoonnummer
+                        landnummer
+                        ingangsdatum
+                        einddatum
+                    }
+                }
+            }
+        }
+    }
+}
