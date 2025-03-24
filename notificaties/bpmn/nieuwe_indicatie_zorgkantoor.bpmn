@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" id="Definitions_0br9fxl" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.3.1">
+  <bpmn:collaboration id="Collaboration_1drr5fc">
+    <bpmn:participant id="Participant_0voh6j6" name="CIZ" processRef="Process_04qwru2" />
+    <bpmn:participant id="Participant_0b1m1q9" name="Verantwoordelijk Zorgkantoor" processRef="Process_1ugcjco" />
+    <bpmn:messageFlow id="Flow_0xo1gju" sourceRef="Participant_0voh6j6" targetRef="Participant_0b1m1q9" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_04qwru2" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_184wjmq" name="Registratie van een Indicatie">
+      <bpmn:outgoing>Flow_03xbwoo</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_1xwjrjq" />
+    </bpmn:startEvent>
+    <bpmn:businessRuleTask id="Activity_1urm4d8" name="Opstellen notificatie">
+      <bpmn:incoming>Flow_03xbwoo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0x5qerh</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:intermediateThrowEvent id="Event_1tbemz2" name="Verstuur notificatie naar Verantwoordelijk zorgkantoor">
+      <bpmn:incoming>Flow_0x5qerh</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_13tq1y6" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:sequenceFlow id="Flow_03xbwoo" sourceRef="StartEvent_184wjmq" targetRef="Activity_1urm4d8" />
+    <bpmn:sequenceFlow id="Flow_0x5qerh" sourceRef="Activity_1urm4d8" targetRef="Event_1tbemz2" />
+  </bpmn:process>
+  <bpmn:process id="Process_1ugcjco">
+    <bpmn:intermediateCatchEvent id="Event_1fdd63c" name="Ontvang notificatie">
+      <bpmn:outgoing>Flow_0yshp7t</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1x2a32w" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:task id="Activity_0exvmix" name="Verwerken Notificatie">
+      <bpmn:incoming>Flow_0yshp7t</bpmn:incoming>
+      <bpmn:outgoing>Flow_0kzvyax</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0rhb0sq" name="Notificatie verwerkt">
+      <bpmn:incoming>Flow_0kzvyax</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0yshp7t" sourceRef="Event_1fdd63c" targetRef="Activity_0exvmix" />
+    <bpmn:sequenceFlow id="Flow_0kzvyax" sourceRef="Activity_0exvmix" targetRef="Event_0rhb0sq" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1drr5fc">
+      <bpmndi:BPMNShape id="Participant_0voh6j6_di" bpmnElement="Participant_0voh6j6" isHorizontal="true">
+        <dc:Bounds x="160" y="85" width="420" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_137z5fn_di" bpmnElement="StartEvent_184wjmq">
+        <dc:Bounds x="252" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="234" y="235" width="74" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1a6ryab_di" bpmnElement="Activity_1urm4d8">
+        <dc:Bounds x="340" y="170" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1usrqdy_di" bpmnElement="Event_1tbemz2">
+        <dc:Bounds x="492" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="470" y="235" width="81" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_03xbwoo_di" bpmnElement="Flow_03xbwoo">
+        <di:waypoint x="288" y="210" />
+        <di:waypoint x="340" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0x5qerh_di" bpmnElement="Flow_0x5qerh">
+        <di:waypoint x="440" y="210" />
+        <di:waypoint x="492" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_0b1m1q9_di" bpmnElement="Participant_0b1m1q9" isHorizontal="true">
+        <dc:Bounds x="710" y="85" width="420" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0asitjq_di" bpmnElement="Event_1fdd63c">
+        <dc:Bounds x="792" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="787" y="235" width="47" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0exvmix_di" bpmnElement="Activity_0exvmix">
+        <dc:Bounds x="880" y="170" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0rhb0sq_di" bpmnElement="Event_0rhb0sq">
+        <dc:Bounds x="1032" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1026" y="235" width="49" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0yshp7t_di" bpmnElement="Flow_0yshp7t">
+        <di:waypoint x="828" y="210" />
+        <di:waypoint x="880" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0kzvyax_di" bpmnElement="Flow_0kzvyax">
+        <di:waypoint x="980" y="210" />
+        <di:waypoint x="1032" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xo1gju_di" bpmnElement="Flow_0xo1gju" bioc:stroke="#205022" color:border-color="#205022">
+        <di:waypoint x="580" y="210" />
+        <di:waypoint x="710" y="210" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
