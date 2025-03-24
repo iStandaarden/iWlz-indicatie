@@ -3,7 +3,7 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
-# [Versie 1.6.4]() - 2025-03-07 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
+# [Versie 1.6.4]() - 2025-03-24 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
 
 ### Bevinding: [B103: Query voor raadplegen Wlz indicatie door zorgaanbieder, zorgkantoor nieuwe en zorgkantoor uitvoerend ontbreken](https://github.com/iStandaarden/iWlz_RequestForChange/issues/103)
 - **Nieuwe** **query**-template voor zorgaanbieders toegevoegd: ```QIR-0002-ZA.graphql```. zie [/gql-query/zorgaanbieder](/gql-query/zorgaanbieder/) inclusief autorisatiebeschrijving.
