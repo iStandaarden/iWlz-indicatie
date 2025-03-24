@@ -1,5 +1,5 @@
 # iWlz-Indicatieregister 2
-**iWlz-Indicatieregister bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie en voorgeschreven [GraphQL-query templates](/gql-query/) voor het raadplegen van Wlz Indicatiegegevens in het indicatieregister**
+**iWlz-Indicatieregister bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie en voorgeschreven [GraphQL-query templates](/gql-query/) voor het raadplegen van Wlz Indicatiegegevens in het indicatieregister en de [notificaties](/notificaties) verzonden vanuit het indicatieregister.**
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
@@ -10,8 +10,8 @@ Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, st
 | | LOPEND (*default branch*) | IN ONTWIKKELING | ARCHIEF |
 | --: |:-- |:-- | :-- |
 | ***Informatiemodel***| [**Indicatieregister 2**](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/) (*huidige branch*) | -- | [Indicatieregister 1](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |
-| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.4](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.6.4) | -- |  [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
-| ***Datum*** | 16-01-2025 | -- | 
+| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.5] | -- |  [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
+| ***Datum*** | 24-03-2025 - [Changelog](/CHANGELOG.md)| -- | juli 2023 |
 
 ### Changelog
 Volledige Changelog [Hier](/CHANGELOG.md)
@@ -25,6 +25,7 @@ Volledige Changelog [Hier](/CHANGELOG.md)
     - [Graphql-schema](#graphql-schema)
     - [Graphql-query](#graphql-query)
     - [Open Agent Policy](#open-agent-policy)
+    - [Notificaties](#notificaties)
   - [Documentatie](#documentatie)
     - [Informatiemodel](#informatiemodel)
     - [GraphQL](#graphql)
@@ -39,17 +40,27 @@ De koppelvlak specificatie van het Indicatieregister maakt onderdeel uit van de 
 v.l.n.r. Raadpleger doet via GraphQL-query een raadpleging. Open Policy agent controleert of query voldoet aan autorisatie-regels van dat register. GraphQL-schema definieert het data-schema van het register.
 
 ### Graphql-schema 
-De [Graphql-schema specificatie](/gql-specificatie/) is bedoelt voor implementatie door de bronhouder en beschrijft hoe de data aan elkaar is gerelateerd. De specificatie is te vinden in de folder [/gql-specificatie](/gql-specificatie/). 
+De [Graphql-schema specificatie](/gql-specificatie/) is bedoelt voor implementatie door de bronhouder en beschrijft hoe de data aan elkaar is gerelateerd. 
+
+> [!NOTE]
+> De graphql-specificatie is te vinden in de folder [**/gql-specificatie**](/gql-specificatie/). 
 
 ### Graphql-query
 De [Graphql-queries](/gql-query/) beschrijven het template hoe een raadpleger vanuit zijn rol informatie kan raadplegen. Deze template volgt altijd het GraphQL-schema maar moet op bepaalde momenten aan vaste patronen voldoen vanwege de geldende autorisatie. Gaat een raadpleger buiten dit patroon dan zal de vraag worden afgekeurd en krijgt de raadpleger geen inzicht in de data. 
 
-In de folder [/gql-query](/gql-query/) staat een overzicht van de beschikbare templates inclusief een toelichting voor welke partij de template is.
+> [!NOTE]
+> Het overzicht van de beschikbare templates inclusief een toelichting voor welke partij de template is en autorisatieflow is te vinden in de folder [**/gql-query**](/gql-query/) staat .
 
 ### Open Agent Policy
 De Open Agent Policy controleert of een query voldoet aan de daarvoor afgesproken template. De policy is gebaseerd op de autorisatieregels van dat register. 
 
 De policy is beschikbaar in: @@@ nog te bepalen.
+
+### Notificaties
+Met een notificatie wordt een netwerk-deelnemer op de hoogte gebracht door een bronhouder dat er nieuwe (of gewijzigde) informatie is die directe of afgeleide betrekking heeft op die deelnemer. De notificatie bevat informatie die de deelnemer in staat stelt de relevante informatie te raadplegen bij de bron. Een notificatie loopt altijd van bron naar deelnemer.
+
+> [!NOTE]
+> De notificaties vanuit het Indicatieregister zijn te vinden in de folder [**/notificaties**](/notificaties/)
 
 
 ## Documentatie
@@ -77,7 +88,6 @@ zie [Open Agent Policy](https://www.openpolicyagent.org) en [documentatie](https
 Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
 ## Contactpersonen:
-* Hilko Jacobse - [@hilkojacobse](https://github.com/HilkoJacobse)
 * Dennis de Gouw - [@dennisdegouw](http://github.com/dennisdegouw)
 * Remo van Rest - [@rvanrest](https://github.com/rvanrest)
 
