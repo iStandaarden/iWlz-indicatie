@@ -1,7 +1,7 @@
 """
 Graphql Schemadefinitie voor het Indicatieregsiter
-Versie 1.6.5
-datum 2025-03-06
+Versie 1.6.4
+datum 2024-10-04
 Gebaseerd op Indicatieregister 2
 """
 schema {
@@ -257,9 +257,6 @@ Specific Input Types
 input WlzIndicatieFilterInput {
   wlzindicatieID: UuidOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
-  agbCodeInstelling: StringOperationFilterInput
-  uzoviCodeZorgkantoor: StringOperationFilterInput
-  raadpleegDatum: Date
 }
 
 """
