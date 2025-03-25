@@ -19,6 +19,7 @@ Het zorgkantoor is daarmee op de hoogte gesteld van de aanwezigheid van een nieu
 Het type-notificatie: 
 > VERPLICHT
 
+## Schematisch
 
 ```mermaid
 ---
