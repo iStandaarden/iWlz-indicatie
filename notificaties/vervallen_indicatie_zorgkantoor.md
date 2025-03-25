@@ -22,7 +22,7 @@ Het zorgkantoor is daarmee op de hoogte gesteld dat een Wlz-indicatie is vervall
 Het type-notificatie: 
 > VERPLICHT
 
-## Flow
+## Schematisch
 
 
 ```mermaid
