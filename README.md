@@ -26,7 +26,8 @@ Volledige Changelog [Hier](/CHANGELOG.md)
     - [Graphql-query](#graphql-query)
     - [Open Agent Policy](#open-agent-policy)
     - [Notificaties](#notificaties)
-  - [Documentatie](#documentatie)
+  - [**Raadplegen Indicatieregister**](#raadplegen-indicatieregister)
+  - [Aanvullende Documentatie](#aanvullende-documentatie)
     - [Informatiemodel](#informatiemodel)
     - [GraphQL](#graphql)
     - [Open Agent Policy](#open-agent-policy-1)
@@ -56,14 +57,30 @@ De Open Agent Policy controleert of een query voldoet aan de daarvoor afgesproke
 
 De policy is beschikbaar in: @@@ nog te bepalen.
 
+> [!NOTE]
+> De functionele beschrijving van de toegangscontrole per raadpleging is beschikbaar in de folder **[/raadplegen](/raadplegen/)**
+
 ### Notificaties
 Met een notificatie wordt een netwerk-deelnemer op de hoogte gebracht door een bronhouder dat er nieuwe (of gewijzigde) informatie is die directe of afgeleide betrekking heeft op die deelnemer. De notificatie bevat informatie die de deelnemer in staat stelt de relevante informatie te raadplegen bij de bron. Een notificatie loopt altijd van bron naar deelnemer.
 
 > [!NOTE]
 > De notificaties vanuit het Indicatieregister zijn te vinden in de folder [**/notificaties**](/notificaties/)
 
+## **Raadplegen Indicatieregister**
 
-## Documentatie
+Het raadplegen van het Indicatieregister is gebonden aan voorwaarden. De raadpleger moet bevoegd zijn én het vastgestelde raadpleegpatroon volgen. Dit patroon is essentieel voor het valideren van de toestemming. 
+
+Als dat patroon niet wordt gevolgd — bijvoorbeeld door ontbrekende autorisatie, onjuiste of incomplete input, of het opvragen van ongeoorloofde gegevens — wordt de toegang geweigerd of het resultaat beperkt.
+
+Use-cases beschrijven hoe een deelnemer het register correct raadpleegt.
+
+> [!NOTE]
+> De functionele beschrijving van per raadpleging per deelnemer is beschikbaar in de folder **[/raadplegen](/raadplegen/)**
+
+Meer informatie over de structuur van het raadplegen en het valideren ervan is te lezen in het [Afsprakenstelsel iWlz - Raadplegen](https://wlz.atlassian.net/wiki/x/KgpgAQ)
+
+
+## Aanvullende Documentatie
 
 ### Informatiemodel
 
