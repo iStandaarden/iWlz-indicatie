@@ -26,27 +26,24 @@ flowchart LR
 - De Wlz-indicatie is opgenomen in het Indicatieregister.
 - De zorgaanbieder is door het verantwoordelijk zorgkantoor betrokken bij de levering van zorg aan de client door de registratie van een bemiddelingspecificatie
 
-
 ### Autorisatie:
-Een zorgkantoor mag voor het toeleiden van een client de Wlz-indicatie raadplegen die hoort bij de toewijzingen waarvoor dat zorgkantoor uitvoerend zorgkantoor is
-- Volledige autorisatieregel: [IRA0002-informatiemodel](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/ira0002/)
-- Autorisatiematrix: [IRA0002](https://github.com/iStandaarden/iWlz-Autorisatiematrix/blob/main/autorisatiematrix_indicatieregister.md)
+Een zorgaanbieder met een toewijzing voor het leveren van zorg aan een cliënt mag de bijbehorende Wlz-indicatie van de cliënt raadplegen.
+- Volledige autorisatieregel: [IRA0003-informatiemodel](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/ira0003/)
+- Autorisatiematrix: [IRA0003](https://github.com/iStandaarden/iWlz-Autorisatiematrix/blob/main/autorisatiematrix_indicatieregister.md)
 
 **Trigger:**
-- Een zorgkantoor wil de Wlz-indicatie raadplegen ter ondersteuning van het leveren van zorg aan een cliënt.
+- De zorgaanbieder wil de Wlz-indicatie raadplegen ter ondersteuning van het leveren van zorg aan een cliënt.
 
 
 ## Query-template beschrijving
 
 | **Query ID** | **Beschrijving** | **Verplichte input** | **resultaat** | 
 |---|---|---|---|
-| [QIR-0004-ZKu](/gql-query/zorgkantoor/QIR-0004-ZKu.graphql) |  Op basis van de (opgehaalde) wlzIndicatieID en eigen identificatie, de bijbehorende WlzIndicatie raadplegen inclusief cliëntgegevens | `wlzIndicatieID` | Alle klassen/nodes |
+| [QIR-0002-ZA](/gql-query/zorgaanbieder/QIR-0002-ZA.graphql) |  Op basis van de (opgehaalde) wlzIndicatieID en eigen identificatie, de bijbehorende WlzIndicatie raadplegen inclusief cliëntgegevens | `wlzIndicatieID` | Alle klassen/nodes |
 
 
 ## **Proces raadplegen**
-Een bovenregionaal zorgkantoor wordt bij de zorg van een client betrokken door het verantwoordelijk zorgkantoor. Het verantwoordelijk zorgkantoor registreert een bemiddelingspecificatie voor een zorgaanbieder die onder verantwoordelijkheid van het bovenregional zorgkantoor valt. 
-
-Het zorgkantoor ontvangt hiervan een notificatie ```NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGKANTOOR```. Op basis van deze notificatie kan het zorgkantoor de ```wlzIndicatieID``` raadplegen in het Bemiddelingsregister (zie hiervoor de queries voor het raadplegen van het [Bemiddelingsregister](https://github.com/iStandaarden/iWlz-bemiddeling)). Met deze ```wlzIndicatieID``` kan het zorgkantoor de Wlz-indicatie gegevens raadplegen. 
+Een zorgaanbieder wordt bij de zorg van een client betrokken door het zorgkantoor. Het zorgkantoor registreert een bemiddelingspecificatie voor de zorgaanbieder. De zorgaanbieder ontvangt hiervan een notificatie ```NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGAANBIEDER```. Op basis van deze notificatie kan de zorgaanbieder de ```wlzIndicatieID``` raadplegen in het Bemiddelingsregister (zie hiervoor de queries voor het raadplegen van het [Bemiddelingsregister](https://github.com/iStandaarden/iWlz-bemiddeling)). Met deze ```wlzIndicatieID``` kan de zorgaanbieder de Wlz-indicatie gegevens raadplegen. 
 
 
 **schematisch:**
@@ -81,10 +78,10 @@ stateDiagram
     register: Bemiddelingsregister
     idAvailable: 2.wlzIndicateID bekend?
     notifyWait: 3.Wacht op notificatie
-    notifyReceive: 4.notificatie NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGKANTOOR ontvangen
+    notifyReceive: 4.notificatie NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGAANBIEDER ontvangen
     haalData: 5.Raadpleeg het bemiddelingsregister voor de wlzIndicatieID
     inputQuery: 6.Gebruik (opgehaald) wlzIndicatieID 
-    Query: 7.Gebruik query QIR-0004-ZKu
+    Query: 7.Gebruik query QIR-0002-ZA
     PEP: 8.Toegangscontrole PEP
 
   style notifyWait fill:#FFD600
@@ -98,13 +95,13 @@ stateDiagram
 | # | Toelichting |
 | --: | :-- |
 | 1. | *Start* | 
-| 2. | Is de **```wlzIndicatieID```** bekend? <br/> - **Ja** →  Ga verder naar stap 6 <br/> - **Nee** → Wacht op notificatie **`NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGKANTOOR`**  | 
+| 2. | Is de **```wlzIndicatieID```** bekend? <br/> - **Ja** →  Ga verder naar stap 6 <br/> - **Nee** → Wacht op notificatie [NIEUWE_BEMIDDELINGSPECIFICATIE_ZORGAANBIEDER](https://github.com/iStandaarden/iWlz-bemiddeling/blob/Bemiddelingsregister-1/notificaties/nieuwe_bemiddelingspecificatie_zorgaanbieder.md)  | 
 | 4. | Notificatie is ontvangen | 
 | 5. | Gebruik de informatie uit de notificatie voor het raadplegen van het Bemiddeingsregister en wlzIndicatieID |
-| 6. | Het **Zorgkantoor** vult de verplichte **```wlzIndicatieID```** in query-template [QIR-0004-ZKn.graphql](/gql-query/zorgkantoor/QIR-0004-ZKu.graphql) en initieert een raadpleging van de Wlz-indicatie in het Indicatieregister. | 
-| 7. | Het **Zorgkantoor** stuurt Graphql-request + Access-token naar het Policy Enforcement Point (PEP) |
-| 8. | De PEP voert de [toegangscontrole](UCIR-0004-toegangscontrole.md) uit en stuurt bij toegang het request door naar het Indicatieregister. |
-| 9. | Het zorgkantoor ontvangt response van de PEP (bij ongeldig verzoek) of vanuit het Indicatieregister (resource) |
+| 6. | De **Zorgaanbieder** vult de verplichte **```wlzIndicatieID```** in query-template [QIR-0002-ZA.graphql](/gql-query/zorgaanbieder/QIR-0002-ZA.graphql) en initieert een raadpleging van de Wlz-indicatie in het Indicatieregister. | 
+| 7. | De **Zorgaanbieder** stuurt Graphql-request + Access-token naar het Policy Enforcement Point (PEP) |
+| 8. | De PEP voert de [toegangscontrole](UCIR-0002-toegangscontrole.md) uit en stuurt bij toegang het request door naar het Indicatieregister. |
+| 9. | De zorgaanbieder ontvangt response van de PEP (bij ongeldig verzoek) of vanuit het Indicatieregister (resource) |
 | 10. | *Einde proces* | 
 
 
