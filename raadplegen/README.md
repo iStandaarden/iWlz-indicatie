@@ -13,6 +13,30 @@ Meer informatie over de structuur van het raadplegen en het valideren ervan is t
 
 De use-cases voor het raadplegen van het Indicatieregister per rol en bijbehorende beschrijving van de toegangscontrole door de PDP[^1]. 
 
+```mermaid
+---
+config:
+  theme: mc
+  look: classic
+  layout: elk
+---
+flowchart LR
+ subgraph s1["PDP"]
+          P["toegangscontrole"]
+ end
+ subgraph s2["Indicatieregister"]
+          B["Resource"]
+  end
+    A["Raadpleger"] --> R
+    R["Use-case<br>Raadplegen"] --> P
+    P --> B
+    B@{ shape: terminal}
+    P@{ shape: terminal}
+    A@{ shape: rounded}
+    R@{ shape: rounded}
+    
+```
+
 Kies een use-case voor de beschrijving van het raadplegen of controleren van de toegang van die raadpleging.
 
 ### Zorgaanbieder
