@@ -40,18 +40,18 @@ flowchart LR
 Kies een use-case voor de beschrijving van het raadplegen of controleren van de toegang van die raadpleging.
 
 ### Zorgaanbieder
-| Rol | toelichting | raadplegen | toegangscontrole |
+| Doel | toelichting | raadplegen | toegangscontrole |
 | :-- |:-- | :-- | :-- |
-| **Uitvoerend** | Een zorgaanbieder die betrokken is bij de uitvoering van zorg | [UCIR-0002-raadplegen](/raadplegen/zorgaanbieder/UCIR-0002-raadplegen.md) | [UCIR-0002-toegangscontrole](/raadplegen/zorgaanbieder/UCIR-0002-toegangscontrole.md) |
+| Wlz Indicatie raadplegen | **Als** zorgaanbieder die betrokken is bij het leveren van zorg, **wil ik** de Wlz Indicatie raadplegen van de client waar ik een bemiddelingsspecificatie heb, **zodat** ik inzicht heb in de geïndiceerde zorg  | [UCIR-0002-raadplegen](/raadplegen/zorgaanbieder/UCIR-0002-raadplegen.md) | [UCIR-0002-toegangscontrole](/raadplegen/zorgaanbieder/UCIR-0002-toegangscontrole.md) |
 
 
 ### Zorgkantoor
 
-| Rol | toelichting | raadplegen | toegangscontrole |
+| Doel | toelichting | raadplegen | toegangscontrole |
 | :-- |:-- | :-- | :-- |
-| **Initieel** verantwoordelijke | Een zorgkantoor dat initieel verantwoordelijk is voor de client en zorgt voor de bemiddeling van zorg | [UCIR-0001-raadplegen](/raadplegen/zorgkantoor/UCIR-0001-raadplegen.md) | [UCIR-0001-toegangscontrole](/raadplegen/zorgkantoor/UCIR-0001-toegangscontrole.md) | 
-| **Nieuw** verantwoordelijk | Het zorgkantoor dat de client krijgt overgedragen van het huidige verantwoordelijk zorgkantoor | [UCIR-0003-raadplegen](/raadplegen/zorgkantoor/UCIR-0003-raadplegen.md) | [UCIR-0003-toegangscontrole](/raadplegen/zorgkantoor/UCIR-0003-toegangscontrole.md) |
-| **Uitvoerend** | Een zorgkantoor dat bovenregionaal betrokken is bij de uitvoering van zorg | [UCIR-0004-raadplegen](/raadplegen/zorgkantoor/UCIR-0004-toegangscontrole.md) | [UCIR-0004-toegangscontrole](/raadplegen/zorgkantoor/UCIR-0004-toegangscontrole.md) | 
+|  Wlz Indicatie raadplegen door **Initieel** verantwoordelijk zorgkantoor | **Als** zorgkantoor dat initieel verantwoordelijk is voor de client en zorgt voor de bemiddeling van zorg, **wil ik** de Wlz Indicatie raadplegen van de client, **zodat** ik inzicht heb in de geïndiceerde zorg. | [UCIR-0001-raadplegen](/raadplegen/zorgkantoor/UCIR-0001-raadplegen.md) | [UCIR-0001-toegangscontrole](/raadplegen/zorgkantoor/UCIR-0001-toegangscontrole.md) | 
+|  Wlz Indicatie raadplegen na dossieroverdracht | **Als** zorgkantoor dat de client krijgt overgedragen van het huidige verantwoordelijk zorgkantoor , **wil ik** de Wlz Indicatie raadplegen van de client, **zodat** ik inzicht heb in de geïndiceerde zorg. | [UCIR-0003-raadplegen](/raadplegen/zorgkantoor/UCIR-0003-raadplegen.md) | [UCIR-0003-toegangscontrole](/raadplegen/zorgkantoor/UCIR-0003-toegangscontrole.md) |
+|  Wlz Indicatie raadplegen bovenregionaal betrokken | **Als** zorgkantoor dat bovenregionaal betrokken is bij de uitvoering van zorg , **wil ik** de Wlz Indicatie raadplegen van de client, **zodat** ik inzicht heb in de geïndiceerde zorg. | [UCIR-0004-raadplegen](/raadplegen/zorgkantoor/UCIR-0004-toegangscontrole.md) | [UCIR-0004-toegangscontrole](/raadplegen/zorgkantoor/UCIR-0004-toegangscontrole.md) | 
 
 
 [^1]: PDP: Policy Decision Point. [Afsprakenstelsel iWlz - Raadplegen](https://wlz.atlassian.net/wiki/x/KgpgAQ)
