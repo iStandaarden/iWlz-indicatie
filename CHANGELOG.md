@@ -3,6 +3,9 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
+### Bevinding: [#59: Huisletter ontbreekt in query-templates](https://github.com/iStandaarden/iWlz-indicatie/issues/59) - 2025-06-17
+- Query-templates aangevuld met `huisletter`
+
 # [Versie 1.6.5]() - 2025-03-24 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
 
 ### Bevinding: [B103: Query voor raadplegen Wlz indicatie door zorgaanbieder, zorgkantoor nieuwe en zorgkantoor uitvoerend ontbreken](https://github.com/iStandaarden/iWlz_RequestForChange/issues/103)
