@@ -1,0 +1,26 @@
+# QIR-0005-ZKn.graphql
+# Query voor nieuw Verantwoordelijk Zorgkantoor op Indicatieregister om de wlzIndicatieID op te halen
+# Verplichte input:
+#   - bsn = bsn van de client
+#   - besluitnummer = besluitnummer van de indicatie
+#   - afgiftedatum = afgiftedatum van de indicatie
+#   - ingangsdatum = ingangsdatum van de indicatie
+# versie 1.0.0 - 2025-10-07
+
+query WlzIndicatieID(
+  $Bsn: String!
+  $Besluitnummer: Int!
+  $Afgiftedatum: Date!
+  $Ingangsdatum: Date!
+  ) {
+    WlzIndicatieID(
+      where: {
+        bsn: {eq: $Bsn}
+        besluitnummer: {eq: $Besluitnummer}
+        afgiftedatum: {eq: $Afgiftedatum}
+        ingangsdatum: {eq: $Ingangsdatum}
+      }
+    ) {
+      wlzindicatieID
+    } 
+} 
