@@ -49,8 +49,6 @@ Een zorgkantoor wordt door dossieroverdracht via een ZK31 verantwoordelijk voor 
 Dit gegeven zit niet in de ZK31. Daarvoor is het nodig dat het zorgkantoor op basis van informatie uit de ZK31 het gegeven kan opvragen.
 
 
-
-
 **schematisch:**
 
 ```mermaid
@@ -79,14 +77,14 @@ stateDiagram
     PEP --> resource: toegang
     resource --> [*]
 
-    raadplegen: 1.Raadplegen Wlz Indicatie
-    register: Bemiddelingsregister
-    idAvailable: 2.wlzIndicateID bekend?
-    notifyWait: 3.Wacht op notificatie
-    notifyReceive: 4.notificatie NIEUWE_OVERDRACHT_ZORGKANTOOR ontvangen
-    haalData: 5.Raadpleeg het bemiddelingsregister voor de wlzIndicatieID
-    inputQuery: 6.Gebruik (opgehaald) wlzIndicatieID 
-    Query: 7.Gebruik query QIR-0003-ZKn
+    raadplegen: 1.Raadplegen wlzIndicatieID
+    register: Berichtenverkeer
+    idAvailable: 2.verplichte parameters bekend?
+    notifyWait: 3.Wacht op ZK31
+    notifyReceive: 4.ZK31 ontvangen
+    haalData: 5.Gebruik verplichte velden ZK31
+    inputQuery: 6.Gebruik ontvangen parameters uit ZK31 
+    Query: 7.Gebruik query QIR-0005-ZKn
     PEP: 8.Toegangscontrole PEP
     resource: Indicatieregister
 
@@ -101,16 +99,16 @@ stateDiagram
 | # | Toelichting |
 | --: | :-- |
 | 1. | *Start* | 
-| 2. | Is de **```wlzIndicatieID```** bekend? <br/> - **Ja** →  Ga verder naar stap 6 <br/> - **Nee** → Wacht op notificatie **`NIEUWE_OVERDRACHT_ZORGKANTOOR`** | 
-| 4. | Notificatie is ontvangen | 
-| 5. | Gebruik de informatie uit de notificatie voor het raadplegen van het Bemiddelingsregister en wlzIndicatieID |
-| 6. | Het **Zorgkantoor** vult de verplichte **```wlzIndicatieID```** in query-template [QIR-0003-ZKn.graphql](/gql-query/zorgkantoor/QIR-0003-ZKn.graphql) en initieert een raadpleging van de Wlz-indicatie in het Indicatieregister. | 
+| 2. | Zijn de verplichte parameters bekend? <br/> - **Ja** →  Ga verder naar stap 6 <br/> - **Nee** → Wacht op  **`ZK31`** | 
+| 4. | Bericht is ontvangen | 
+| 5. | Gebruik de informatie uit de ZK31 voor het raadplegen van het Indicatieregister voor de wlzIndicatieID |
+| 6. | Het **Zorgkantoor** vult de verplichte **```parameters```** in query-template [QIR-0005-ZKn.graphql](/gql-query/zorgkantoor/QIR-0005-ZKn.graphql) en initieert een raadpleging van de Wlz-indicatie in het Indicatieregister. | 
 | 7. | Het **Zorgkantoor** stuurt Graphql-request + Access-token naar het Policy Enforcement Point (PEP) |
-| 8. | De PEP voert de [toegangscontrole](UCIR-0003-toegangscontrole.md) uit en stuurt bij toegang het request door naar het Indicatieregister. |
+| 8. | De PEP voert de [toegangscontrole](UCIR-0005-toegangscontrole.md) uit en stuurt bij toegang het request door naar het Indicatieregister. |
 | 9. | Het Zorgkantoor ontvangt response van de PEP (bij ongeldig verzoek) of vanuit het Indicatieregister (data) |
 | 10. | *Einde proces* | 
 
 
 ---
 
-Ga naar [toegangscontrole](UCIR-0003-toegangscontrole.md) -- Terug naar [Raadplegen](/raadplegen/README.md)
+Ga naar [toegangscontrole](UCIR-0005-toegangscontrole.md) -- Terug naar [Raadplegen](/raadplegen/README.md)
