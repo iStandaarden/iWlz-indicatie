@@ -260,7 +260,7 @@ type Wzd {
 """
 Specific Input Types
 """
-input WlzIndicatieFilterInwlzIndicatieIDput {
+input WlzIndicatieFilterInput {
   wlzindicatieID: UuidOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
   bsn: StringOperationFilterInput
