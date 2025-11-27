@@ -40,7 +40,7 @@ type Query {
   wlzIndicatie(where: WlzIndicatieFilterInput): [WlzIndicatie!]!
   
   # Ophalen van de WlzIndicatieID die voldoen aan de filter criteria
-  WlzIndicatieID(where: WlzIndicatieFilterInput): [UUID!]!
+  WlzIndicatieID(where: WlzIndicatieFilterInput): WlzIndicatie
 }
 
 """

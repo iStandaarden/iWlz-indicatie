@@ -12,15 +12,16 @@ query WlzIndicatieID(
   $Besluitnummer: Int!
   $Afgiftedatum: Date!
   $Ingangsdatum: Date!
-  ) {
-    WlzIndicatieID(
-      where: {
-        bsn: {eq: $Bsn}
-        besluitnummer: {eq: $Besluitnummer}
-        afgiftedatum: {eq: $Afgiftedatum}
-        ingangsdatum: {eq: $Ingangsdatum}
-      }
-    ) {
-      wlzindicatieID
-    } 
-} 
+) {
+  WlzIndicatieID(
+    where: {
+      bsn: { eq: $Bsn }
+      besluitnummer: { eq: $Besluitnummer }
+      afgiftedatum: { eq: $Afgiftedatum }
+      ingangsdatum: { eq: $Ingangsdatum }
+    }
+  ) 
+  {
+    wlzindicatieID
+  }
+}
