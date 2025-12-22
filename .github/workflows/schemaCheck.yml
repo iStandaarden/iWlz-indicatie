@@ -13,6 +13,6 @@ jobs:
  
       - uses: kamilkisiela/graphql-inspector@master
         with:
-          schema: 'master:gql-specificatie/Indicatieregister.graphql'
+          schema: 'Indicatieregister-2:gql-specificatie/Indicatieregister.graphql'
           rules: suppressRemovalOfDeprecatedField
           fail-on-breaking: true
