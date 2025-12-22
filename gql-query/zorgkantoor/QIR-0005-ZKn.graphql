@@ -13,7 +13,7 @@ query WlzIndicatieID(
   $Afgiftedatum: Date!
   $Ingangsdatum: Date!
 ) {
-  WlzIndicatieID(
+  wlzIndicatie(
     where: {
       bsn: { eq: $Bsn }
       besluitnummer: { eq: $Besluitnummer }
