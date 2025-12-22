@@ -3,8 +3,12 @@ Alle noemenswaardige wijzigingen zullen worden vastgelegd in dit document.
 Kies een versie voor een uitgebreide vergelijking met de voorgaande versie.
 
 ---
+# [Versie 1.7.0] - 2025-11-27 - 
 ### Bevinding: [#59: Huisletter ontbreekt in query-templates](https://github.com/iStandaarden/iWlz-indicatie/issues/59) - 2025-06-17
 - Query-templates aangevuld met `huisletter`
+
+### RFC: [#60](https://github.com/iStandaarden/iWlz-indicatie/issues/60) - Ondersteunen opvragen WlzIndicatie(ID)
+- op basis van bsn, besluitnummer en aanvullende gegevens t.b.v ondersteuning implementaie Bemiddelingsregister.
 
 # [Versie 1.6.5]() - 2025-03-24 - [Indicatieregister 2](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/) 
 

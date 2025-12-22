@@ -1,12 +1,19 @@
 """
-Graphql Schemadefinitie voor het Indicatieregsiter
-Versie 1.6.4
-datum 2024-10-04
+Graphql Schemadefinitie voor het Indicatieregister
+Versie 1.7.0
+datum 2025-11-27
 Gebaseerd op Indicatieregister 2
 """
 schema {
   query: Query
 }
+
+directive @specifiedBy(
+"""
+The URL that specifies the behavior of this scalar.
+"""
+    url: String!
+  ) on SCALAR
 
 """
 The `UUID` scalar represents an version 4 UUID specification
@@ -29,12 +36,11 @@ scalar DateTime
 QUERY definities
 """
 type Query {
-  # Haal Wlzindicatie voor IndicatieId
-  #54 Query werkt door introductie OPA niet @deprecated markering suggereert anders daarom comment
-  # getWlzIndicatieVoorIndicatieID(wlzindicatieID: UUID!): WlzIndicatie!
-  #  @deprecated(reason: "Gebruik wlzIndicatie met filter opties")
-
+  # Haal Wlzindicatie met een WlzIndicatieID 
   wlzIndicatie(where: WlzIndicatieFilterInput): [WlzIndicatie!]!
+  
+  # Ophalen van de WlzIndicatieID die voldoen aan de filter criteria
+  # WlzIndicatieID(where: WlzIndicatieFilterInput): WlzIndicatie
 }
 
 """
@@ -257,6 +263,10 @@ Specific Input Types
 input WlzIndicatieFilterInput {
   wlzindicatieID: UuidOperationFilterInput
   initieelVerantwoordelijkZorgkantoor: StringOperationFilterInput
+  bsn: StringOperationFilterInput
+  besluitnummer: IntOperationFilterInput
+  afgiftedatum: DateOperationFilterInput
+  ingangsdatum: DateOperationFilterInput
 }
 
 """
@@ -290,4 +300,12 @@ input UuidOperationFilterInput {
   # nlt: UUID
   # lte: UUID
   # nlte: UUID
+}
+
+input IntOperationFilterInput {
+  eq: Int
+}
+
+input DateOperationFilterInput {
+  eq: Date
 }
