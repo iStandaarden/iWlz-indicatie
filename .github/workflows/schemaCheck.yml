@@ -13,4 +13,4 @@ jobs:
  
       - uses: kamilkisiela/graphql-inspector@master
         with:
-          schema: 'master:gql-specificatie/Indicatieregister.graphql'
+          schema: 'Indicatieregister-1:gql-specificatie/Indicatieregister.graphql'
