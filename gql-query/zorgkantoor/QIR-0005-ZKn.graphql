@@ -5,15 +5,15 @@
 #   - besluitnummer = besluitnummer van de indicatie
 #   - afgiftedatum = afgiftedatum van de indicatie
 #   - ingangsdatum = ingangsdatum van de indicatie
-# versie 1.0.0 - 2025-10-07
+# versie 1.0.1 - 2025-12-22
 
-query WlzIndicatieID(
+query WlzIndicatie(
   $Bsn: String!
   $Besluitnummer: Int!
   $Afgiftedatum: Date!
   $Ingangsdatum: Date!
 ) {
-  WlzIndicatieID(
+  wlzIndicatie(
     where: {
       bsn: { eq: $Bsn }
       besluitnummer: { eq: $Besluitnummer }
