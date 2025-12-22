@@ -25,7 +25,9 @@ Volledige Changelog [Hier](/CHANGELOG.md)
     - [Graphql-schema](#graphql-schema)
     - [Graphql-query](#graphql-query)
     - [Open Agent Policy](#open-agent-policy)
-  - [Documentatie](#documentatie)
+    - [Notificaties](#notificaties)
+  - [**Raadplegen Indicatieregister**](#raadplegen-indicatieregister)
+  - [Aanvullende Documentatie](#aanvullende-documentatie)
     - [Informatiemodel](#informatiemodel)
     - [GraphQL](#graphql)
     - [Open Agent Policy](#open-agent-policy-1)
@@ -39,20 +41,46 @@ De koppelvlak specificatie van het Indicatieregister maakt onderdeel uit van de 
 v.l.n.r. Raadpleger doet via GraphQL-query een raadpleging. Open Policy agent controleert of query voldoet aan autorisatie-regels van dat register. GraphQL-schema definieert het data-schema van het register.
 
 ### Graphql-schema 
-De [Graphql-schema specificatie](/gql-specificatie/) is bedoelt voor implementatie door de bronhouder en beschrijft hoe de data aan elkaar is gerelateerd. De specificatie is te vinden in de folder [/gql-specificatie](/gql-specificatie/). 
+De [Graphql-schema specificatie](/gql-specificatie/) is bedoelt voor implementatie door de bronhouder en beschrijft hoe de data aan elkaar is gerelateerd. 
+
+> [!NOTE]
+> De graphql-specificatie is te vinden in de folder [**/gql-specificatie**](/gql-specificatie/). 
 
 ### Graphql-query
 De [Graphql-queries](/gql-query/) beschrijven het template hoe een raadpleger vanuit zijn rol informatie kan raadplegen. Deze template volgt altijd het GraphQL-schema maar moet op bepaalde momenten aan vaste patronen voldoen vanwege de geldende autorisatie. Gaat een raadpleger buiten dit patroon dan zal de vraag worden afgekeurd en krijgt de raadpleger geen inzicht in de data. 
 
-In de folder [/gql-query](/gql-query/) staat een overzicht van de beschikbare templates inclusief een toelichting voor welke partij de template is.
+> [!NOTE]
+> Het overzicht van de beschikbare templates inclusief een toelichting voor welke partij de template is en autorisatieflow is te vinden in de folder [**/gql-query**](/gql-query/) staat .
 
 ### Open Agent Policy
 De Open Agent Policy controleert of een query voldoet aan de daarvoor afgesproken template. De policy is gebaseerd op de autorisatieregels van dat register. 
 
 De policy is beschikbaar in: @@@ nog te bepalen.
 
+> [!NOTE]
+> De functionele beschrijving van de toegangscontrole per raadpleging is beschikbaar in de folder **[/raadplegen](/raadplegen/)**
 
-## Documentatie
+### Notificaties
+Met een notificatie wordt een netwerk-deelnemer op de hoogte gebracht door een bronhouder dat er nieuwe (of gewijzigde) informatie is die directe of afgeleide betrekking heeft op die deelnemer. De notificatie bevat informatie die de deelnemer in staat stelt de relevante informatie te raadplegen bij de bron. Een notificatie loopt altijd van bron naar deelnemer.
+
+> [!NOTE]
+> De notificaties vanuit het Indicatieregister zijn te vinden in de folder [**/notificaties**](/notificaties/)
+
+## **Raadplegen Indicatieregister**
+
+Het raadplegen van het Indicatieregister is gebonden aan voorwaarden. De raadpleger moet bevoegd zijn én het vastgestelde raadpleegpatroon volgen. Dit patroon is essentieel voor het valideren van de toestemming. 
+
+Als dat patroon niet wordt gevolgd — bijvoorbeeld door ontbrekende autorisatie, onjuiste of incomplete input, of het opvragen van ongeoorloofde gegevens — wordt de toegang geweigerd of het resultaat beperkt.
+
+Use-cases beschrijven hoe een deelnemer het register correct raadpleegt.
+
+> [!NOTE]
+> De functionele beschrijving van per raadpleging per deelnemer is beschikbaar in de folder **[/raadplegen](/raadplegen/)**
+
+Meer informatie over de structuur van het raadplegen en het valideren ervan is te lezen in het [Afsprakenstelsel iWlz - Raadplegen](https://wlz.atlassian.net/wiki/x/KgpgAQ)
+
+
+## Aanvullende Documentatie
 
 ### Informatiemodel
 
@@ -77,7 +105,6 @@ zie [Open Agent Policy](https://www.openpolicyagent.org) en [documentatie](https
 Zorg en Ondersteuning: [homepagina iStandaarden](https://www.istandaarden.nl)
 
 ## Contactpersonen:
-* Hilko Jacobse - [@hilkojacobse](https://github.com/HilkoJacobse)
 * Dennis de Gouw - [@dennisdegouw](http://github.com/dennisdegouw)
 * Remo van Rest - [@rvanrest](https://github.com/rvanrest)
 

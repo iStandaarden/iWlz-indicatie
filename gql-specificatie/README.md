@@ -1,4 +1,4 @@
-# iWlz-indicatie-gq
+# iWlz-indicatie-gql
 
 
 ### Versiebeheer:

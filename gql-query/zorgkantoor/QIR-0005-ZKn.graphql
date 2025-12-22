@@ -1,0 +1,187 @@
+# QIR-0005-ZKn.graphql
+# Query voor nieuw Verantwoordelijk Zorgkantoor op Indicatieregister om de wlzIndicatieID op te halen
+# Verplichte input:
+#   - bsn = bsn van de client
+#   - besluitnummer = besluitnummer van de indicatie
+#   - afgiftedatum = afgiftedatum van de indicatie
+#   - ingangsdatum = ingangsdatum van de indicatie
+# versie 1.0.1 - 2025-12-22
+
+query WlzIndicatie(
+  $Bsn: String!
+  $Besluitnummer: Int!
+  $Afgiftedatum: Date!
+  $Ingangsdatum: Date!
+) {
+  wlzIndicatie(
+    where: {
+      bsn: { eq: $Bsn }
+      besluitnummer: { eq: $Besluitnummer }
+      afgiftedatum: { eq: $Afgiftedatum }
+      ingangsdatum: { eq: $Ingangsdatum }
+    }
+  ) {
+    wlzindicatieID
+    bsn
+    besluitnummer
+    soortWlzindicatie
+    afgiftedatum
+    ingangsdatum
+    einddatum
+    meerzorg
+    initieelVerantwoordelijkZorgkantoor
+    vervaldatum
+    commentaar
+    grondslag {
+      grondslagID
+      grondslag
+      volgorde
+    }
+    geindiceerdZorgzwaartepakket {
+      geindiceerdZorgzwaartepakketID
+      zzpCode
+      ingangsdatum
+      einddatum
+      voorkeurClient
+      instellingVoorkeur
+      financiering
+      commentaar
+    }
+    beperking {
+      beperkingID
+      categorie
+      duur
+      commentaar
+      beperkingScore {
+        beperkingScoreID
+        beperkingVraag
+        beperkingScore
+        commentaar
+      }
+    }
+    stoornis {
+      stoornisID
+      grondslag
+      diagnoseCodelijst
+      diagnoseSubCodelijst
+      ziektebeeldStoornis
+      prognose
+      commentaar
+    }
+    stoornisScore {
+      stoornisScoreID
+      stoornisVraag
+      stoornisScore
+      commentaar
+    }
+    wzd {
+      wzdID
+      wzdVerklaring
+      ingangsdatum
+      einddatum
+    }
+    client {
+      clientID
+      bsn
+      geheimeClient
+      geboorteDatum
+      geboortedatumGebruik
+      geslacht
+      burgerlijkeStaat
+      geslachtsnaam
+      voorvoegselGeslachtsnaam
+      partnernaam
+      voorvoegselPartnernaam
+      voornamen
+      roepnaam
+      voorletters
+      naamGebruik
+      leefeenheid
+      agbcodeHuisarts
+      communicatieVorm
+      taal
+      commentaar
+      contactGegevens {
+        contactGegevensID
+        adres {
+          adresID
+          adresSoort
+          straatnaam
+          huisnummer
+          huisletter
+          huisnummerToevoeging
+          postcode
+          plaatsnaam
+          landCode
+          aanduidingWoonadres
+          ingangsdatum
+          einddatum
+        }
+        email {
+          emailID
+          emailadres
+          ingangsdatum
+          einddatum
+        }
+        telefoon {
+          telefoonID
+          telefoonnummer
+          landnummer
+          ingangsdatum
+          einddatum
+        }
+      }
+      contactPersoon {
+        contactPersoonID
+        relatieNummer
+        volgorde
+        soortRelatie
+        rol
+        relatie
+        voornamen
+        roepnaam
+        voorletters
+        geslachtsnaam
+        voorvoegselGeslachtsnaam
+        partnernaam
+        voorvoegselPartnernaam
+        naamGebruik
+        geslacht
+        geboorteDatum
+        geboortedatumGebruik
+        ingangsdatum
+        einddatum
+        contactGegevens {
+          contactGegevensID
+          adres {
+            adresID
+            adresSoort
+            straatnaam
+            huisnummer
+            huisletter
+            huisnummerToevoeging
+            postcode
+            plaatsnaam
+            landCode
+            aanduidingWoonadres
+            ingangsdatum
+            einddatum
+          }
+          email {
+            emailID
+            emailadres
+            ingangsdatum
+            einddatum
+          }
+          telefoon {
+            telefoonID
+            telefoonnummer
+            landnummer
+            ingangsdatum
+            einddatum
+          }
+        }
+      }
+    }
+  }
+}

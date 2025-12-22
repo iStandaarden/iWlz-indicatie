@@ -1,18 +1,15 @@
-# QIR-0001-ZKi.graphql
-# Query voor initieel Verantwoordelijk Zorgkantoor op Indicatieregister
+# QIR-0004-ZKu.graphql
+# Query voor uitvoerend Zorgkantoor op Indicatieregister
 # Verplichte input:
 #   - wlzIndicatieID = te raadplegen WlzIndicatie
-#   - uzovicode zorgkantoor = eigen uzovicode raadpleger
-# versie 1.1.0 - 2025-02-03
+# versie 1.0.0 - 2025-03-21
 
 query WlzIndicatie(
     $wlzIndicatieID: UUID!
-    $initieelVerantwoordelijkZorgkantoor: String!
 ) {
     wlzIndicatie(
         where: {
             wlzindicatieID: {eq: $wlzIndicatieID}
-            initieelVerantwoordelijkZorgkantoor: {eq: $initieelVerantwoordelijkZorgkantoor}
         }
     ) {
         wlzindicatieID
@@ -24,6 +21,7 @@ query WlzIndicatie(
         einddatum
         meerzorg
         initieelVerantwoordelijkZorgkantoor
+        vervaldatum
         commentaar
         grondslag {
             grondslagID
@@ -175,13 +173,6 @@ query WlzIndicatie(
                     }
                 }
             }
-        }
-        vervallenGeldigheid {
-            vervallenGeldigheidID
-            vervaldatum
-            vaststellingmoment
-            reden
-            nieuwVerantwoordelijkZorgkantoor
         }
     }
 }
