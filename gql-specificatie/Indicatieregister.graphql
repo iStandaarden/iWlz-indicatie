@@ -1,8 +1,8 @@
 """
-Graphql Schemadefinitie voor het Indicatieregister
+Graphql Schemadefinitie voor het Indicatieregsiter
 Versie 1.7.0
-datum 2025-11-27
-Gebaseerd op Indicatieregister 2
+datum 2025-01-29
+Gebaseerd op Indicatieregister 3
 """
 schema {
   query: Query
@@ -36,7 +36,7 @@ scalar DateTime
 QUERY definities
 """
 type Query {
-  # Haal Wlzindicatie met een WlzIndicatieID 
+  # Haal Wlzindicatie 
   wlzIndicatie(where: WlzIndicatieFilterInput): [WlzIndicatie!]!
   
   # Ophalen van de WlzIndicatieID die voldoen aan de filter criteria
@@ -56,7 +56,9 @@ type WlzIndicatie {
   einddatum: Date
   meerzorg: String #COD260
   initieelVerantwoordelijkZorgkantoor: String! 
-  vervaldatum: Date
+  vervaldatum: Date @deprecated(
+      reason: "vervangen door node VervallenGeldigheid"
+    )
   grondslag: [Grondslag!]
   geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket!]
   beperking: [Beperking!]
@@ -65,6 +67,7 @@ type WlzIndicatie {
   wzd: Wzd
   client: Client!
   commentaar: String
+  vervallenGeldigheid: [VervallenGeldigheid!]
 }
 
 type GeindiceerdZorgzwaartepakket {
@@ -80,6 +83,14 @@ type GeindiceerdZorgzwaartepakket {
   instellingVoorkeur: String
   financiering: String! #COD998
   commentaar: String
+}
+
+type VervallenGeldigheid {
+  vervallenGeldigheidID: UUID!
+  vervaldatum: Date!
+  vaststellingmoment: DateTime!
+  reden: String!
+  nieuwVerantwoordelijkZorgkantoor: String
 }
 
 type Grondslag {
@@ -199,7 +210,7 @@ type ContactPersoon {
   geboortedatumGebruik: String #COD170
   ingangsdatum: Date!
   einddatum: Date
-  clientID: UUID!
+  clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   contactGegevens: [ContactGegevens!]!
 }
 
@@ -209,8 +220,8 @@ type ContactGegevens {
       reason: "vervangen door functioneel technisch ID gebruik contactGegevensID"
     )
   contactGegevensID: UUID!
-  clientID: UUID
-  contactPersoonID: UUID
+  clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
+  contactPersoonID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   adres: Adres
   telefoon: Telefoon
   email: Email

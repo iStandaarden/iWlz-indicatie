@@ -3,7 +3,7 @@
 # Verplichte input:
 #   - wlzIndicatieID = te raadplegen WlzIndicatie
 #   - uzovicode zorgkantoor = eigen uzovicode raadpleger
-# versie 1.0.0 - 2024-10-04
+# versie 1.1.0 - 2025-02-03
 
 query WlzIndicatie(
     $wlzIndicatieID: UUID!
@@ -24,7 +24,6 @@ query WlzIndicatie(
         einddatum
         meerzorg
         initieelVerantwoordelijkZorgkantoor
-        vervaldatum
         commentaar
         grondslag {
             grondslagID
@@ -176,6 +175,13 @@ query WlzIndicatie(
                     }
                 }
             }
+        }
+        vervallenGeldigheid {
+            vervallenGeldigheidID
+            vervaldatum
+            vaststellingmoment
+            reden
+            nieuwVerantwoordelijkZorgkantoor
         }
     }
 }

@@ -1,5 +1,4 @@
 # iWlz-indicatie-gql
-Graphql-schema specificate indicatiekoppelvlak
 
 
 ### Versiebeheer:
@@ -24,7 +23,7 @@ classDiagram
     einddatum: Date
     meerzorg: String
     initieelVerantwoordelijkZorgkantoor: String!
-    vervaldatum: Date
+    vervaldatum: Date @deprecated(reason: "vervangen door node VervallenGeldigheid" zie RFC24080 )
     grondslag [Grondslag!]
     geindiceerdZorgzwaartepakket: [GeindiceerdZorgzwaartepakket!]
     beperking: [Beperking!]
@@ -33,6 +32,7 @@ classDiagram
     wzd: Wzd
     client: Client!
     commentaar: String
+    vervallenGeldigheid: [VervallenGeldigheid!]
   }
   WlzIndicatie --> GeindiceerdZorgzwaartepakket
   WlzIndicatie --> Grondslag
@@ -41,6 +41,7 @@ classDiagram
   WlzIndicatie --> StoornisScore
   WlzIndicatie --> Wzd
   WlzIndicatie --> Client
+  WlzIndicatie --> VervallenGeldigheid
 
   class GeindiceerdZorgzwaartepakket {
   id: UUID@deprecated(reason: "vervangen door functioneel technisch ID gebruik geindiceerdZorgzwaartepakketID")
@@ -106,6 +107,14 @@ classDiagram
   wlzindicatieID: UUID @deprecated(reason: "overbodig")
   }
 
+  class VervallenGeldigheid {
+  vervallenGeldigheidID: UUID!
+  vervaldatum: Date!
+  vaststellingmoment: DateTime!
+  reden: String
+  nieuwVerantwoordelijkZorgkantoor: String
+  }
+
   class Client {
   id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik clientID")
   clientID: UUID!
@@ -157,7 +166,7 @@ classDiagram
   geboortedatumGebruik: String #COD170
   ingangsdatum: Date!
   einddatum: Date
-  clientID: UUID!
+  clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   contactGegevens: [ContactGegevens!]!
   }
 
@@ -166,8 +175,8 @@ classDiagram
   class ContactGegevens {
   id: UUID @deprecated(reason: "vervangen door functioneel technisch ID gebruik contactGegevensID")
   contactGegevensID: UUID!
-  clientID: UUID
-  contactPersoonID: UUID
+  clientID: UUID @deprecated(reason: "overbodig" zie RFC25089)
+  contactPersoonID: UUID @deprecated(reason: "overbodig" zie RFC25089)
   adres: Adres
   telefoon: Telefoon
   email: Email
