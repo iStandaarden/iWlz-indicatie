@@ -8,17 +8,17 @@
 # versie 1.0.1 - 2025-12-22
 
 query WlzIndicatie(
-  $Bsn: String!
-  $Besluitnummer: Int!
-  $Afgiftedatum: Date!
-  $Ingangsdatum: Date!
+  $bsn: String!
+  $besluitnummer: Int!
+  $afgiftedatum: Date!
+  $ingangsdatum: Date!
 ) {
   wlzIndicatie(
     where: {
-      bsn: { eq: $Bsn }
-      besluitnummer: { eq: $Besluitnummer }
-      afgiftedatum: { eq: $Afgiftedatum }
-      ingangsdatum: { eq: $Ingangsdatum }
+      bsn: { eq: $bsn }
+      besluitnummer: { eq: $besluitnummer }
+      afgiftedatum: { eq: $afgiftedatum }
+      ingangsdatum: { eq: $ingangsdatum }
     }
   ) {
     wlzindicatieID
