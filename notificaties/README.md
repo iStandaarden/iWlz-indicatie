@@ -11,7 +11,12 @@ Per notificatie is beschreven wat de aanleiding is voor het versturen van een no
 | Notificatie | Ontvanger | Documentatie | Type |
 | :-- | :-- | :-- | :-- |
 | [NIEUWE_INDICATIE_ZORGKANTOOR](/notificaties/nieuwe_indicatie_zorgkantoor.md) | Zorgkantoor | Notificatie aan het zorgkantoor als het CIZ een nieuwe Wlz-indicatie heeft geregistreerd voor een cliënt die in de regio van dit zorgkantoor woont. | VERPLICHT |
-| [VERVALLEN_INDICATIE_ZORGKANTOOR](/notificaties/vervallen_indicatie_zorgkantoor.md) | Zorgkantoor | Notificatie aan het zorgkantoor als het CIZ een nieuwe vervaldatum heeft geregistreerd, of een vervaldatum heeft gewijzigd of verwijderd, bij een Wlz-indicatie waarvoor dit zorgkantoor verantwoordelijk is, was of wordt. | VERPLICHT| 
+| [GEWIJZIGDE_INDICATIE_ZORGKANTOOR](/notificaties/GEWIJZIGDE_INDICATIE_ZORGKANTOOR.md) | Zorgkantoor | Notificatie aan het zorgkantoor als het CIZ een wijziging heeft doorgevoerd in een Wlz-indicatie waarvoor dit zorgkantoor verantwoordelijk is, was of wordt. De wijziging betreft een of meer van de entiteiten WlzIndicatie en GeindiceerdZorgzwaartepakket. | VERPLICHT |
+| [VERWIJDERDE_INDICATIE_ZORGKANTOOR](/notificaties/VERWIJDERDE_INDICATIES_ZORGKANTOOR.md) | ZORGKANTOOR | Notificatie aan het zorgkantoor als het CIZ een Wlz-indicatie heeft verwijderd waarvoor dit zorgkantoor verantwoordelijk is, was of zou worden. | VERPLICHT |
+| [NIEUWE_VERVALLENGELDIGHEID_ZORGKANTOOR](/notificaties/NIEUWE_VERVALLENGELDIGHEID_ZORGKANTOOR.md) | ZORGKANTOOR | Notificatie aan het zorgkantoor als het CIZ een nieuwe VervallenGeldigheid heeft geregistreerd bij een Wlz-indicatie waarvoor dit zorgkantoor verantwoordelijk is, was of wordt. | VERPLICHT |
+| [GEWIJZIGDE_VERVALLENGELDIGHEID_ZORGKANTOOR](/notificaties/GEWIJZIGDE_VERVALLENGELDIGHEID_ZORGKANTOOR.md) | ZORGKANTOOR | Notificatie aan het zorgkantoor als het CIZ een VervallenGeldigheid heeft gewijzigd van een Wlz-indicatie waarvoor dit zorgkantoor verantwoordelijk is, was of wordt. | VERPLICHT |
+| [VERWIJDERDE_VERVALLENGELDIGHEID_ZORGKANTOOR](/notificaties/VERWIJDERDE_VERVALLENGELDIGHEID_ZORGKANTOOR.md) | ZORGKANTOOR | Notificatie aan het zorgkantoor als het CIZ een VervallenGeldigheid heeft verwijderd bij een Wlz-indicatie waarvoor dit zorgkantoor verantwoordelijk is, was of wordt. | VERPLICHT |
+
 
 
 
