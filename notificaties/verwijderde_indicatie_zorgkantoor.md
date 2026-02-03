@@ -78,9 +78,9 @@ opstellen:- VERWIJDERDE_INDICATIE_ZORGKANTOOR
 | ontvangerKenmerk | NULL | |
 | eventType | "VERWIJDERDE_INDICATIE_ZORGKANTOOR" | ```"eventType": "VERWIJDERDE_INDICATIE_ZORGKANTOOR"``` |
 | subjectList |  | ```"subjectList": [{```|
-| ../subject | "WlzIndicatie/{wlzIndicatieID}" | "subject": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6"|
-| ../recordID | "WlzIndicatie/{wlzIndicatieID}" | "recordID": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6" |
-| | | ```}``` | 
+| ../subject | "WlzIndicatie/{wlzIndicatieID}" | ```"subject": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6"``` |
+| ../recordID | "WlzIndicatie/{wlzIndicatieID}" | ```"recordID": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6"``` |
+| | | ```}]``` | 
 
 
 
