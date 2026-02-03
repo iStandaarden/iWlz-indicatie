@@ -8,6 +8,10 @@ Use-cases beschrijven hoe een deelnemer het register correct raadpleegt.
 
 Meer informatie over de structuur van het raadplegen en het valideren ervan is te lezen in het [Afsprakenstelsel iWlz - Raadplegen](https://wlz.atlassian.net/wiki/x/KgpgAQ)
 
+## Autorisatieregels en autorisatiematrix
+De toegang tot gegevens is vastgelegd doormiddel van **Autorisatieregels** en de **Autorisatiematrix**. De [autorisatieregels](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-3/regels/autorisatieregel/) zijn te vinden in het Informatiemodel Indicatieregister 2 (via [hier](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-3/regels/autorisatieregel/)) en de [autorisatiematrix](/raadplegen/autorisatiematrix_indicatieregister.md) is [hier](/raadplegen/autorisatiematrix_indicatieregister.md) te vinden.
+
+
 
 ## Use-cases raadplegen Indicatieregister
 

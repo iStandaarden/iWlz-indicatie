@@ -1,8 +1,9 @@
 # QIR-0002-ZA.graphql
 # Query voor zorgaanbieder
+# Gebaseerd op Indicatieregister 3
 # Verplichte input:
 #   - wlzIndicatieID = te raadplegen WlzIndicatie
-# versie 1.0.0 - 2025-03-06
+# versie 1.2.0 - 2026-02-03
 
 query WlzIndicatie(
     $wlzIndicatieID: UUID!
@@ -21,7 +22,6 @@ query WlzIndicatie(
         einddatum
         meerzorg
         initieelVerantwoordelijkZorgkantoor
-        vervaldatum
         commentaar
         grondslag {
             grondslagID
@@ -70,6 +70,13 @@ query WlzIndicatie(
             wzdVerklaring
             ingangsdatum
             einddatum
+        }
+        vervallenGeldigheid {
+            vervallenGeldigheidID
+            vervaldatum
+            vaststellingmoment
+            reden
+            nieuwVerantwoordelijkZorgkantoor
         }
         client {
             clientID
