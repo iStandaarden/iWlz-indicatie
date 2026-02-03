@@ -27,6 +27,7 @@ Volledige Changelog [Hier](/CHANGELOG.md)
     - [Open Agent Policy](#open-agent-policy)
     - [Notificaties](#notificaties)
   - [**Raadplegen Indicatieregister**](#raadplegen-indicatieregister)
+    - [Autorisatieregels en autorisatiematrix](#autorisatieregels-en-autorisatiematrix)
   - [Aanvullende Documentatie](#aanvullende-documentatie)
     - [Informatiemodel](#informatiemodel)
     - [GraphQL](#graphql)
@@ -73,6 +74,10 @@ Het raadplegen van het Indicatieregister is gebonden aan voorwaarden. De raadple
 Als dat patroon niet wordt gevolgd — bijvoorbeeld door ontbrekende autorisatie, onjuiste of incomplete input, of het opvragen van ongeoorloofde gegevens — wordt de toegang geweigerd of het resultaat beperkt.
 
 Use-cases beschrijven hoe een deelnemer het register correct raadpleegt.
+
+### Autorisatieregels en autorisatiematrix
+De toegang tot gegevens is vastgelegd doormiddel van **Autorisatieregels** en de **Autorisatiematrix**. De [autorisatieregels](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/) zijn te vinden in het Informatiemodel Indicatieregister 2 (via [hier](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/)) en de [autorisatiematrix](/raadplegen/autorisatiematrix_indicatieregister.md) is [hier](/raadplegen/autorisatiematrix_indicatieregister.md) te vinden.
+
 
 > [!NOTE]
 > De functionele beschrijving van per raadpleging per deelnemer is beschikbaar in de folder **[/raadplegen](/raadplegen/)**
