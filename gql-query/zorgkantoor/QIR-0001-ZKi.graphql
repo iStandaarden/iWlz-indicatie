@@ -1,187 +1,190 @@
 # QIR-0001-ZKi.graphql
 # Query voor initieel Verantwoordelijk Zorgkantoor op Indicatieregister
+# Gebaseerd op Indicatieregister 3
 # Verplichte input:
 #   - wlzIndicatieID = te raadplegen WlzIndicatie
 #   - uzovicode zorgkantoor = eigen uzovicode raadpleger
-# versie 1.1.0 - 2025-02-03
+# versie 1.2.0 - 2026-02-03
 
 query WlzIndicatie(
-    $wlzIndicatieID: UUID!
-    $initieelVerantwoordelijkZorgkantoor: String!
+  $wlzIndicatieID: UUID!
+  $initieelVerantwoordelijkZorgkantoor: String!
 ) {
-    wlzIndicatie(
-        where: {
-            wlzindicatieID: {eq: $wlzIndicatieID}
-            initieelVerantwoordelijkZorgkantoor: {eq: $initieelVerantwoordelijkZorgkantoor}
+  wlzIndicatie(
+    where: {
+      wlzindicatieID: { eq: $wlzIndicatieID }
+      initieelVerantwoordelijkZorgkantoor: {
+        eq: $initieelVerantwoordelijkZorgkantoor
+      }
+    }
+  ) {
+    wlzindicatieID
+    bsn
+    besluitnummer
+    soortWlzindicatie
+    afgiftedatum
+    ingangsdatum
+    einddatum
+    meerzorg
+    initieelVerantwoordelijkZorgkantoor
+    commentaar
+    grondslag {
+      grondslagID
+      grondslag
+      volgorde
+    }
+    geindiceerdZorgzwaartepakket {
+      geindiceerdZorgzwaartepakketID
+      zzpCode
+      ingangsdatum
+      einddatum
+      voorkeurClient
+      instellingVoorkeur
+      financiering
+      commentaar
+    }
+    beperking {
+      beperkingID
+      categorie
+      duur
+      commentaar
+      beperkingScore {
+        beperkingScoreID
+        beperkingVraag
+        beperkingScore
+        commentaar
+      }
+    }
+    stoornis {
+      stoornisID
+      grondslag
+      diagnoseCodelijst
+      diagnoseSubCodelijst
+      ziektebeeldStoornis
+      prognose
+      commentaar
+    }
+    stoornisScore {
+      stoornisScoreID
+      stoornisVraag
+      stoornisScore
+      commentaar
+    }
+    wzd {
+      wzdID
+      wzdVerklaring
+      ingangsdatum
+      einddatum
+    }
+    vervallenGeldigheid {
+      vervallenGeldigheidID
+      vervaldatum
+      vaststellingmoment
+      reden
+      nieuwVerantwoordelijkZorgkantoor
+    }
+    client {
+      clientID
+      bsn
+      geheimeClient
+      geboorteDatum
+      geboortedatumGebruik
+      geslacht
+      burgerlijkeStaat
+      geslachtsnaam
+      voorvoegselGeslachtsnaam
+      partnernaam
+      voorvoegselPartnernaam
+      voornamen
+      roepnaam
+      voorletters
+      naamGebruik
+      leefeenheid
+      agbcodeHuisarts
+      communicatieVorm
+      taal
+      commentaar
+      contactGegevens {
+        contactGegevensID
+        adres {
+          adresID
+          adresSoort
+          straatnaam
+          huisnummer
+          huisletter
+          huisnummerToevoeging
+          postcode
+          plaatsnaam
+          landCode
+          aanduidingWoonadres
+          ingangsdatum
+          einddatum
         }
-    ) {
-        wlzindicatieID
-        bsn
-        besluitnummer
-        soortWlzindicatie
-        afgiftedatum
+        email {
+          emailID
+          emailadres
+          ingangsdatum
+          einddatum
+        }
+        telefoon {
+          telefoonID
+          telefoonnummer
+          landnummer
+          ingangsdatum
+          einddatum
+        }
+      }
+      contactPersoon {
+        contactPersoonID
+        relatieNummer
+        volgorde
+        soortRelatie
+        rol
+        relatie
+        voornamen
+        roepnaam
+        voorletters
+        geslachtsnaam
+        voorvoegselGeslachtsnaam
+        partnernaam
+        voorvoegselPartnernaam
+        naamGebruik
+        geslacht
+        geboorteDatum
+        geboortedatumGebruik
         ingangsdatum
         einddatum
-        meerzorg
-        initieelVerantwoordelijkZorgkantoor
-        commentaar
-        grondslag {
-            grondslagID
-            grondslag
-            volgorde
-        }
-        geindiceerdZorgzwaartepakket {
-            geindiceerdZorgzwaartepakketID
-            zzpCode
+        contactGegevens {
+          contactGegevensID
+          adres {
+            adresID
+            adresSoort
+            straatnaam
+            huisnummer
+            huisletter
+            huisnummerToevoeging
+            postcode
+            plaatsnaam
+            landCode
+            aanduidingWoonadres
             ingangsdatum
             einddatum
-            voorkeurClient
-            instellingVoorkeur
-            financiering
-            commentaar
-        }
-        beperking {
-            beperkingID
-            categorie
-            duur
-            commentaar
-            beperkingScore {
-                beperkingScoreID
-                beperkingVraag
-                beperkingScore
-                commentaar
-            }
-        }
-        stoornis {
-            stoornisID
-            grondslag
-            diagnoseCodelijst
-            diagnoseSubCodelijst
-            ziektebeeldStoornis
-            prognose
-            commentaar
-        }
-        stoornisScore {
-            stoornisScoreID
-            stoornisVraag
-            stoornisScore
-            commentaar
-        }
-        wzd {
-            wzdID
-            wzdVerklaring
+          }
+          email {
+            emailID
+            emailadres
             ingangsdatum
             einddatum
+          }
+          telefoon {
+            telefoonID
+            telefoonnummer
+            landnummer
+            ingangsdatum
+            einddatum
+          }
         }
-        client {
-            clientID
-            bsn
-            geheimeClient
-            geboorteDatum
-            geboortedatumGebruik
-            geslacht
-            burgerlijkeStaat
-            geslachtsnaam
-            voorvoegselGeslachtsnaam
-            partnernaam
-            voorvoegselPartnernaam
-            voornamen
-            roepnaam
-            voorletters
-            naamGebruik
-            leefeenheid
-            agbcodeHuisarts
-            communicatieVorm
-            taal
-            commentaar
-            contactGegevens {
-                contactGegevensID
-                adres {
-                    adresID
-                    adresSoort
-                    straatnaam
-                    huisnummer
-                    huisletter
-                    huisnummerToevoeging
-                    postcode
-                    plaatsnaam
-                    landCode
-                    aanduidingWoonadres
-                    ingangsdatum
-                    einddatum
-                }
-                email {
-                    emailID
-                    emailadres
-                    ingangsdatum
-                    einddatum
-                }
-                telefoon {
-                    telefoonID
-                    telefoonnummer
-                    landnummer
-                    ingangsdatum
-                    einddatum
-                }
-            }
-            contactPersoon {
-                contactPersoonID
-                relatieNummer
-                volgorde
-                soortRelatie
-                rol
-                relatie
-                voornamen
-                roepnaam
-                voorletters
-                geslachtsnaam
-                voorvoegselGeslachtsnaam
-                partnernaam
-                voorvoegselPartnernaam
-                naamGebruik
-                geslacht
-                geboorteDatum
-                geboortedatumGebruik
-                ingangsdatum
-                einddatum
-                contactGegevens {
-                    contactGegevensID
-                    adres {
-                        adresID
-                        adresSoort
-                        straatnaam
-                        huisnummer
-                        huisletter
-                        huisnummerToevoeging
-                        postcode
-                        plaatsnaam
-                        landCode
-                        aanduidingWoonadres
-                        ingangsdatum
-                        einddatum
-                    }
-                    email {
-                        emailID
-                        emailadres
-                        ingangsdatum
-                        einddatum
-                    }
-                    telefoon {
-                        telefoonID
-                        telefoonnummer
-                        landnummer
-                        ingangsdatum
-                        einddatum
-                    }
-                }
-            }
-        }
-        vervallenGeldigheid {
-            vervallenGeldigheidID
-            vervaldatum
-            vaststellingmoment
-            reden
-            nieuwVerantwoordelijkZorgkantoor
-        }
+      }
     }
+  }
 }

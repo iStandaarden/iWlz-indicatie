@@ -1,11 +1,12 @@
 # QIR-0005-ZKn.graphql
 # Query voor nieuw Verantwoordelijk Zorgkantoor op Indicatieregister om de wlzIndicatieID op te halen
+# Gebaseerd op Indicatieregister 3
 # Verplichte input:
 #   - bsn = bsn van de client
 #   - besluitnummer = besluitnummer van de indicatie
 #   - afgiftedatum = afgiftedatum van de indicatie
 #   - ingangsdatum = ingangsdatum van de indicatie
-# versie 1.0.1 - 2025-12-22
+# versie 1.2.0 - 2026-02-03
 
 query WlzIndicatie(
   $bsn: String!
@@ -30,7 +31,6 @@ query WlzIndicatie(
     einddatum
     meerzorg
     initieelVerantwoordelijkZorgkantoor
-    vervaldatum
     commentaar
     grondslag {
       grondslagID
@@ -79,6 +79,13 @@ query WlzIndicatie(
       wzdVerklaring
       ingangsdatum
       einddatum
+    }
+    vervallenGeldigheid {
+      vervallenGeldigheidID
+      vervaldatum
+      vaststellingmoment
+      reden
+      nieuwVerantwoordelijkZorgkantoor
     }
     client {
       clientID
