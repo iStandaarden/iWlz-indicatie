@@ -1,18 +1,35 @@
 name: GraphQL Inspector
- 
-on: [push]
- 
+
+on: [push, pull_request]
+
 jobs:
-  test:
-    name: Check Schema
+  check:
+    name: Check GraphQL Schema
     runs-on: ubuntu-latest
- 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
- 
-      - uses: kamilkisiela/graphql-inspector@master
+        uses: actions/checkout@v4
+
+      # (A) Schema diff / breaking changes check (Action)
+      - name: GraphQL Inspector (schema diff)
+        uses: graphql-hive/graphql-inspector@master
         with:
-          schema: '${{ github.ref_name }}:gql-specificatie/Indicatieregister.graphql'
+          # vergelijkt PR branch met base (via ref:path notatie)
+          schema: '${{ github.base_ref || github.ref_name }}:gql-specificatie/Indicatieregister.graphql'
+          # schema: '${{ github.ref_name }}:gql-specificatie/Indicatieregister.graphql'
           rules: suppressRemovalOfDeprecatedField
           fail-on-breaking: true
+
+      # (B) Validate queries/documents tegen het schema (CLI)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate queries (fail on deprecated usage)
+        run: |
+          npx -y @graphql-inspector/cli@6 validate \
+            "./gql-query/**/*.graphql" \
+            "./gql-specificatie/Indicatieregister.graphql" \
+            --deprecated
+
