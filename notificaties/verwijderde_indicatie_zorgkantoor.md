@@ -70,7 +70,7 @@ opstellen:- VERWIJDERDE_INDICATIE_ZORGKANTOOR
 
 | Variabele | Waarde | Voorbeeld | 
 | :-- | :-- | :-- |
-| timestamp | {timestamp} | ```"timestamp": "2024-07-02T00:00:00Z"``` | 
+| timestamp | {timestamp} | ```"timestamp": "2024-07-02T00:00:00.000Z"``` | 
 | afzenderIDType | "KVK" | ```"afzenderIDType": "KVK"``` |
 | afzenderID | "62253778" | ```"afzenderID": "62253778"``` |
 | ontvangerIDType | "UZOVI" | ```"ontvangerIDType": "UZOVI"``` |
