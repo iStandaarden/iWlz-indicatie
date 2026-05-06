@@ -77,7 +77,7 @@ opstellen:- VERVALLEN_INDICATIE_ZORGKANTOOR
 | ontvangerIDType | "UZOVI" | ```"ontvangerIDType": "UZOVI"``` |
 | ontvangerID | {uzovi-code ontvanger} | ```"ontvangerID": "5151"``` |
 | ontvangerKenmerk | NULL | |
-| eventType | "NIEUWE_INDICATIE_ZORGKANTOOR" | ```"eventType": "VERVALLEN_INDICATIE_ZORGKANTOOR"``` |
+| eventType | "VERVALLEN_INDICATIE_ZORGKANTOOR" | ```"eventType": "VERVALLEN_INDICATIE_ZORGKANTOOR"``` |
 | subjectList |  | ```"subjectList": [{```|
 | ../subject | "WlzIndicatie/{wlzIndicatieID}" | "subject": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6"|
 | ../recordID | "WlzIndicatie/{wlzIndicatieID}" | "recordID": "WlzIndicatie/ef88ce35-58fa-4e6d-ac7a-6e298dd211d6" |
