@@ -11,12 +11,12 @@ jobs:
         uses: actions/checkout@v4
 
       # (A) Schema diff / breaking changes check (Action)
+      # source https://github.com/graphql-hive/graphql-inspector
       - name: GraphQL Inspector (schema diff)
         uses: graphql-hive/graphql-inspector@master
         with:
           # vergelijkt PR branch met base (via ref:path notatie)
           schema: '${{ github.base_ref || github.ref_name }}:gql-specificatie/Indicatieregister.graphql'
-          # schema: '${{ github.ref_name }}:gql-specificatie/Indicatieregister.graphql'
           rules: suppressRemovalOfDeprecatedField
           fail-on-breaking: true
 
@@ -24,7 +24,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+          cache: 'npm'
 
       - name: Validate queries (fail on deprecated usage)
         run: |
