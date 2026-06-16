@@ -1,10 +1,5 @@
 # Query-templates voor de Zorgaanbieder
 
-**Beschikbare Query-templates**
-| Deelnemer  rol | toelichting | query |
-| :-- | :-- |:-- |
-| **Zorgaanbieder** - uitvoerend | Een zorgaanbieder die betrokken is bij de uitvoering van zorg | [QIR-0002-ZA.graphql](/gql-query/zorgaanbieder/QIR-0002-ZA.graphql) |
+Hier staan de query templates die de zorgaanbieder kan gebruiken voor het raadplegen van gegevens in het Indicatieregister. De templates dienen als voorbeeld hoe de query opgebouwd moet worden. De structuur en bepaalde verplichte parameters zijn nodig om te voldoen aan de autorisatie-policies.
 
-
----
-[Terug naar Query overzicht](/gql-query/README.md)
+Ga naar [Raadplegen](/iWlz-indicatie/raadplegen/README.md) voor meer uitleg.
