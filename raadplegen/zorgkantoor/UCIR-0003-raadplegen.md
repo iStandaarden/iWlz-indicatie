@@ -29,8 +29,8 @@ flowchart LR
 
 ### Autorisatie:
 Een zorgkantoor mag voor het toeleiden van een cliënt de Wlz-indicatie raadplegen waarvoor dat zorgkantoor door dossieroverdracht verantwoordelijk geworden is
-- Volledige autorisatieregel: [IRA0001-informatiemodel](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/ira0001/)
-- Autorisatiematrix: [IRA0003](https://github.com/iStandaarden/iWlz-Autorisatiematrix/blob/main/autorisatiematrix_indicatieregister.md)
+- Volledige autorisatieregel:  [IRA0004-informatiemodel](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/ira0004/)
+- Autorisatiematrix: [IRA0004](https://github.com/iStandaarden/iWlz-indicatie/blob/Indicatieregister-2/raadplegen/autorisatiematrix_indicatieregister.md)
 
 **Trigger:**
 - Het zorgkantoor wil de Wlz-indicatie raadplegen ter ondersteuning van het toeleidingsproces van een cliënt.
