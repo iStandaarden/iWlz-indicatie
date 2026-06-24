@@ -17,6 +17,8 @@ Het zorgkantoor is daarmee op de hoogte gesteld dat een Wlz-indicatie is vervall
 > - het zorgkantoor dat verantwoordelijk is voor de Wlz-indicatie
 > - het zorgkantoor dat verantwoordelijk is geweest voor de Wlz-indicatie
 > - het zorgkantoor dat door overdracht verantwoordelijk wordt voor de Wlz-indicatie
+> - het zorgkantoor dat uitvoerend is voor de Wlz-indicatie
+> - het zorgkantoor dat uitvoerend is geweest voor de Wlz-indicatie
 
 ## Type
 Het type-notificatie: 
