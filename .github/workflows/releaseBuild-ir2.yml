@@ -1,10 +1,10 @@
-name: Publish new version of Indicatieregister
+name: Publish new version of Indicatieregister 2
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - Indicatieregister-*
+      - Indicatieregister-2
     # alleen als het schema is gewijzigd voeg paths toe. 
     # paths:
     #   - 'gql-specificatie/**'
