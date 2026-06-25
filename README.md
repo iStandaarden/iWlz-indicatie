@@ -1,25 +1,15 @@
-# iWlz-Indicatieregister 2
+# iWlz-Indicatieregister 2 (In productie)
 **iWlz-Indicatieregister bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie en voorgeschreven [GraphQL-query templates](/gql-query/) voor het raadplegen van Wlz Indicatiegegevens in het indicatieregister en de [notificaties](/notificaties) verzonden vanuit het indicatieregister.**
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
-## Versies en Status 
-
-Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
-
-| | LOPEND (*default branch*) | IN ONTWIKKELING | ARCHIEF |
-| --: |:-- |:-- | :-- |
-| ***Informatiemodel***| [**Indicatieregister 2**](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/) (*huidige branch*) | -- | [Indicatieregister 1](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |
-| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.5] | -- |  [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
-| ***Datum*** | 27-11-2025 - [Changelog](/CHANGELOG.md)| -- | juli 2023 |
-
-### Changelog
-Volledige Changelog [Hier](/CHANGELOG.md)
+> [!NOTE] 
+> [![Latest Release](https://img.shields.io/github/v/release/iStandaarden/iWlz-Indicatie?filter=v.Indicatieregister-2*&label=latest%20release&style=flat-square)](https://github.com/iStandaarden/iWlz-indicatie/releases)
+> ![Release Date](https://img.shields.io/github/release-date/iStandaarden/iWlz-Indicatie?filter=v.Indicatieregister-2*&label=latest%20release&style=flat-square). 
+> [![Static Badge](https://img.shields.io/badge/changelog-here-BA2BE2)](https://github.com/iStandaarden/iWlz-indicatie/releases)
 
 ## Inhoudsopgave
-- [iWlz-Indicatieregister 2](#iwlz-indicatieregister-2)
-  - [Versies en Status](#versies-en-status)
-    - [Changelog](#changelog)
+- [iWlz-Indicatieregister 2 (In productie)](#iwlz-indicatieregister-2-in-productie)
   - [Inhoudsopgave](#inhoudsopgave)
   - [Onderdelen](#onderdelen)
     - [Graphql-schema](#graphql-schema)
