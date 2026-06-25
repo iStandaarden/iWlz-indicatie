@@ -1,25 +1,17 @@
-# iWlz-Indicatieregister 2
+# iWlz-Indicatieregister 3 (In Ontwikkeling)
 **iWlz-Indicatieregister bevat de [Graphql-schema](/gql-specificatie) koppelvlak specificatie en voorgeschreven [GraphQL-query templates](/gql-query/) voor het raadplegen van Wlz Indicatiegegevens in het indicatieregister en de [notificaties](/notificaties) verzonden vanuit het indicatieregister.**
 
 Het indicatieregister is in beheer bij het CIZ en is onderdeel van het iWlz-netwerkmodel.
 
-## Versies en Status 
+> [!NOTE] 
+> [![Latest Release](https://img.shields.io/github/v/release/iStandaarden/iWlz-Indicatie?filter=v.Indicatieregister-3*&label=latest%20release&style=flat-square)](https://github.com/iStandaarden/iWlz-indicatie/releases)
+> ![Release Date](https://img.shields.io/github/release-date/iStandaarden/iWlz-Indicatie?filter=v.Indicatieregister-3*&label=latest%20release&style=flat-square). 
+> [![Static Badge](https://img.shields.io/badge/changelog-here-BA2BE2)](https://github.com/iStandaarden/iWlz-indicatie/releases)
 
-Er zijn altijd minimaal twee versies actueel. Een versie die in productie is, status is *Lopend* en een versie die in ontwikkeling is, status is *In ontwikkeling*.
 
-| | LOPEND (*default branch*) | IN ONTWIKKELING | ARCHIEF |
-| --: |:-- |:-- | :-- |
-| ***Informatiemodel***| [**Indicatieregister 2**](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/) (*huidige branch*) | -- | [Indicatieregister 1](https://informatiemodel.istandaarden.nl/iWlz-Indicatie-1/) |
-| ***Koppelvlak specificatie*** | [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-2) / [Release v1.6.5] | -- |  [Documentatie](https://github.com/iStandaarden/iWlz-indicatie/tree/Indicatieregister-1) / [Release v1.2](https://github.com/iStandaarden/iWlz-indicatie/releases/tag/v1.2) |
-| ***Datum*** | 27-11-2025 - [Changelog](/CHANGELOG.md)| -- | juli 2023 |
-
-### Changelog
-Volledige Changelog [Hier](/CHANGELOG.md)
 
 ## Inhoudsopgave
-- [iWlz-Indicatieregister 2](#iwlz-indicatieregister-2)
-  - [Versies en Status](#versies-en-status)
-    - [Changelog](#changelog)
+- [iWlz-Indicatieregister 3 (In Ontwikkeling)](#iwlz-indicatieregister-3-in-ontwikkeling)
   - [Inhoudsopgave](#inhoudsopgave)
   - [Onderdelen](#onderdelen)
     - [Graphql-schema](#graphql-schema)
@@ -76,7 +68,7 @@ Als dat patroon niet wordt gevolgd — bijvoorbeeld door ontbrekende autorisatie
 Use-cases beschrijven hoe een deelnemer het register correct raadpleegt.
 
 ### Autorisatieregels en autorisatiematrix
-De toegang tot gegevens is vastgelegd doormiddel van **Autorisatieregels** en de **Autorisatiematrix**. De [autorisatieregels](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/) zijn te vinden in het Informatiemodel Indicatieregister 2 (via [hier](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-2/regels/autorisatieregel/)) en de [autorisatiematrix](/raadplegen/autorisatiematrix_indicatieregister.md) is [hier](/raadplegen/autorisatiematrix_indicatieregister.md) te vinden.
+De toegang tot gegevens is vastgelegd doormiddel van **Autorisatieregels** en de **Autorisatiematrix**. De [autorisatieregels](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-3/regels/autorisatieregel/) zijn te vinden in het Informatiemodel Indicatieregister 3 (via [hier](https://informatiemodel.istandaarden.nl/informatiemodel/iwlz/netwerk/indicatieregister-3/regels/autorisatieregel/)) en de [autorisatiematrix](/raadplegen/autorisatiematrix_indicatieregister.md) is [hier](/raadplegen/autorisatiematrix_indicatieregister.md) te vinden.
 
 
 > [!NOTE]
