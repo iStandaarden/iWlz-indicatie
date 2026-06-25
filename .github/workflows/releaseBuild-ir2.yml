@@ -1,0 +1,76 @@
+name: Publish new version of Indicatieregister 2
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - Indicatieregister-2
+    # alleen als het schema is gewijzigd voeg paths toe. 
+    # paths:
+    #   - 'gql-specificatie/**'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # need history to diff properly
+
+      - name: Generate version
+        id: version
+        run: |
+          BRANCH_NAME="${GITHUB_REF_NAME//\//-}"
+          VERSION="${BRANCH_NAME}-$(date +'%Y.%m.%d.%H%M%S')"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Detect changed directories
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            BEFORE_SHA="${{ github.event.before }}"
+            AFTER_SHA="${{ github.event.after }}"
+          else
+            BEFORE_SHA="HEAD~1"
+            AFTER_SHA="HEAD"
+          fi
+
+          CHANGED_FILES=$(git diff --name-only "$BEFORE_SHA" "$AFTER_SHA")
+
+          check_dir() {
+            local dir="$1"
+            if echo "$CHANGED_FILES" | grep -q "^$dir"; then
+              echo "yes"
+            else
+              echo "no"
+            fi
+          }
+
+          echo "gql_specificaties=$(check_dir 'gql-specificaties/')" >> "$GITHUB_OUTPUT"
+          echo "gql_query=$(check_dir 'gql-query/')" >> "$GITHUB_OUTPUT"
+          echo "notificaties=$(check_dir 'notificaties/')" >> "$GITHUB_OUTPUT"
+          echo "raadplegen=$(check_dir 'raadplegen/')" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v.${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          files: gql-specificatie/Indicatieregister.graphql
+          generate_release_notes: true
+          body: |
+            Automatisch gegenereerde release van de Koppelvlakspecificatie voor branch `${{ github.ref_name }}`.
+            Version: ${{ steps.version.outputs.version }}.
+
+            **Release bevat de volgende wijzigingen in de volgende onderdelen:**
+            | Onderdeel | Wijziging |
+            |-----------|-----------|
+            | Schema-wijziging (in gql-specificaties/): | ${{ steps.changes.outputs.gql_specificaties }} |
+            | Querytemplate-wijziging (in gql-query/): | ${{ steps.changes.outputs.gql_query }} |
+            | Notificaties (in notificaties/): | ${{ steps.changes.outputs.notificaties }} |
+            | Raadpleeg en toegangs usecases (in raadplegen/): | ${{ steps.changes.outputs.raadplegen }} |
+
+            Voor meer informatie over de wijzigingen, zie hieronder.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
