@@ -1,5 +1,5 @@
 # Autorisatiematrix Indicatieregister 2
-_Indicatieregister 2 - versie 1.2: 29-01-2026_
+_Indicatieregister 2 - versie 1.3: 24-06-2026_
 
 In de autorisatiematrix is per autorisatieregel de toegang op attribuutniveau vastgelegd.
 
