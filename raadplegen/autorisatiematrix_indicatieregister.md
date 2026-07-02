@@ -1,5 +1,5 @@
 # Autorisatiematrix Indicatieregister 3
-*Indicatieregister 3 - versie 1.1: 24-06-2026*
+*Indicatieregister 3 - versie 1.0 rc-2: 24-06-2026*
 
 In de autorisatiematrix is per autorisatieregel de toegang op attribuutniveau vastgelegd.
 
